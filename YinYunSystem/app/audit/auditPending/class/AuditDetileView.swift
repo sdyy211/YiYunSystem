@@ -21,7 +21,6 @@ class AuditDetileView: UIView,UITableViewDelegate,UITableViewDataSource,HttpProt
     var request = HttpRequest()
     var viewController = UIViewController()
     var delegate = AuditDetileProtocol?()
-    var type = 1
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
@@ -132,15 +131,11 @@ class AuditDetileView: UIView,UITableViewDelegate,UITableViewDataSource,HttpProt
         lineL.frame = CGRectMake(0, 0,CGRectGetWidth(tv.frame), 1)
         lineL.backgroundColor = UIColor(red: 221.0/255.0, green: 221.0/255.0, blue: 221.0/255.0, alpha: 1)
         
-        if(type == 1)
-        {
-            footerView.addSubview(lineL)
-            footerView.addSubview(btn)
-            footerView.addSubview(btn2)
-        }else{
-            footerView.addSubview(lineL)
+      
+        footerView.addSubview(lineL)
+        footerView.addSubview(btn)
+        footerView.addSubview(btn2)
 
-        }
         
         self.addSubview(footerView)
     }
