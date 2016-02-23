@@ -48,6 +48,8 @@
 		0496A61F1C78337D002B0947 /* myselfMeetingRoomVController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0496A60D1C78337D002B0947 /* myselfMeetingRoomVController.swift */; };
 		0496A6201C78337D002B0947 /* myselfMeetRoomDetileVController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0496A60E1C78337D002B0947 /* myselfMeetRoomDetileVController.swift */; };
 		0496A6311C78338B002B0947 /* personalCenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0496A6301C78338B002B0947 /* personalCenterViewController.swift */; };
+		0497D0F91C7C1FDF00809A1A /* personalMegcell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0497D0F71C7C1FDF00809A1A /* personalMegcell.swift */; };
+		0497D0FA1C7C1FDF00809A1A /* personalMegcell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0497D0F81C7C1FDF00809A1A /* personalMegcell.xib */; };
 		04FB3D021C604F9300AE0787 /* fixedDetileBorrowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FB3CFA1C604F9300AE0787 /* fixedDetileBorrowView.swift */; };
 		04FB3D031C604F9300AE0787 /* fixedDetileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FB3CFB1C604F9300AE0787 /* fixedDetileHeaderView.swift */; };
 		04FB3D041C604F9300AE0787 /* fixedDetileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FB3CFC1C604F9300AE0787 /* fixedDetileView.swift */; };
@@ -181,6 +183,8 @@
 		0496A60D1C78337D002B0947 /* myselfMeetingRoomVController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = myselfMeetingRoomVController.swift; sourceTree = "<group>"; };
 		0496A60E1C78337D002B0947 /* myselfMeetRoomDetileVController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = myselfMeetRoomDetileVController.swift; sourceTree = "<group>"; };
 		0496A6301C78338B002B0947 /* personalCenterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = personalCenterViewController.swift; sourceTree = "<group>"; };
+		0497D0F71C7C1FDF00809A1A /* personalMegcell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = personalMegcell.swift; sourceTree = "<group>"; };
+		0497D0F81C7C1FDF00809A1A /* personalMegcell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = personalMegcell.xib; sourceTree = "<group>"; };
 		04FB3CFA1C604F9300AE0787 /* fixedDetileBorrowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = fixedDetileBorrowView.swift; sourceTree = "<group>"; };
 		04FB3CFB1C604F9300AE0787 /* fixedDetileHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = fixedDetileHeaderView.swift; sourceTree = "<group>"; };
 		04FB3CFC1C604F9300AE0787 /* fixedDetileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = fixedDetileView.swift; sourceTree = "<group>"; };
@@ -437,9 +441,19 @@
 		0496A62F1C78338B002B0947 /* personalCenter */ = {
 			isa = PBXGroup;
 			children = (
+				0497D0F61C7C1FDF00809A1A /* class */,
 				0496A6301C78338B002B0947 /* personalCenterViewController.swift */,
 			);
 			path = personalCenter;
+			sourceTree = "<group>";
+		};
+		0497D0F61C7C1FDF00809A1A /* class */ = {
+			isa = PBXGroup;
+			children = (
+				0497D0F71C7C1FDF00809A1A /* personalMegcell.swift */,
+				0497D0F81C7C1FDF00809A1A /* personalMegcell.xib */,
+			);
+			path = class;
 			sourceTree = "<group>";
 		};
 		04995BA11C4626E600518DC7 /* app */ = {
@@ -744,6 +758,7 @@
 				9882272D1C604C5C0040DB2C /* addressBook.plist in Resources */,
 				048BEE601C79606B006C660A /* workCollectionCell.xib in Resources */,
 				9855BCCA1C586CF5005788BE /* KQ_Jia.storyboard in Resources */,
+				0497D0FA1C7C1FDF00809A1A /* personalMegcell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -815,6 +830,7 @@
 				988227831C609CCB0040DB2C /* SwiftyJSON.swift in Sources */,
 				0496A6141C78337D002B0947 /* checkSelectRoomView.swift in Sources */,
 				044196AF1C794A5D00B8E1BE /* AuditDetileView.swift in Sources */,
+				0497D0F91C7C1FDF00809A1A /* personalMegcell.swift in Sources */,
 				984D56BE1C75950E00FAC478 /* KQNewBLTableViewController.swift in Sources */,
 				04FB3D041C604F9300AE0787 /* fixedDetileView.swift in Sources */,
 				0496A6101C78337D002B0947 /* checkMeetingRoomVController.swift in Sources */,

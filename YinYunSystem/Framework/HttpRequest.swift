@@ -1,8 +1,8 @@
 import Foundation
 //总地址
 //let GetService = "http://172.16.8.109/Login/JDoLogin"
-let GetService = "http://172.16.8.250:8085"
-
+//let GetService = "http://172.16.8.250:8085"
+let GetService = "http://172.16.8.109"
 //普通网络请求协议
 @objc protocol HttpProtocol{
     func didResponse(result:NSDictionary)
