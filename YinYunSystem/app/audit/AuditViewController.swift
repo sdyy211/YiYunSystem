@@ -14,10 +14,10 @@ class AuditViewController: UIViewController,UICollectionViewDelegate,UICollectio
     var itemWith:CGFloat = 0
     var itemHeight:CGFloat = 0
     var cv : UICollectionView?
-    
+    var titleStr = ""
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "审核管理"
+        self.title = "审核列表"
         self.tabBarController?.tabBar.hidden = true
         
         itemArry  = ["考勤"]
@@ -79,11 +79,16 @@ class AuditViewController: UIViewController,UICollectionViewDelegate,UICollectio
     {
         if(index == 0)
         {
-            self.performSegueWithIdentifier("pushAuditDetile", sender: self)
+            titleStr = (itemArry[index] as? String)!
+            self.performSegueWithIdentifier("push1", sender: self)
         }else if(index == 1)
         {
             
         }
+    }
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?){
+        let  channel:AuditPendingOrHasbeenViewController = segue.destinationViewController as! AuditPendingOrHasbeenViewController
+        channel.title = titleStr
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

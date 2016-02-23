@@ -21,6 +21,7 @@ class AuditDetileView: UIView,UITableViewDelegate,UITableViewDataSource,HttpProt
     var request = HttpRequest()
     var viewController = UIViewController()
     var delegate = AuditDetileProtocol?()
+    var type = 1
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
@@ -119,12 +120,28 @@ class AuditDetileView: UIView,UITableViewDelegate,UITableViewDataSource,HttpProt
         btn2.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
         btn2.addTarget(self, action: Selector("btn2Action"), forControlEvents: UIControlEvents.TouchUpInside)
         
+        let btnWith2 = CGRectGetWidth(tv.frame)-40
+        let btn3 = UIButton()
+        btn3.frame = CGRectMake(20, 15,btnWith2,CGRectGetHeight(btn.frame))
+        btn3.setBackgroundImage(UIImage(named: "trueBtn"), forState: UIControlState.Normal)
+        btn3.setTitle("确定", forState: UIControlState.Normal)
+        btn3.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
+        btn3.addTarget(self, action: Selector("btn3Action"), forControlEvents: UIControlEvents.TouchUpInside)
+        
         let lineL = UILabel()
         lineL.frame = CGRectMake(0, 0,CGRectGetWidth(tv.frame), 1)
         lineL.backgroundColor = UIColor(red: 221.0/255.0, green: 221.0/255.0, blue: 221.0/255.0, alpha: 1)
-        footerView.addSubview(lineL)
-        footerView.addSubview(btn)
-        footerView.addSubview(btn2)
+        
+        if(type == 1)
+        {
+            footerView.addSubview(lineL)
+            footerView.addSubview(btn)
+            footerView.addSubview(btn2)
+        }else{
+            footerView.addSubview(lineL)
+
+        }
+        
         self.addSubview(footerView)
     }
     // MARK:退回的点击事件
