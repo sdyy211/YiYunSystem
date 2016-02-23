@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="APW-Pf-5S3">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+    </dependencies>
+    <scenes>
+        <!--工作平台-->
+        <scene sceneID="6yc-4m-0Op">
+            <objects>
+                <viewController id="797-h3-9yQ" customClass="workPlatformVController" customModule="YinYunSystem" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gib-gQ-JCZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="s2w-T2-Suj"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hPl-eo-THi">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="工作平台" image="h2" id="60p-48-Sm4"/>
+                    <navigationItem key="navigationItem" title="工作平台" id="b8y-sa-f3M"/>
+                    <connections>
+                        <segue destination="4Mn-Zp-WeE" kind="modal" identifier="KQSegue" modalPresentationStyle="fullScreen" modalTransitionStyle="flipHorizontal" id="CYh-3p-gyW"/>
+                        <segue destination="YzH-kz-4Wy" kind="push" identifier="HYSSegue" id="Q3J-a7-ihJ"/>
+                        <segue destination="i0n-Hv-l1w" kind="push" identifier="pushAudit" id="8SS-IH-ezS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IPq-nf-16g" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1924" y="949"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="d2K-Kl-4I9">
+            <objects>
+                <navigationController id="APW-Pf-5S3" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="xXC-N9-wcn"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="zE7-4k-9vf">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="797-h3-9yQ" kind="relationship" relationship="rootViewController" id="eXG-mW-Msh"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vCG-NT-8e5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1284" y="949"/>
+        </scene>
+        <!--KQ-->
+        <scene sceneID="yPv-Uz-f62">
+            <objects>
+                <viewControllerPlaceholder storyboardName="KQ" id="4Mn-Zp-WeE" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tys-zh-wuk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2393.5" y="652"/>
+        </scene>
+        <!--HYS-->
+        <scene sceneID="86m-cp-SCX">
+            <objects>
+                <viewControllerPlaceholder storyboardName="HYS" id="YzH-kz-4Wy" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="AMd-E5-9rx"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KNG-QU-oxM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2406" y="836"/>
+        </scene>
+        <!--AuditPending-->
+        <scene sceneID="7hp-0o-9DX">
+            <objects>
+                <viewControllerPlaceholder storyboardName="AuditPending" id="i0n-Hv-l1w" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="RZV-Af-VWg"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NYz-Ho-PPX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2710" y="1270"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="h2" width="27" height="27"/>
+    </resources>
+</document>
