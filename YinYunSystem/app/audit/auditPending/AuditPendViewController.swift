@@ -30,7 +30,6 @@ class AuditPendViewController: UIViewController,UITableViewDataSource,UITableVie
         super.viewDidLoad()
         
         request.delegate = self
-        self.title = "审核管理"
 //        itemsWith = Int(CGRectGetWidth(UIScreen.mainScreen().bounds))/4
         addLeftItem()
         addRightItem()

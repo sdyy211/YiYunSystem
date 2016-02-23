@@ -9,12 +9,12 @@
 import UIKit
 
 class workPlatformVController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource,HttpProtocol{
-    var itemArry  = NSArray()
-    var imageArry  =  NSArray()
+    var itemArry  = ["会议管理","考勤管理","固定资产"]
+    var imageArry  = ["p1","p2","p3"]
     var itemWith:CGFloat = 0
     var itemHeight:CGFloat = 0
     var cv : UICollectionView?
-    
+
     var url = "/Mobile/Mobile/right"
     var request = HttpRequest()
     override func viewDidLoad() {
@@ -59,9 +59,6 @@ class workPlatformVController: UIViewController,UICollectionViewDelegate,UIColle
             {
                 itemArry  = ["会议管理","考勤管理","固定资产","办理事项"]
                 imageArry  = ["p1","p2","p3","p4"]
-            }else{
-                itemArry  = ["会议管理","考勤管理","固定资产"]
-                imageArry  = ["p1","p2","p3"]
             }
         }
         cv?.reloadData()

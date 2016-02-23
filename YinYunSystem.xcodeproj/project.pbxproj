@@ -18,6 +18,10 @@
 		044196B01C794A5D00B8E1BE /* AuditTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044196AA1C794A5D00B8E1BE /* AuditTableViewCell.swift */; };
 		044196B11C794A5D00B8E1BE /* AuditTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 044196AB1C794A5D00B8E1BE /* AuditTableViewCell.xib */; };
 		044196B31C794A9200B8E1BE /* AuditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044196B21C794A9200B8E1BE /* AuditViewController.swift */; };
+		0451C2051C7C30D700A1EF1B /* AuditPendingOrHasbeenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0451C2041C7C30D700A1EF1B /* AuditPendingOrHasbeenViewController.swift */; };
+		0451C2081C7C383500A1EF1B /* AuditHasbeenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0451C2071C7C383500A1EF1B /* AuditHasbeenViewController.swift */; };
+		0451C20C1C7C3AB100A1EF1B /* auditHasbeenViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0451C20A1C7C3AB100A1EF1B /* auditHasbeenViewCell.swift */; };
+		0451C20D1C7C3AB100A1EF1B /* auditHasbeenViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0451C20B1C7C3AB100A1EF1B /* auditHasbeenViewCell.xib */; };
 		046464DE1C76A2EE004841FF /* OAsySytemService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046464DD1C76A2EE004841FF /* OAsySytemService.swift */; };
 		048BEE5F1C79606B006C660A /* workCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048BEE5B1C79606B006C660A /* workCollectionCell.swift */; };
 		048BEE601C79606B006C660A /* workCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 048BEE5C1C79606B006C660A /* workCollectionCell.xib */; };
@@ -153,6 +157,10 @@
 		044196AA1C794A5D00B8E1BE /* AuditTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuditTableViewCell.swift; sourceTree = "<group>"; };
 		044196AB1C794A5D00B8E1BE /* AuditTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AuditTableViewCell.xib; sourceTree = "<group>"; };
 		044196B21C794A9200B8E1BE /* AuditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuditViewController.swift; sourceTree = "<group>"; };
+		0451C2041C7C30D700A1EF1B /* AuditPendingOrHasbeenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuditPendingOrHasbeenViewController.swift; sourceTree = "<group>"; };
+		0451C2071C7C383500A1EF1B /* AuditHasbeenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuditHasbeenViewController.swift; sourceTree = "<group>"; };
+		0451C20A1C7C3AB100A1EF1B /* auditHasbeenViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = auditHasbeenViewCell.swift; sourceTree = "<group>"; };
+		0451C20B1C7C3AB100A1EF1B /* auditHasbeenViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = auditHasbeenViewCell.xib; sourceTree = "<group>"; };
 		046464DD1C76A2EE004841FF /* OAsySytemService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAsySytemService.swift; sourceTree = "<group>"; };
 		048BEE5B1C79606B006C660A /* workCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = workCollectionCell.swift; sourceTree = "<group>"; };
 		048BEE5C1C79606B006C660A /* workCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = workCollectionCell.xib; sourceTree = "<group>"; };
@@ -326,6 +334,24 @@
 			path = class;
 			sourceTree = "<group>";
 		};
+		0451C2061C7C381500A1EF1B /* auditHasbeen */ = {
+			isa = PBXGroup;
+			children = (
+				0451C2091C7C39B600A1EF1B /* class */,
+				0451C2071C7C383500A1EF1B /* AuditHasbeenViewController.swift */,
+			);
+			path = auditHasbeen;
+			sourceTree = "<group>";
+		};
+		0451C2091C7C39B600A1EF1B /* class */ = {
+			isa = PBXGroup;
+			children = (
+				0451C20A1C7C3AB100A1EF1B /* auditHasbeenViewCell.swift */,
+				0451C20B1C7C3AB100A1EF1B /* auditHasbeenViewCell.xib */,
+			);
+			path = class;
+			sourceTree = "<group>";
+		};
 		046464DC1C76A2EE004841FF /* service */ = {
 			isa = PBXGroup;
 			children = (
@@ -433,7 +459,9 @@
 			isa = PBXGroup;
 			children = (
 				044196B21C794A9200B8E1BE /* AuditViewController.swift */,
+				0451C2041C7C30D700A1EF1B /* AuditPendingOrHasbeenViewController.swift */,
 				044196A41C794A5D00B8E1BE /* auditPending */,
+				0451C2061C7C381500A1EF1B /* auditHasbeen */,
 			);
 			path = audit;
 			sourceTree = "<group>";
@@ -745,6 +773,7 @@
 				0417F5671C472A68008CCF59 /* presonCenter.storyboard in Resources */,
 				988227301C604C5C0040DB2C /* fixedAsset.plist in Resources */,
 				04FB3D071C604F9300AE0787 /* fixedAssetsTableCell.xib in Resources */,
+				0451C20D1C7C3AB100A1EF1B /* auditHasbeenViewCell.xib in Resources */,
 				044196B11C794A5D00B8E1BE /* AuditTableViewCell.xib in Resources */,
 				98650FC31C4877D800DAA323 /* HYS.storyboard in Resources */,
 				9855BCCC1C5874EB005788BE /* KQ_JB.storyboard in Resources */,
@@ -825,12 +854,14 @@
 				9822E5261C7327430024E8A0 /* KQBL.swift in Sources */,
 				0496A61B1C78337D002B0947 /* myselfMeetingRoomCell.swift in Sources */,
 				048BEE611C79606B006C660A /* workPlatformVController.swift in Sources */,
+				0451C20C1C7C3AB100A1EF1B /* auditHasbeenViewCell.swift in Sources */,
 				04FB3D061C604F9300AE0787 /* fixedAssetsTableCell.swift in Sources */,
 				0496A5F61C783375002B0947 /* addressDetileView.swift in Sources */,
 				988227831C609CCB0040DB2C /* SwiftyJSON.swift in Sources */,
 				0496A6141C78337D002B0947 /* checkSelectRoomView.swift in Sources */,
 				044196AF1C794A5D00B8E1BE /* AuditDetileView.swift in Sources */,
 				0497D0F91C7C1FDF00809A1A /* personalMegcell.swift in Sources */,
+				0451C2081C7C383500A1EF1B /* AuditHasbeenViewController.swift in Sources */,
 				984D56BE1C75950E00FAC478 /* KQNewBLTableViewController.swift in Sources */,
 				04FB3D041C604F9300AE0787 /* fixedDetileView.swift in Sources */,
 				0496A6101C78337D002B0947 /* checkMeetingRoomVController.swift in Sources */,
@@ -854,6 +885,7 @@
 				04FB3D2B1C60517C00AE0787 /* Error.swift in Sources */,
 				04FB3D301C60517C00AE0787 /* Response.swift in Sources */,
 				98E50E3E1C621670002AF370 /* KQChaiTableViewController.swift in Sources */,
+				0451C2051C7C30D700A1EF1B /* AuditPendingOrHasbeenViewController.swift in Sources */,
 				0496A6121C78337D002B0947 /* checkMeetingRoomCollectionCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
