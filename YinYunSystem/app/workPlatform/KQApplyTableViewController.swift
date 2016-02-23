@@ -62,7 +62,7 @@ class KQApplyTableViewController: UITableViewController, HttpProtocol {
     
     
     func didResponse(result: NSDictionary) {
-//        print(result)
+        print(result)
         
         if let data = result["rows"] {
             let json = JSON(data)

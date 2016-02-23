@@ -163,7 +163,7 @@
                                                     </variation>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="JB" translatesAutoresizingMaskIntoConstraints="NO" id="CbS-t6-HwI">
-                                                    <rect key="frame" x="10" y="14" width="32" height="32"/>
+                                                    <rect key="frame" x="28" y="14" width="32" height="32"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="32" id="SrE-Vv-MOV"/>
                                                         <constraint firstAttribute="width" constant="32" id="UQ2-po-FRG"/>
@@ -172,7 +172,7 @@
                                             </subviews>
                                             <color key="backgroundColor" red="0.94787708969999995" green="0.9636445669" blue="0.9689280965" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
-                                                <constraint firstItem="CbS-t6-HwI" firstAttribute="leading" secondItem="4wH-1n-ef7" secondAttribute="leading" constant="10" id="Agr-5a-pKo"/>
+                                                <constraint firstItem="CbS-t6-HwI" firstAttribute="leading" secondItem="4wH-1n-ef7" secondAttribute="leading" constant="28" id="Agr-5a-pKo"/>
                                                 <constraint firstAttribute="trailing" secondItem="W17-b0-XfT" secondAttribute="trailing" id="H4C-fn-aj8"/>
                                                 <constraint firstAttribute="height" constant="100" id="OlJ-tZ-OMo"/>
                                                 <constraint firstItem="W17-b0-XfT" firstAttribute="leading" secondItem="4wH-1n-ef7" secondAttribute="leading" constant="60" id="VEe-Eg-RMV"/>
@@ -195,11 +195,6 @@
                                         <constraint firstAttribute="trailing" secondItem="4wH-1n-ef7" secondAttribute="trailing" constant="3" id="fVe-OB-ij4"/>
                                         <constraint firstItem="4wH-1n-ef7" firstAttribute="top" secondItem="dZb-zf-t5y" secondAttribute="top" constant="4" id="vVd-5U-col"/>
                                     </constraints>
-                                    <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                            <integer key="value" value="10"/>
-                                        </userDefinedRuntimeAttribute>
-                                    </userDefinedRuntimeAttributes>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.94787708969999995" green="0.9636445669" blue="0.9689280965" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
@@ -210,11 +205,6 @@
                                 </connections>
                             </tableViewCell>
                         </prototypes>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                <integer key="value" value="15"/>
-                            </userDefinedRuntimeAttribute>
-                        </userDefinedRuntimeAttributes>
                         <connections>
                             <outlet property="dataSource" destination="Mxc-gl-vfj" id="VVc-p9-FGC"/>
                             <outlet property="delegate" destination="Mxc-gl-vfj" id="p2I-sa-C81"/>
