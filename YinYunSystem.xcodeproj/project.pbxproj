@@ -22,6 +22,9 @@
 		0451C2081C7C383500A1EF1B /* AuditHasbeenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0451C2071C7C383500A1EF1B /* AuditHasbeenViewController.swift */; };
 		0451C20C1C7C3AB100A1EF1B /* auditHasbeenViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0451C20A1C7C3AB100A1EF1B /* auditHasbeenViewCell.swift */; };
 		0451C20D1C7C3AB100A1EF1B /* auditHasbeenViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0451C20B1C7C3AB100A1EF1B /* auditHasbeenViewCell.xib */; };
+		0451C20F1C7C526200A1EF1B /* AuditHasbeenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0451C20E1C7C526200A1EF1B /* AuditHasbeenView.swift */; };
+		0451C2121C7C547700A1EF1B /* AuditHasbeenCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0451C2101C7C547700A1EF1B /* AuditHasbeenCell.swift */; };
+		0451C2131C7C547700A1EF1B /* AuditHasbeenCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0451C2111C7C547700A1EF1B /* AuditHasbeenCell.xib */; };
 		046464DE1C76A2EE004841FF /* OAsySytemService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046464DD1C76A2EE004841FF /* OAsySytemService.swift */; };
 		048BEE5F1C79606B006C660A /* workCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048BEE5B1C79606B006C660A /* workCollectionCell.swift */; };
 		048BEE601C79606B006C660A /* workCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 048BEE5C1C79606B006C660A /* workCollectionCell.xib */; };
@@ -161,6 +164,9 @@
 		0451C2071C7C383500A1EF1B /* AuditHasbeenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuditHasbeenViewController.swift; sourceTree = "<group>"; };
 		0451C20A1C7C3AB100A1EF1B /* auditHasbeenViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = auditHasbeenViewCell.swift; sourceTree = "<group>"; };
 		0451C20B1C7C3AB100A1EF1B /* auditHasbeenViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = auditHasbeenViewCell.xib; sourceTree = "<group>"; };
+		0451C20E1C7C526200A1EF1B /* AuditHasbeenView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuditHasbeenView.swift; sourceTree = "<group>"; };
+		0451C2101C7C547700A1EF1B /* AuditHasbeenCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuditHasbeenCell.swift; sourceTree = "<group>"; };
+		0451C2111C7C547700A1EF1B /* AuditHasbeenCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AuditHasbeenCell.xib; sourceTree = "<group>"; };
 		046464DD1C76A2EE004841FF /* OAsySytemService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAsySytemService.swift; sourceTree = "<group>"; };
 		048BEE5B1C79606B006C660A /* workCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = workCollectionCell.swift; sourceTree = "<group>"; };
 		048BEE5C1C79606B006C660A /* workCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = workCollectionCell.xib; sourceTree = "<group>"; };
@@ -348,6 +354,9 @@
 			children = (
 				0451C20A1C7C3AB100A1EF1B /* auditHasbeenViewCell.swift */,
 				0451C20B1C7C3AB100A1EF1B /* auditHasbeenViewCell.xib */,
+				0451C20E1C7C526200A1EF1B /* AuditHasbeenView.swift */,
+				0451C2101C7C547700A1EF1B /* AuditHasbeenCell.swift */,
+				0451C2111C7C547700A1EF1B /* AuditHasbeenCell.xib */,
 			);
 			path = class;
 			sourceTree = "<group>";
@@ -756,6 +765,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0451C2131C7C547700A1EF1B /* AuditHasbeenCell.xib in Resources */,
 				98650FC91C48806200DAA323 /* KQ.storyboard in Resources */,
 				0496A6161C78337D002B0947 /* collectionHeaderView.xib in Resources */,
 				980B7DEF1C58B5C50019D5A0 /* mapapi.bundle in Resources */,
@@ -812,6 +822,7 @@
 				9846BB291C47465A00E7DF6A /* CheckHYSViewController.swift in Sources */,
 				980B7E041C58BEC00019D5A0 /* test.mm in Sources */,
 				9855BCD01C58A123005788BE /* KQChaiViewController.swift in Sources */,
+				0451C2121C7C547700A1EF1B /* AuditHasbeenCell.swift in Sources */,
 				983194871C620C5C00900C0F /* KQJBTimeViewController.swift in Sources */,
 				984A83BF1C76E886001A3D3A /* KQTableViewCell.swift in Sources */,
 				988227851C609EC80040DB2C /* KQData.swift in Sources */,
@@ -825,6 +836,7 @@
 				984D56C01C75955000FAC478 /* KQNewBLTimeViewController.swift in Sources */,
 				0496A6111C78337D002B0947 /* checkDataPickerView.swift in Sources */,
 				988227271C604BCB0040DB2C /* ViewController.swift in Sources */,
+				0451C20F1C7C526200A1EF1B /* AuditHasbeenView.swift in Sources */,
 				0496A6181C78337D002B0947 /* meetingRoomApplyCell.swift in Sources */,
 				983194851C620BA800900C0F /* KQJBTableViewController.swift in Sources */,
 				9831947F1C61E8A300900C0F /* KQJiaTableViewController.swift in Sources */,
