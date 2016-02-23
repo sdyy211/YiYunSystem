@@ -8,18 +8,20 @@
 
 import UIKit
 
-class workPlatformVController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource{
+class workPlatformVController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource,HttpProtocol{
     var itemArry  = NSArray()
     var imageArry  =  NSArray()
     var itemWith:CGFloat = 0
     var itemHeight:CGFloat = 0
     var cv : UICollectionView?
     
+    var url = "/Mobile/Mobile/right"
+    var request = HttpRequest()
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        itemArry  = ["会议管理","考勤管理","固定资产","审核管理"]
-        imageArry  = ["p1","p2","p3","p4"]
+//        itemArry  = ["会议管理","考勤管理","固定资产","审核管理"]
+//        imageArry  = ["p1","p2","p3","p4"]
         itemWith = (CGRectGetWidth(UIScreen.mainScreen().bounds)-10-15)/4
         
         let layout = UICollectionViewFlowLayout()
@@ -36,8 +38,33 @@ class workPlatformVController: UIViewController,UICollectionViewDelegate,UIColle
         cv?.backgroundColor = UIColor.whiteColor()
         
         self.view.addSubview(cv!)
+        request.delegate = self
+        loadData()
+    }
+    func loadData()
+    {
+        let par = ["":""]
+        let str = "\(((UIApplication.sharedApplication().delegate) as! AppDelegate).getService())\(url)"
+        request.Get(str, parameters: par)
+    }
+    func didResponse(result: NSDictionary) {
 
-    
+        let ary =  result.objectForKey("dt") as? NSArray
+        //考勤审批列表 报销审批列表
+        for(var i = 0;i < ary?.count ;i++)
+        {
+            let dic =  ary?.objectAtIndex(i) as! NSDictionary
+            let name = dic.objectForKey("Menu_Name") as? String
+            if(name == "考勤审批列表" ||  name == "报销审批列表")
+            {
+                itemArry  = ["会议管理","考勤管理","固定资产","办理事项"]
+                imageArry  = ["p1","p2","p3","p4"]
+            }else{
+                itemArry  = ["会议管理","考勤管理","固定资产"]
+                imageArry  = ["p1","p2","p3"]
+            }
+        }
+        cv?.reloadData()
     }
     override func viewWillAppear(animated: Bool) {
         self.tabBarController?.tabBar.hidden = false
