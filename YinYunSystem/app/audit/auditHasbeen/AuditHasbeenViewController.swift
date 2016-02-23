@@ -22,6 +22,7 @@ class AuditHasbeenViewController: UIViewController,UITableViewDelegate,UITableVi
         tv.dataSource = self
         request.delegate = self
         self.automaticallyAdjustsScrollViewInsets = false
+        addLeftItem()
         loadData()
     }
     func loadData()
@@ -31,6 +32,19 @@ class AuditHasbeenViewController: UIViewController,UITableViewDelegate,UITableVi
         request.delegate = self
         request.Post(str, str: bodyStr as String)
     }
+    func addLeftItem()
+    {
+        let btn1 = UIButton(frame: CGRectMake(0, 0,12, 20))
+        btn1.setBackgroundImage(UIImage(named: "7"), forState: UIControlState.Normal)
+        btn1.addTarget(self, action: Selector("letfItemAction:"), forControlEvents: UIControlEvents.TouchUpInside)
+        let item2=UIBarButtonItem(customView: btn1)
+        self.navigationItem.leftBarButtonItem = item2
+    }
+    func letfItemAction(send:UIButton)
+    {
+        self.navigationController?.popViewControllerAnimated(true)
+    }
+
     
     func didResponse(result: NSDictionary) {
         itemArry = (result.objectForKey("rows") as? NSMutableArray)!
@@ -53,13 +67,13 @@ class AuditHasbeenViewController: UIViewController,UITableViewDelegate,UITableVi
         cell.name.text = dic!.objectForKey("U_Name") as? String
         cell.startTime.text = dic!.objectForKey("KQ_StartTime") as? String
         cell.endTime.text = dic!.objectForKey("KQ_EndTime") as? String
-        cell.auditName.text = dic!.objectForKey("CK_UName") as? String
+//        cell.auditName.text = dic!.objectForKey("CK_UName") as? String
         cell.state.text = dic!.objectForKey("KQ_State") as? String
         return cell
     }
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let dic = itemArry.objectAtIndex(indexPath.row) as! NSDictionary
-        let detileView = AuditDetileView.init(frame: CGRectMake(0,0,CGRectGetWidth(UIScreen.mainScreen().bounds),CGRectGetHeight(UIScreen .mainScreen().bounds)))
+        let detileView = AuditHasbeenView.init(frame: CGRectMake(0,0,CGRectGetWidth(UIScreen.mainScreen().bounds),CGRectGetHeight(UIScreen .mainScreen().bounds)))
         detileView.backgroundColor = UIColor.init(colorLiteralRed:0, green: 0, blue: 0, alpha:0.5)
         detileView.itemDic = dic
         detileView.viewController = self
