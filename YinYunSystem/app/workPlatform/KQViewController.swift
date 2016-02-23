@@ -19,6 +19,7 @@ class KQViewController: UIViewController, UITableViewDataSource, UITableViewDele
         super.viewDidLoad()
         listTableView.delegate = self
         listTableView.dataSource = self
+        print("测试")
 
         
 
