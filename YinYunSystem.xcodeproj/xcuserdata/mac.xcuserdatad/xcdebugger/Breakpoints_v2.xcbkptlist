@@ -36,7 +36,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YinYunSystem/app/meetingRoom/checkMeetingRoom/class/meetingRoomApplyCell.swift"
@@ -55,13 +55,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "YinYunSystem/app/meetingRoom/checkMeetingRoom/class/meetingRoomApplyCell.swift"
-            timestampString = "477799919.986808"
+            filePath = "YinYunSystem/app/audit/auditHasbeen/AuditHasbeenViewController.swift"
+            timestampString = "477911548.896727"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "54"
-            endingLineNumber = "54"
-            landmarkName = "tureBtnAction(_:)"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
+            landmarkName = "didResponse(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -71,13 +71,61 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "YinYunSystem/app/audit/auditHasbeen/AuditHasbeenViewController.swift"
-            timestampString = "477911548.896727"
+            filePath = "YinYunSystem/app/meetingRoom/checkMeetingRoom/class/meetingRoomApplyCell.swift"
+            timestampString = "477968313.905586"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
-            landmarkName = "didResponse(_:)"
+            startingLineNumber = "105"
+            endingLineNumber = "105"
+            landmarkName = "checkPhoneNum(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YinYunSystem/app/meetingRoom/checkMeetingRoom/checkMeetingRoomVController.swift"
+            timestampString = "477992183.284463"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "428"
+            endingLineNumber = "428"
+            landmarkName = "collectionView(_:cellForItemAtIndexPath:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YinYunSystem/app/meetingRoom/checkMeetingRoom/checkMeetingRoomVController.swift"
+            timestampString = "477992183.284463"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "430"
+            endingLineNumber = "430"
+            landmarkName = "collectionView(_:cellForItemAtIndexPath:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YinYunSystem/app/meetingRoom/myselfMeetingRoom/myselfMeetingRoomVController.swift"
+            timestampString = "477991649.994132"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "152"
+            endingLineNumber = "152"
+            landmarkName = "tableView(_:commitEditingStyle:forRowAtIndexPath:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

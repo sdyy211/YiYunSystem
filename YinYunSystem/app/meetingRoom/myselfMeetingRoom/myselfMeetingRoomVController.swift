@@ -118,6 +118,18 @@ class myselfMeetingRoomVController: UITableViewController,HttpProtocol{
         cell.meetType.text = dic.objectForKey("Q_Type") as? String
         cell.startTime.text = dic.objectForKey("Q_StartTime") as? String
         cell.endTime.text = dic.objectForKey("Q_EndTime") as? String
+        
+        let btn = UIButton()
+        btn.frame = CGRectMake(CGRectGetWidth(UIScreen.mainScreen().bounds), 0, 55, 110)
+        btn.setImage(UIImage(named: "delete"), forState: UIControlState.Normal)
+        btn.backgroundColor = UIColor.whiteColor()
+        
+        let cusview = UIView()
+        cusview.frame = CGRectMake(CGRectGetWidth(UIScreen.mainScreen().bounds), 0, 300, 110)
+        cusview.backgroundColor = UIColor.whiteColor()
+//        cusview.addSubview(btn)
+        cell.contentView.addSubview(cusview)
+        cell.contentView.addSubview(btn)
         return cell
     }
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -128,7 +140,9 @@ class myselfMeetingRoomVController: UITableViewController,HttpProtocol{
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         return true
     }
-    
+    override func tableView(tableView: UITableView, titleForDeleteConfirmationButtonForRowAtIndexPath indexPath: NSIndexPath) -> String? {
+        return "删除"
+    }
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath)
     {
         
@@ -136,7 +150,6 @@ class myselfMeetingRoomVController: UITableViewController,HttpProtocol{
             let dic =  itemArry.objectAtIndex(indexPath.row) as! NSDictionary
             
             deleteCell(dic.objectForKey("Q_ID") as! String)
-            print("\(itemArry)")
             itemArry.removeObjectAtIndex(indexPath.row)
             
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
