@@ -45,6 +45,7 @@ class checkMeetingRoomVController: UIViewController,UITableViewDataSource,UITabl
     
     var resultDate = NSDictionary()
     var titleTime = UILabel()
+    var time = UILabel()
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "会议室"
@@ -79,6 +80,7 @@ class checkMeetingRoomVController: UIViewController,UITableViewDataSource,UITabl
         let item2=UIBarButtonItem(customView: btn1)
         self.navigationItem.rightBarButtonItem = item2
     }
+    //MARK: 下一步的点击事件
     func rightItemAction(send:UIButton)
     {
         self.performSegueWithIdentifier("pushHYSQ", sender:self)
@@ -197,7 +199,7 @@ class checkMeetingRoomVController: UIViewController,UITableViewDataSource,UITabl
         
         //添加scrollView
         sv = UIScrollView()
-        sv!.frame = CGRectMake(CGRectGetMaxX(tv.frame),CGRectGetMaxY(timeView.frame),CGRectGetWidth(UIScreen.mainScreen().bounds)-CGRectGetMaxX(tv.frame)-10,CGRectGetHeight(tv.frame))
+        sv!.frame = CGRectMake(CGRectGetMaxX(tv.frame),CGRectGetMaxY(timeView.frame),(CGRectGetWidth(UIScreen.mainScreen().bounds) - CGRectGetMaxX(time.frame)-10),CGRectGetHeight(tv.frame))
         sv!.backgroundColor = UIColor.whiteColor()
         sv!.delegate = self
         sv!.bounces = false
@@ -207,7 +209,7 @@ class checkMeetingRoomVController: UIViewController,UITableViewDataSource,UITabl
         let layout = UICollectionViewFlowLayout()
         layout.minimumLineSpacing = 0.0
         layout.minimumInteritemSpacing = 0.0
-        cv = UICollectionView(frame: CGRectMake(0, 0,(sv?.contentSize.width)!,(sv?.contentSize.height)!),collectionViewLayout:layout)
+        cv = UICollectionView(frame: CGRectMake(0, 0,CGRectGetWidth((sv?.frame)!),CGRectGetHeight((sv?.frame)!)),collectionViewLayout:layout)
         cv?.registerClass(checkMeetingRoomCollectionCell.self, forCellWithReuseIdentifier:"cell")
         cv?.delegate = self
         cv?.dataSource = self
@@ -217,7 +219,7 @@ class checkMeetingRoomVController: UIViewController,UITableViewDataSource,UITabl
     }
     func initTimeView()
     {
-        let time = UILabel()
+        time = UILabel()
         time.frame = CGRectMake(10, 2, tvWith,26)
         time.text = "时间"
         time.font = UIFont.systemFontOfSize(12.0)
@@ -245,19 +247,6 @@ class checkMeetingRoomVController: UIViewController,UITableViewDataSource,UITabl
         btn.addTarget(self, action: Selector("clearBtnAction:"), forControlEvents: UIControlEvents.TouchUpInside)
         timeView.addSubview(btn)
         
-//        var value = CGFloat()
-//        value = CGRectGetMaxX(time.frame)
-//         btnWith = (CGRectGetWidth(UIScreen.mainScreen().bounds) - value)/6
-//        for(var i = 0;i < 6;++i)
-//        {
-//            let minute = UILabel()
-//            minute.frame = CGRectMake(value, 0, btnWith,30)
-//            minute.text = "\(i)0分钟"
-//            minute.font = UIFont.systemFontOfSize(12.0)
-//            minute.textAlignment = NSTextAlignment.Center
-//            timeView.addSubview(minute)
-//            value = CGRectGetMaxX(minute.frame)
-//        }
     }
     func getData(data: String) {
         dateTextfield.text = data
@@ -299,7 +288,6 @@ class checkMeetingRoomVController: UIViewController,UITableViewDataSource,UITabl
             dataPicker.backgroundColor = UIColor.whiteColor()
             let window = UIApplication.sharedApplication().keyWindow
             window?.addSubview(dataPicker)
-//            self.performSegueWithIdentifier("presentData", sender: self)
         }
     }
     //MARK: tableViewDelegate
@@ -357,7 +345,8 @@ class checkMeetingRoomVController: UIViewController,UITableViewDataSource,UITabl
 //        cell.rightLine.hidden = false
 //        cell.backgroundView = UIImageView(image: UIImage(named:"inchoose"))
         //判断自己选择的会议室时间段
-        
+        cell.rightLine.hidden = false
+        cell.bow.hidden = false
         if(selectItem.count > 0)
         {
             if(selectItem.count == 1)
@@ -379,7 +368,6 @@ class checkMeetingRoomVController: UIViewController,UITableViewDataSource,UITabl
                 }
             }
         }
-         cell.rightLine.hidden = false
         //判断已经预订的会议室时间
         if(hasSelectItem.count > 0)
         {
@@ -405,7 +393,43 @@ class checkMeetingRoomVController: UIViewController,UITableViewDataSource,UITabl
                         {
                             if(indexPath.row == i)
                             {
-                                cell.rightLine.hidden = true
+                                
+                                let remainderNum = i%6-1
+                                let hour = i/6+8
+                                var index = 0
+                                for(var j = minvalue; j <= maxvalue; ++j)
+                                {
+                                    let hour2 = minvalue/6+8
+                                    //判断是否在最小时间的一样。
+                                    if(hour == hour2)
+                                    {
+                                        cell.bow.hidden = false
+                                    }else{
+                                        let remainderNum2 = j%6-1
+                                        
+                                        if(remainderNum == remainderNum2)
+                                        {
+                                            if(i == j)
+                                            {
+                                                break
+                                            }else{
+                                                index = index + 1
+                                            }
+                                        }
+                                    
+                                    }
+                                }
+                                if(index >= 1)
+                                {
+                                    cell.bow.hidden = true
+                                }
+                                if(maxvalue == indexPath.row)
+                                {
+                                    cell.rightLine.hidden = false
+                                }else{
+                                    cell.rightLine.hidden = true
+                                }
+
                                 cell.backgroundColor = UIColor(colorLiteralRed: 211.0/255.0, green: 211.0/255.0, blue: 211.0/255.0, alpha: 1)
 //                                cell.backgroundView = UIImageView(image: UIImage(named:"choosed"))
                             }

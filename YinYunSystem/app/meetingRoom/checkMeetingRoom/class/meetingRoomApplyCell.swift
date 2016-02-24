@@ -51,6 +51,7 @@ class meetingRoomApplyCell: UITableViewCell,HttpProtocol,UITextFieldDelegate,mee
         {
             alter("提示！", message: "请检查会议名称、联系电话、参会人员是否填写完整。")
         }else{
+            
             postData()
         }
     }
@@ -100,6 +101,14 @@ class meetingRoomApplyCell: UITableViewCell,HttpProtocol,UITextFieldDelegate,mee
                 alter("警告！", message: "电话号码中包含字母，请重新输入！")
                 break;
             }
+        }
+        print(str.lengthOfBytesUsingEncoding(NSUTF8StringEncoding))
+        if((str.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) == 4 )||( str.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) == 8 )||( str.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) == 13))
+        {
+            
+        }else{
+            peoplePhoneNum.text = ""
+            alter("警告！", message: "电话号码的长度不正确，请重新输入（允许的长度为4、8、11位）")
         }
     }
 

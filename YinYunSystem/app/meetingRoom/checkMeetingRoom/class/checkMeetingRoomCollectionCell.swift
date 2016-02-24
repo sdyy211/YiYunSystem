@@ -10,6 +10,7 @@ import UIKit
 
 class checkMeetingRoomCollectionCell: UICollectionViewCell {
 
+    @IBOutlet weak var bow: UILabel!
     @IBOutlet weak var rightLine: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
