@@ -22,8 +22,11 @@ class KQNewBLTableViewController: UITableViewController, HttpProtocol, UITextFie
             let reason = reasonTF.text!
             
             let bodStr = "pstarttime=\(time)&reason=\(reason)&starttime=\(time)"
-            
-            self.httpRequest.Post2(GetService + "/KaoQinMask/JAddBuLu", str: bodStr)
+            do {
+                try self.httpRequest.Post2(GetService + "/KaoQinMask/JAddBuLu", str: bodStr)
+            } catch {
+                
+            }
         } else {
             let alert = UIAlertController(title: "警告", message: "有选项未填写！", preferredStyle: UIAlertControllerStyle.Alert)
             let action = UIAlertAction(title: "确定", style: UIAlertActionStyle.Default, handler: nil)

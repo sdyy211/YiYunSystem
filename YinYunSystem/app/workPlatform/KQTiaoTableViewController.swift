@@ -72,7 +72,12 @@ class KQTiaoTableViewController: UITableViewController, HttpProtocol, UITextFiel
             let bodStr = "F_ID=\(liuChengId)&endtime=\(end)&info=\(other)&leixing=tx&pendtime=\(end)&pstarttime=\(beigin)&reason=\(reasonText.text!)&starttime=\(beigin)"
             if request1 == false {
                 request1 = true
-                self.httpRequest.Post2(GetService + "/KaoQinMask/JSendShenHe", str: bodStr)
+                do {
+                    try self.httpRequest.Post2(GetService + "/KaoQinMask/JSendShenHe", str: bodStr)
+
+                } catch {
+                    
+                }
                 
             }
         }

@@ -13,4 +13,7 @@ struct KQApply {
     var endTime = ""
     var type = ""
     var state = ""
+    var address = ""
+    var pass = ""
+    var id = ""
 }

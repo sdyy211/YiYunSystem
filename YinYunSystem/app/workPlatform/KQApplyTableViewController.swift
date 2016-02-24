@@ -34,7 +34,17 @@ class KQApplyTableViewController: UITableViewController, HttpProtocol {
         
         
         let bodyStr = "page=1&rows=1000"
-        httpRequest.Post2(GetService + "/KaoQinCheck/JMyKaoQinList", str: bodyStr)
+        do {
+            
+            try httpRequest.Post2(GetService + "/KaoQinCheck/JMyKaoQinList", str: bodyStr)
+        } catch {
+            let alert  = UIAlertController(title: "警告", message: "网络异常", preferredStyle: UIAlertControllerStyle.Alert)
+            let action = UIAlertAction(title: "确定", style: UIAlertActionStyle.Default, handler: { (alertAction) -> Void in
+                
+            })
+            alert.addAction(action)
+            self.presentViewController(alert, animated: true, completion: nil)
+        }
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false

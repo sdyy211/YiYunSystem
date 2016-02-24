@@ -136,7 +136,12 @@ class KQChaiTableViewController: UITableViewController, HttpProtocol, UITextFiel
             let bodStr = "F_ID=\(liuChengId)&KQ_XiangMu=\(projectID)&address=\(address)&area=\(area)&endtime=\(end)&feiyong=\(feiyong)&idssuixingrens=\(idssuixingrens)&info=\(other)&leixing=cc&lianxiren=\(lianxiren)&pendtime=\(end)&phone=\(phone)&pstarttime=\(beigin)&reason=\(reasonText!.text!)&starttime=\(beigin)&ssuixingrens=\(idssuixingrens)"
             if request1 == false {
                 request1 = true
-                self.httpRequest.Post2(GetService + "/KaoQinMask/JSendShenHe", str: bodStr)
+                do {
+                    try self.httpRequest.Post2(GetService + "/KaoQinMask/JSendShenHe", str: bodStr)
+                 
+                } catch {
+                    
+                }
                 
             }
         }

@@ -79,7 +79,7 @@ class HttpRequest: NSObject {
         }
     }
 
-    func Post2(url:String, str: String) {
+    func Post2(url:String, str: String) throws {
 
         
         request(.POST, url, parameters: [:], encoding: ParameterEncoding.Custom({ (convertible, params) -> (NSMutableURLRequest, NSError?) in
@@ -89,9 +89,11 @@ class HttpRequest: NSObject {
 //            print(str.dataUsingEncoding(NSUTF8StringEncoding))
             return (mutableRequest, nil)
         }), headers: nil).responseJSON { (response) -> Void in
-            guard let _ = response.response else{
-                return
-            }
+                
+                guard var _ = response.result.value else {
+
+                    return
+                }
             
             self.delegate?.didResponse(response.result.value as! NSDictionary)
         }

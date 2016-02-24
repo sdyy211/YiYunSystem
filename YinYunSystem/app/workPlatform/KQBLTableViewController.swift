@@ -32,7 +32,12 @@ class KQBLTableViewController: UITableViewController, HttpProtocol {
         
         
         let bodyStr = "page=1&rows=1000"
-        httpRequest.Post2(GetService + "/KaoQinMask/JBuLuList", str: bodyStr)
+        do {
+            
+            try httpRequest.Post2(GetService + "/KaoQinMask/JBuLuList", str: bodyStr)
+        } catch {
+            
+        }
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -102,7 +107,12 @@ class KQBLTableViewController: UITableViewController, HttpProtocol {
     @IBAction func unwindToBL(segue: UIStoryboardSegue) {
         if let _ = segue.sourceViewController as? KQNewBLTableViewController {
             let bodyStr = "page=1&rows=1000"
-            httpRequest.Post2(GetService + "/KaoQinMask/JBuLuList", str: bodyStr)
+            do {
+                
+                try httpRequest.Post2(GetService + "/KaoQinMask/JBuLuList", str: bodyStr)
+            } catch {
+                
+            }
         }
     }
 

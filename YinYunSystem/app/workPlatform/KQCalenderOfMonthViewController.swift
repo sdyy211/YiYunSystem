@@ -42,7 +42,12 @@ class KQCalenderOfMonthViewController: UIViewController, UITableViewDataSource, 
         
         let bodyStr =  "nian=\(year)&yue=\(month)"
 //        print(bodyStr)
-        httpRequest.Post2(GetService + "/KaoQinMask/JMyList", str: bodyStr)
+        do {
+
+            try httpRequest.Post2(GetService + "/KaoQinMask/JMyList", str: bodyStr)
+        } catch {
+            
+        }
         checkSegment.selectedSegmentIndex = 0
         
     }
@@ -366,7 +371,11 @@ class KQCalenderOfMonthViewController: UIViewController, UITableViewDataSource, 
                 chaiArray.append(val)
                 
                 let bodyStr = "kqid=\(val.id)"
-                httpRequest.Post2(GetService + "/Mobile/Mobile/JGetTravelKQData", str: bodyStr)
+                do {
+                    try httpRequest.Post2(GetService + "/Mobile/Mobile/JGetTravelKQData", str: bodyStr)
+                } catch {
+                    
+                }
             }
         }
     }

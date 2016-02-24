@@ -133,7 +133,12 @@ class KQChaiViewController: UIViewController, BMKLocationServiceDelegate, BMKGeo
             
             let bodyStr = "kqid=\(currentChai.id)"
 //            print(currentChai.id)
-            httpRequest.Post2(GetService + "/Mobile/Mobile/JGetTravelKQData", str: bodyStr)
+            do {
+                try httpRequest.Post2(GetService + "/Mobile/Mobile/JGetTravelKQData", str: bodyStr)
+                
+            } catch {
+                
+            }
         }
         // Do any additional setup after loading the view.
     }
@@ -339,7 +344,11 @@ class KQChaiViewController: UIViewController, BMKLocationServiceDelegate, BMKGeo
             pass = "否"
         }
         let bodyStr = "kqid=\(kqid)&address=\(address)&jingdu=\(jingdu)&weidu=\(weidu)&time=\(time)&pass=\(pass)&DKaddress=\(dKaddress)&DKjingdu=\(dKjindu)&DKweidu=\(dKweidu)&num=\(num)"
-        httpRequest.Post2(GetService + "/Mobile/Mobile/JAddTravelKQData", str: bodyStr)
+        do {
+            try httpRequest.Post2(GetService + "/Mobile/Mobile/JAddTravelKQData", str: bodyStr)
+        } catch {
+            
+        }
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
