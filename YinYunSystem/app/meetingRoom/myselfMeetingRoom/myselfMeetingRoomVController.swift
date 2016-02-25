@@ -44,16 +44,18 @@ class myselfMeetingRoomVController: UITableViewController,HttpProtocol{
     func loadData()
     {
         let postStr = "page=1&rows=100000"
+        loadingAnimationMethod.sharedInstance.startAnimation()
         request.Post("\((UIApplication.sharedApplication().delegate as! AppDelegate).getService())\(url)", str: postStr)
     }
     func deleteCell(roomId:String)
     {
-//        let par = ["qid":"\(roomId)"]
-//        request.Get("\((UIApplication.sharedApplication().delegate as! AppDelegate).getService())\(deleteUrl)", parameters: par)
+
         let postStr = "qid=\(roomId)"
+        loadingAnimationMethod.sharedInstance.startAnimation()
         request.Post("\((UIApplication.sharedApplication().delegate as! AppDelegate).getService())\(deleteUrl)", str: postStr)
     }
     func didResponse(result: NSDictionary) {
+        loadingAnimationMethod.sharedInstance.endAnimation()
         let keyArry =  result.allKeys as NSArray
 	        for(var i = 0;i < keyArry.count;i++)
         {

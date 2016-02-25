@@ -54,13 +54,13 @@ class myselfMeetRoomDetileVController: UITableViewController,HttpProtocol,UIAler
     func deleteItemAction(send:UIButton)
     {
         let dicData = itemArry.objectAtIndex(0)
-        print("\(itemArry)")
         let roomId = dicData.objectForKey("Q_ID") as! String
         let postStr = "qid=\(roomId)"
+        loadingAnimationMethod.sharedInstance.startAnimation()
         request.Post("\((UIApplication.sharedApplication().delegate as! AppDelegate).getService())\(deleteUrl)", str: postStr)
     }
     func  didResponse(result: NSDictionary) {
-        print("\(result)")
+        loadingAnimationMethod.sharedInstance.endAnimation()
         let str = result.objectForKey("msg") as! String
         if(str == "")
         {

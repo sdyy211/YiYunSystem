@@ -68,6 +68,7 @@ class AuditPendViewController: UIViewController,UITableViewDataSource,UITableVie
     // MARK: 请求数据的方法
     func loadData()
     {
+        loadingAnimationMethod.sharedInstance.startAnimation()
         postFlag = "0"
         let bodyStr = NSString(format:"page=1&rows=100000&lx=0&Name=")
         let str = "\(((UIApplication.sharedApplication().delegate) as! AppDelegate).getService())\(url)"
@@ -78,6 +79,7 @@ class AuditPendViewController: UIViewController,UITableViewDataSource,UITableVie
     // MARK: 批量删除 和 批量退回请求的接口
     func loadBatch(type:String,kqid:String)
     {
+        loadingAnimationMethod.sharedInstance.startAnimation()
         let bodyStr = NSString(format:"type=\(type)&kqid=\(kqid)")
         let str = "\(((UIApplication.sharedApplication().delegate) as! AppDelegate).getService())\(deleteURL)"
         request.delegate = self
@@ -85,7 +87,7 @@ class AuditPendViewController: UIViewController,UITableViewDataSource,UITableVie
     }
     // MARK: 接收请求后台的数据
     func didResponse(result: NSDictionary) {
-
+        loadingAnimationMethod.sharedInstance.endAnimation()
         if(postFlag == "0")
         {
             dataArry.removeAllObjects()

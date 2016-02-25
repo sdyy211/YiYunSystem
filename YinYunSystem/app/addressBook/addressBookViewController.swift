@@ -41,12 +41,14 @@ class addressBookViewController:UIViewController,UITableViewDataSource,UITableVi
     }
     func loadDataMethod()
     {
+        loadingAnimationMethod.sharedInstance.startAnimation()
         let bodyStr = NSString(format: "page=1&rows=100000")
         let str = "\(((UIApplication.sharedApplication().delegate) as! AppDelegate).getService())\(url)"
         request.delegate = self
         request.Post(str, str: bodyStr as String)
     }
     func didResponse(result: NSDictionary) {
+        loadingAnimationMethod.sharedInstance.endAnimation()
         itemArray =  (result.objectForKey("rows") as? NSMutableArray)!
         if(itemArray.count > 0)
         {

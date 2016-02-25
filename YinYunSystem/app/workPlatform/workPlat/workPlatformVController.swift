@@ -9,8 +9,8 @@
 import UIKit
 
 class workPlatformVController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource,HttpProtocol{
-    var itemArry  = ["会议管理","考勤管理","固定资产"]
-    var imageArry  = ["p1","p2","p3"]
+    var itemArry  =  NSMutableArray()
+    var imageArry  = NSMutableArray()
     var itemWith:CGFloat = 0
     var itemHeight:CGFloat = 0
     var cv : UICollectionView?
@@ -20,8 +20,8 @@ class workPlatformVController: UIViewController,UICollectionViewDelegate,UIColle
     override func viewDidLoad() {
         super.viewDidLoad()
 
-//        itemArry  = ["会议管理","考勤管理","固定资产","审核管理"]
-//        imageArry  = ["p1","p2","p3","p4"]
+        itemArry  = ["会议管理","考勤管理","固定资产"]
+        imageArry  =  ["p1","p2","p3"]
         itemWith = (CGRectGetWidth(UIScreen.mainScreen().bounds)-10-15)/4
         
         let layout = UICollectionViewFlowLayout()
@@ -43,12 +43,13 @@ class workPlatformVController: UIViewController,UICollectionViewDelegate,UIColle
     }
     func loadData()
     {
+        loadingAnimationMethod.sharedInstance.startAnimation()
         let par = ["":""]
         let str = "\(((UIApplication.sharedApplication().delegate) as! AppDelegate).getService())\(url)"
         request.Get(str, parameters: par)
     }
     func didResponse(result: NSDictionary) {
-
+        loadingAnimationMethod.sharedInstance.endAnimation()
         let ary =  result.objectForKey("dt") as? NSArray
         //考勤审批列表 报销审批列表
         for(var i = 0;i < ary?.count ;i++)

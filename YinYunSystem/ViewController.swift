@@ -73,9 +73,9 @@ class ViewController: UIViewController,HttpProtocol{
     @IBAction func loginBtnAction(sender: AnyObject) {
         
         
-//        self.performSegueWithIdentifier("action", sender:self)
         if(userTextfield.text != "" || pwdTextField.text != "")
         {
+            loadingAnimationMethod.sharedInstance.startAnimation()
             let bodyStr = NSString(format: "uname=\(userTextfield.text!)&upwd=\(pwdTextField.text!)")
             let str = "\(((UIApplication.sharedApplication().delegate) as! AppDelegate).getService())\(loginUrl)"
             request.Post(str, str: bodyStr as String)
@@ -89,6 +89,7 @@ class ViewController: UIViewController,HttpProtocol{
     
     }
     func didResponse(result: NSDictionary) {
+        loadingAnimationMethod.sharedInstance.endAnimation()
         let cookieJob = NSHTTPCookieStorage.sharedHTTPCookieStorage()
         let cookieArray:[NSHTTPCookie] = cookieJob.cookies!
         if(cookieArray.count > 0)
