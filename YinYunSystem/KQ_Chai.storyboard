@@ -998,7 +998,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RLI-3z-3YH" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Qfa-97-HWe" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="6615" y="-257"/>
+            <point key="canvasLocation" x="6566" y="359"/>
         </scene>
     </scenes>
     <resources>
