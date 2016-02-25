@@ -74,7 +74,7 @@ class AuditDetileView: UIView,UITableViewDelegate,UITableViewDataSource,HttpProt
     }
     override func drawRect(rect: CGRect) {
         // Drawing code
-        let leftWith:CGFloat = 30
+        let leftWith:CGFloat = 15
         let with = (CGRectGetWidth(self.frame) - leftWith*2)
         let h = 6*50+80
         let xh = CGRectGetHeight(self.frame)

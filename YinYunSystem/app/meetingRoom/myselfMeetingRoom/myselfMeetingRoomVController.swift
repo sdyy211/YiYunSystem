@@ -121,7 +121,7 @@ class myselfMeetingRoomVController: UITableViewController,HttpProtocol{
         
         let btn = UIButton()
         btn.frame = CGRectMake(CGRectGetWidth(UIScreen.mainScreen().bounds), 0, 55, 110)
-        btn.setImage(UIImage(named: "myselfDelete"), forState: UIControlState.Normal)
+        btn.setImage(UIImage(named: "deleteImage"), forState: UIControlState.Normal)
         btn.backgroundColor = UIColor.whiteColor()
         
         let cusview = UIView()
