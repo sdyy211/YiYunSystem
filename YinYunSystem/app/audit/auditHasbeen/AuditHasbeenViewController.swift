@@ -27,6 +27,7 @@ class AuditHasbeenViewController: UIViewController,UITableViewDelegate,UITableVi
     }
     func loadData()
     {
+        loadingAnimationMethod.sharedInstance.startAnimation()
         let bodyStr = NSString(format:"page=1&rows=100000&lx=1&Name=")
         let str = "\(((UIApplication.sharedApplication().delegate) as! AppDelegate).getService())\(url)"
         request.delegate = self
@@ -47,6 +48,7 @@ class AuditHasbeenViewController: UIViewController,UITableViewDelegate,UITableVi
 
     
     func didResponse(result: NSDictionary) {
+        loadingAnimationMethod.sharedInstance.endAnimation()
         itemArry = (result.objectForKey("rows") as? NSMutableArray)!
         tv.reloadData()
     }

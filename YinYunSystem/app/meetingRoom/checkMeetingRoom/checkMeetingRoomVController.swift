@@ -97,14 +97,17 @@ class checkMeetingRoomVController: UIViewController,UITableViewDataSource,UITabl
         dateTextfield.text = dateStr
         loadData()
     }
+    //MARK:请求数据
     func loadData()
     {
         selectItem.removeAllObjects()
         hasSelectItem.removeAllObjects()
+        loadingAnimationMethod.sharedInstance.startAnimation()
         let str = ["meeting":roomStr,"time":dateTextfield.text!]
         request.Get("\((UIApplication.sharedApplication().delegate as! AppDelegate).getService())\(url)", parameters : str)
     }
     func didResponse(result: NSDictionary) {
+        loadingAnimationMethod.sharedInstance.endAnimation()
         resultDate = NSDictionary(dictionary: result)
         roomIdDic = (resultDate.objectForKey("values") as? NSDictionary)!
         getMaxOrMinValue()

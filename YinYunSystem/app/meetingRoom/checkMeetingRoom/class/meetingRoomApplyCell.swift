@@ -65,17 +65,16 @@ class meetingRoomApplyCell: UITableViewCell,HttpProtocol,UITextFieldDelegate,mee
 
     func postData()
     {
+        loadingAnimationMethod.sharedInstance.startAnimation()
         let index = mayFenPeiBtn.selected
         let postStr =  "endtime=\(endTime.text!)&qname=\(meetingName.text!)&qtype=\(meetingType.text!)&qunames=\(joinPeople.text!)&room=\(roomId)&starttime=\(startTime.text!)&telphone=\(peoplePhoneNum.text!)&mayfenpei=\(index)"
-        print("\(postStr)")
+        
         request.Post("\(((UIApplication.sharedApplication().delegate) as! AppDelegate).getService())\(url)", str: postStr as String)
     }
     func didResponse(result: NSDictionary) {
 
         let flag = result.objectForKey("flag") as! NSNumber
-        print("\(result)")
-        print("\(flag)")
-        print("\(result.objectForKey("msg"))")
+        loadingAnimationMethod.sharedInstance.endAnimation()
         if(flag == 1)
         {
             let alertView =  UIAlertController.init(title:"提示", message:"上传成功", preferredStyle: UIAlertControllerStyle.Alert)

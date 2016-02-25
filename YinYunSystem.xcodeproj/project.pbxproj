@@ -57,6 +57,8 @@
 		0496A6311C78338B002B0947 /* personalCenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0496A6301C78338B002B0947 /* personalCenterViewController.swift */; };
 		0497D0F91C7C1FDF00809A1A /* personalMegcell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0497D0F71C7C1FDF00809A1A /* personalMegcell.swift */; };
 		0497D0FA1C7C1FDF00809A1A /* personalMegcell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0497D0F81C7C1FDF00809A1A /* personalMegcell.xib */; };
+		04EBF6361C7E946A00A2E717 /* loadingAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EBF6351C7E946A00A2E717 /* loadingAnimationView.swift */; };
+		04EBF6381C7E949400A2E717 /* loadingAnimationMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EBF6371C7E949400A2E717 /* loadingAnimationMethod.swift */; };
 		04FB3D021C604F9300AE0787 /* fixedDetileBorrowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FB3CFA1C604F9300AE0787 /* fixedDetileBorrowView.swift */; };
 		04FB3D031C604F9300AE0787 /* fixedDetileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FB3CFB1C604F9300AE0787 /* fixedDetileHeaderView.swift */; };
 		04FB3D041C604F9300AE0787 /* fixedDetileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FB3CFC1C604F9300AE0787 /* fixedDetileView.swift */; };
@@ -201,6 +203,8 @@
 		0496A6301C78338B002B0947 /* personalCenterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = personalCenterViewController.swift; sourceTree = "<group>"; };
 		0497D0F71C7C1FDF00809A1A /* personalMegcell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = personalMegcell.swift; sourceTree = "<group>"; };
 		0497D0F81C7C1FDF00809A1A /* personalMegcell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = personalMegcell.xib; sourceTree = "<group>"; };
+		04EBF6351C7E946A00A2E717 /* loadingAnimationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = loadingAnimationView.swift; sourceTree = "<group>"; };
+		04EBF6371C7E949400A2E717 /* loadingAnimationMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = loadingAnimationMethod.swift; sourceTree = "<group>"; };
 		04FB3CFA1C604F9300AE0787 /* fixedDetileBorrowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = fixedDetileBorrowView.swift; sourceTree = "<group>"; };
 		04FB3CFB1C604F9300AE0787 /* fixedDetileHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = fixedDetileHeaderView.swift; sourceTree = "<group>"; };
 		04FB3CFC1C604F9300AE0787 /* fixedDetileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = fixedDetileView.swift; sourceTree = "<group>"; };
@@ -529,6 +533,15 @@
 			path = workPlatform;
 			sourceTree = "<group>";
 		};
+		04EBF6341C7E944E00A2E717 /*  loadingAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				04EBF6351C7E946A00A2E717 /* loadingAnimationView.swift */,
+				04EBF6371C7E949400A2E717 /* loadingAnimationMethod.swift */,
+			);
+			path = " loadingAnimation";
+			sourceTree = "<group>";
+		};
 		04FB3CF81C604F9300AE0787 /* fixedAssets */ = {
 			isa = PBXGroup;
 			children = (
@@ -619,6 +632,7 @@
 		984155A01C44A06A000B29F2 /* YinYunSystem */ = {
 			isa = PBXGroup;
 			children = (
+				04EBF6341C7E944E00A2E717 /*  loadingAnimation */,
 				046464DC1C76A2EE004841FF /* service */,
 				04FB3D181C60517C00AE0787 /* Framework */,
 				04995BA11C4626E600518DC7 /* app */,
@@ -823,6 +837,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0496A5F31C783375002B0947 /* addressBookViewController.swift in Sources */,
+				04EBF6381C7E949400A2E717 /* loadingAnimationMethod.swift in Sources */,
 				0496A5F71C783375002B0947 /* selectContactViewController.swift in Sources */,
 				981C2DF31C4CC6BD00515E60 /* KQCalenderOfMonthViewController.swift in Sources */,
 				0496A61F1C78337D002B0947 /* myselfMeetingRoomVController.swift in Sources */,
@@ -834,6 +849,7 @@
 				98A693E81C774E1E00B85BD9 /* KQChaiMapCheckViewController.swift in Sources */,
 				04FB3D371C60517C00AE0787 /* HttpRequest.swift in Sources */,
 				9846BB291C47465A00E7DF6A /* CheckHYSViewController.swift in Sources */,
+				04EBF6361C7E946A00A2E717 /* loadingAnimationView.swift in Sources */,
 				980B7E041C58BEC00019D5A0 /* test.mm in Sources */,
 				985A93111C7D57120061D9D0 /* Errors.swift in Sources */,
 				9855BCD01C58A123005788BE /* KQChaiViewController.swift in Sources */,
