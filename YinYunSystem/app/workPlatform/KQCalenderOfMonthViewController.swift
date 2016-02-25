@@ -8,49 +8,11 @@
 
 import UIKit
 
-import UIKit
-
-class KQCalenderOfMonthViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, HttpProtocol {
+class KQCalenderOfMonthViewController: UIViewController, UITableViewDelegate {
     
     @IBOutlet weak var listTableView: UITableView!
-    
     @IBOutlet weak var monthOfDate: UIDatePicker!
-    
     @IBOutlet weak var checkSegment: UISegmentedControl!
-    
-    
-    @IBAction func checkIndex(sender: UISegmentedControl) {
-        let index = sender.selectedSegmentIndex
-        switch index {
-        case 0:
-            self.listTableView.reloadData()
-        case 1:
-            self.listTableView.reloadData()
-        default:
-            return
-        }
-    }
-    
-    @IBAction func checkButton(sender: UIButton) {
-        check = true
-
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "yyyy"
-        let year = dateFormatter.stringFromDate(monthOfDate.date)
-        dateFormatter.dateFormat = "MM"
-        let month = dateFormatter.stringFromDate(monthOfDate.date)
-        
-        let bodyStr =  "nian=\(year)&yue=\(month)"
-//        print(bodyStr)
-        do {
-
-            try httpRequest.Post2(GetService + "/KaoQinMask/JMyList", str: bodyStr)
-        } catch {
-            
-        }
-        checkSegment.selectedSegmentIndex = 0
-        
-    }
     
     var httpRequest: HttpRequest!
     //总考勤标题数组
@@ -72,10 +34,6 @@ class KQCalenderOfMonthViewController: UIViewController, UITableViewDataSource, 
     var check = false
     var currentDate: NSDate!
     
-    
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -84,22 +42,23 @@ class KQCalenderOfMonthViewController: UIViewController, UITableViewDataSource, 
         httpRequest = HttpRequest()
         httpRequest.delegate = self
         monthOfDate.setDate(currentDate, animated: true)
-        
         //section头的时间数据
         self.sectionAdd(monthOfDate.date)
         //查询出差的数据添加数组
         self.checkChaiData()
-        
-        
-        // Do any additional setup after loading the view.
+
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+}
+
+private typealias TableViewDataSource = KQCalenderOfMonthViewController
+
+extension TableViewDataSource: UITableViewDataSource {
     
-    // MARK: tableView
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         if checkSegment.selectedSegmentIndex == 0 {
             return sectionArray.count
@@ -118,7 +77,7 @@ class KQCalenderOfMonthViewController: UIViewController, UITableViewDataSource, 
             return sectionArray[section]
         } else {
             return (chaiArray[section].startTime as NSString).substringWithRange(NSMakeRange(5, 14)) + "--" + (chaiArray[section].endTime as NSString).substringWithRange(NSMakeRange(5, 14))
-//            return chaiArray[section].startTime + "-" + chaiArray[section].endTime
+            //            return chaiArray[section].startTime + "-" + chaiArray[section].endTime
         }
     }
     
@@ -145,7 +104,7 @@ class KQCalenderOfMonthViewController: UIViewController, UITableViewDataSource, 
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! KQCalenderOfMonthTableViewCell
         if checkSegment.selectedSegmentIndex == 0 {
             let day = Int((sectionArray[indexPath.section] as NSString).substringWithRange(NSMakeRange(8, 2)))
-//            print(sectionArray[indexPath.section])
+
             
             self.check(day!)
             if dayIndexs[indexPath.row].data == "OA" {
@@ -173,7 +132,7 @@ class KQCalenderOfMonthViewController: UIViewController, UITableViewDataSource, 
                     cell.chooseLabel.textColor = UIColor(red: 102.0/255.0, green:
                         102.0/255.0, blue: 102.0/255.0, alpha: 1.0)
                 }
-
+                
             } else if dayIndexs[indexPath.row].data == "KQ" {
                 let index = (dayIndexs[indexPath.row].startTime as NSString).substringWithRange(NSMakeRange(11, 5))
                 let str = "\(index)-\(dayIndexs[indexPath.row].type)"
@@ -196,22 +155,7 @@ class KQCalenderOfMonthViewController: UIViewController, UITableViewDataSource, 
                     cell.chooseImage.image = UIImage(named: "chai")
                     cell.chooseLabel.textColor = UIColor(red: 69.0/255.0, green:
                         163.0/255.0, blue: 230.0/255.0, alpha: 1.0)
-//                } else if dayIndexs[indexPath.row].type == "请假" {
-//                    cell.chooseImage.image = UIImage(named: "jia")
-//                    cell.chooseLabel.textColor = UIColor(red: 255.0/255.0, green:
-//                        115.0/255.0, blue: 0.0/255.0, alpha: 1.0)
-//                } else if dayIndexs[indexPath.row].type == "加班" {
-//                    cell.chooseImage.image = UIImage(named: "JB")
-//                    cell.chooseLabel.textColor = UIColor(red: 230.0/255.0, green:
-//                        82.0/255.0, blue: 69.0/255.0, alpha: 1.0)
-//                } else if dayIndexs[indexPath.row].type == "调休" {
-//                    cell.chooseImage.image = UIImage(named: "tiao")
-//                    cell.chooseLabel.textColor = UIColor(red: 57.0/255.0, green:
-//                        175.0/255.0, blue: 182.0/255.0, alpha: 1.0)
-//                } else if dayIndexs[indexPath.row].type == "补录考勤" {
-//                    cell.chooseImage.image = UIImage(named: "bu")
-//                    cell.chooseLabel.textColor = UIColor(red: 102.0/255.0, green:
-//                        102.0/255.0, blue: 102.0/255.0, alpha: 1.0)
+
                 }
             } else {
                 let id = chaiArray[indexPath.section].id
@@ -223,53 +167,136 @@ class KQCalenderOfMonthViewController: UIViewController, UITableViewDataSource, 
                 }
                 let str = "\(nChaiDKArray[indexPath.row - 1].time)-出差打卡"
                 cell.chooseLabel.text = str
-//                cell.chooseLabel.font = UIFont(name: "Avenir-Light", size: 14)
+                //                cell.chooseLabel.font = UIFont(name: "Avenir-Light", size: 14)
                 cell.chooseImage.image = UIImage(named: "daka")
                 cell.chooseLabel.textColor = UIColor(red: 1.0/255.0, green:
                     167.0/255.0, blue: 36.0/255.0, alpha: 1.0)
-
+                
             }
             return cell
         }
-        //        cell.dateButton.setTitle("请假", forState: .Normal)
+
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 64
     }
+}
+
+private typealias Https = KQCalenderOfMonthViewController
+
+extension Https: HttpProtocol {
     
-    // MARK: section数目和标题
+    func didResponse(result: NSDictionary) {
+        //        print(result)
+        if let data = result["dt"] {
+            let json = JSON(data)
+            for val in json {
+                var kQChaiData = KQChaiData()
+                kQChaiData.time = val.1["G_Time"].string!
+                kQChaiData.id = val.1["G_KQID"].string!
+                chaiDKArray.append(kQChaiData)
+            }
+            
+        }
+        if check == true {
+            dates.removeAll()
+            
+            if let data: AnyObject = result["data"] {
+                let json = JSON(data)
+                for val in json {
+                    let model = KQData()
+                    if val.1["data"].string! == "OA" {
+                        model.id = val.1["KQ_ID"].string!
+                        model.endTime = val.1["KQ_EndTime"].string!
+                        model.data = val.1["data"].string!
+                        model.pass = val.1["KQ_Pass"].int!
+                        model.startTime = val.1["KQ_StartTime"].string!
+                        model.state = val.1["KQ_State"].string!
+                        model.type = val.1["KQ_Type"].string!
+                        dates.append(model)
+                    } else if val.1["data"].string! == "KQ" {
+                        model.id = val.1["KQ_ID"].string!
+                        model.endTime = val.1["KQ_EndTime"].string!
+                        model.data = val.1["data"].string!
+                        model.startTime = val.1["KQ_StartTime"].string!
+                        model.type = val.1["KQ_Type"].string!
+                        dates.append(model)
+                    }
+                }
+                
+                //section头的时间数据
+                self.sectionAdd(monthOfDate.date)
+                //查询出差的数据添加数组
+                self.checkChaiData()
+                self.listTableView.reloadData()
+                
+            }
+            check = false
+        }
+        
+    }
+}
+
+private typealias ButtonAction = KQCalenderOfMonthViewController
+
+extension ButtonAction {
+    
+    @IBAction func checkIndex(sender: UISegmentedControl) {
+        let index = sender.selectedSegmentIndex
+        switch index {
+        case 0:
+            self.listTableView.reloadData()
+        case 1:
+            self.listTableView.reloadData()
+        default:
+            return
+        }
+    }
+    
+    @IBAction func checkButton(sender: UIButton) {
+        check = true
+        
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "yyyy"
+        let year = dateFormatter.stringFromDate(monthOfDate.date)
+        dateFormatter.dateFormat = "MM"
+        let month = dateFormatter.stringFromDate(monthOfDate.date)
+        
+        let bodyStr =  "nian=\(year)&yue=\(month)"
+        //        print(bodyStr)
+        do {
+            
+            try httpRequest.Post2(GetService + "/KaoQinMask/JMyList", str: bodyStr)
+        } catch {
+            
+        }
+        checkSegment.selectedSegmentIndex = 0
+        
+    }
+
+}
+
+private typealias SectionDatas = KQCalenderOfMonthViewController
+
+extension SectionDatas {
     //转换星期
     func getWeeks(day: String) -> String {
         var week = ""
         switch day {
-        case "Monday":
+        case "Monday","星期一":
             week = "星期一"
-        case "Tuesday":
+        case "Tuesday","星期二":
             week = "星期二"
-        case "Wednesday":
+        case "Wednesday","星期三":
             week = "星期三"
-        case "Thursday":
+        case "Thursday","星期四":
             week = "星期四"
-        case "Friday":
+        case "Friday","星期五":
             week = "星期五"
-        case "Saturday":
+        case "Saturday","星期六":
             week = "星期六"
-        case "Sunday":
-            week = "星期日"
-        case "星期一":
-            week = "星期一"
-        case "星期二":
-            week = "星期二"
-        case "星期三":
-            week = "星期三"
-        case "星期四":
-            week = "星期四"
-        case "星期五":
-            week = "星期五"
-        case "星期六":
-            week = "星期六"
-        case "星期日":
+        case "Sunday","星期日":
             week = "星期日"
         default:
             break
@@ -379,58 +406,4 @@ class KQCalenderOfMonthViewController: UIViewController, UITableViewDataSource, 
             }
         }
     }
-    
-    func didResponse(result: NSDictionary) {
-//        print(result)
-        if let data = result["dt"] {
-            let json = JSON(data)
-            for val in json {
-                var kQChaiData = KQChaiData()
-                kQChaiData.time = val.1["G_Time"].string!
-                kQChaiData.id = val.1["G_KQID"].string!
-                chaiDKArray.append(kQChaiData)
-            }
-            
-        }
-        if check == true {
-            dates.removeAll()
-            
-            if let data: AnyObject = result["data"] {
-                let json = JSON(data)
-                for val in json {
-                    let model = KQData()
-                    if val.1["data"].string! == "OA" {
-                        model.id = val.1["KQ_ID"].string!
-                        model.endTime = val.1["KQ_EndTime"].string!
-                        model.data = val.1["data"].string!
-                        model.pass = val.1["KQ_Pass"].int!
-                        model.startTime = val.1["KQ_StartTime"].string!
-                        model.state = val.1["KQ_State"].string!
-                        model.type = val.1["KQ_Type"].string!
-                        dates.append(model)
-                    } else if val.1["data"].string! == "KQ" {
-                        model.id = val.1["KQ_ID"].string!
-                        model.endTime = val.1["KQ_EndTime"].string!
-                        model.data = val.1["data"].string!
-                        model.startTime = val.1["KQ_StartTime"].string!
-                        model.type = val.1["KQ_Type"].string!
-                        dates.append(model)
-                    }
-                }
-
-                //section头的时间数据
-                self.sectionAdd(monthOfDate.date)
-                //查询出差的数据添加数组
-                self.checkChaiData()
-                self.listTableView.reloadData()
-
-            }
-            check = false
-        }
-
-    }
-
-
-
-
 }

@@ -8,33 +8,24 @@
 
 import UIKit
 
-class KQViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class KQViewController: UIViewController {
     
     
     @IBOutlet weak var listTableView: UITableView!
-
+    
     var workArray = ["我的工作日历","考勤申请记录","考勤补录记录"]
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         listTableView.delegate = self
         listTableView.dataSource = self
-        print("测试")
-
-        
-
-        // Do any additional setup after loading the view.
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    @IBAction func unwindToKQ(segue: UIStoryboardSegue){
-        
-    }
-    
+}
+
+private typealias TableViewDataSource = KQViewController
+
+extension TableViewDataSource: UITableViewDataSource {
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return workArray.count
@@ -43,9 +34,14 @@ class KQViewController: UIViewController, UITableViewDataSource, UITableViewDele
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("RLCell", forIndexPath: indexPath) as! KQTableViewCell
         cell.nameLabel.text = workArray[indexPath.row]
-
+        
         return cell
     }
+}
+
+private typealias TableViewDelegate = KQViewController
+
+extension TableViewDelegate: UITableViewDelegate {
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let num = indexPath.row
@@ -65,6 +61,15 @@ class KQViewController: UIViewController, UITableViewDataSource, UITableViewDele
         
     }
     
+}
+
+private typealias Segues = KQViewController
+
+extension Segues {
+    @IBAction func unwindToKQ(segue: UIStoryboardSegue){
+        
+    }
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "RLSegue" {
             let vc = segue.destinationViewController as! UITabBarController
@@ -72,16 +77,7 @@ class KQViewController: UIViewController, UITableViewDataSource, UITableViewDele
         }
     }
 
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
+
+
+
