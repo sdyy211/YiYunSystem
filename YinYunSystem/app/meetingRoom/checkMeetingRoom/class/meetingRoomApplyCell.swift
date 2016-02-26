@@ -8,7 +8,7 @@
 
 import UIKit
 
-class meetingRoomApplyCell: UITableViewCell,HttpProtocol,UITextFieldDelegate,meetingApplyTypeDelegate, UITextViewDelegate,selectContactProtocol,UIAlertViewDelegate{
+class meetingRoomApplyCell: UITableViewCell,HttpProtocol,UITextFieldDelegate,meetingApplyTypeDelegate, UITextViewDelegate,selectContactProtocol,UIAlertViewDelegate,UIActionSheetDelegate{
 
     var url = "/MeetingRoom/JShenQing"
     @IBOutlet weak var meetingRoom: UILabel!
@@ -121,34 +121,19 @@ class meetingRoomApplyCell: UITableViewCell,HttpProtocol,UITextFieldDelegate,mee
         if(textField.tag == 2)
         {
             meetingType.resignFirstResponder()
-            let alertController = UIAlertController(title: "会议类型！！", message: "请选择以下几种会议类型！", preferredStyle: UIAlertControllerStyle.Alert)
-            let neibu = UIAlertAction(title: "内部会议", style: UIAlertActionStyle.Default,
-                handler: {
-                    action in
-                    self.meetingType.text = "内部会议"
-            })
-            let waibu = UIAlertAction(title: "外部会议", style: UIAlertActionStyle.Default,
-                handler: {
-                    action in
-                    self.meetingType.text = "外部会议"
-            })
-            let cancel: UIAlertAction = UIAlertAction.init(title: "不选择", style: UIAlertActionStyle.Cancel, handler:{
-                action in
-                self.meetingType.text = ""
-            })
             
-            alertController.addAction(neibu)
-            alertController.addAction(waibu)
-            alertController.addAction(cancel)
-            VC.presentViewController(alertController, animated:true , completion: nil)
-//            meetingType.resignFirstResponder()
-//            meetingTypeView = meetingApplyTypeView()
-//            meetingTypeView.delegate = self
-//            meetingTypeView.frame = CGRectMake(CGRectGetMinX(meetingType.frame)+CGRectGetMinX(typeView.frame),CGRectGetMinY(typeView.frame)+CGRectGetMinY(meetingType.frame),CGRectGetWidth(meetingType.frame),60)
-//            meetingTypeView.backgroundColor = UIColor.groupTableViewBackgroundColor()
-//            let window = UIApplication.sharedApplication().keyWindow
-//            window?.addSubview(meetingTypeView)
-
+            let myActionSheet = UIActionSheet.init(title: "选择会议类型", delegate:self, cancelButtonTitle: "关闭", destructiveButtonTitle:nil, otherButtonTitles: "内部会议","外部会议")
+            myActionSheet.showInView(myActionSheet)
+        }
+    }
+    func actionSheet(actionSheet: UIActionSheet, clickedButtonAtIndex buttonIndex: Int) {
+        if(buttonIndex == 1)
+        {
+            self.meetingType.text = "内部会议"
+        }else if(buttonIndex == 2){
+            self.meetingType.text = "外部会议"
+        }else{
+            self.meetingType.text = ""
         }
     }
     func textViewDidBeginEditing(textView: UITextView) {
