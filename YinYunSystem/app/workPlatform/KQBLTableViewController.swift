@@ -8,13 +8,13 @@
 
 import UIKit
 
-class KQBLTableViewController: UITableViewController, HttpProtocol {
+class KQBLTableViewController: UITableViewController {
     
     
     @IBOutlet var spinner: UIActivityIndicatorView!
 
     var httpRequest: HttpRequest!
-    var bLArray: Array<KQBL>!
+    var bLArray: [KQBL]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +25,7 @@ class KQBLTableViewController: UITableViewController, HttpProtocol {
         spinner.color = UIColor.blueColor()
         spinner.startAnimating()
         
-        bLArray = Array<KQBL>()
+        bLArray = [KQBL]()
         
         httpRequest = HttpRequest()
         httpRequest.delegate = self
@@ -38,33 +38,62 @@ class KQBLTableViewController: UITableViewController, HttpProtocol {
         } catch {
             
         }
-        
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-        
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+}
 
-    // MARK: - Table view data source
+private typealias TableViewDataSource = KQBLTableViewController
 
+extension TableViewDataSource {
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
-
+    
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return bLArray.count
     }
     
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("KQBLCell", forIndexPath: indexPath) as! KQBLTableViewCell
+        cell.startTimeLabel.text = bLArray[indexPath.row].startTime
+        
+        cell.stateLabel.text = bLArray[indexPath.row].state
+        
+        cell.reasonLabel.text = bLArray[indexPath.row].content
+        
+        return cell
+    }
+    
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 120
+    }
+}
+
+private typealias Segues = KQBLTableViewController
+
+extension Segues {
+    
+    @IBAction func unwindToBL(segue: UIStoryboardSegue) {
+        if let _ = segue.sourceViewController as? KQNewBLTableViewController {
+            let bodyStr = "page=1&rows=1000"
+            do {
+                try httpRequest.Post2(GetService + "/KaoQinMask/JBuLuList", str: bodyStr)
+            } catch {
+                
+            }
+        }
+    }
+}
+
+private typealias Https = KQBLTableViewController
+
+extension Https: HttpProtocol {
+    
     func didResponse(result: NSDictionary) {
-//        print(result)
+        
         bLArray.removeAll()
         
         if let data = result["rows"] {
@@ -83,82 +112,5 @@ class KQBLTableViewController: UITableViewController, HttpProtocol {
             
         }
     }
-
-    
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("KQBLCell", forIndexPath: indexPath) as! KQBLTableViewCell
-        cell.startTimeLabel.text = bLArray[indexPath.row].startTime
-//        cell.startTimeLabel.textColor = UIColor.blueColor()
-        cell.stateLabel.text = bLArray[indexPath.row].state
-//        cell.startTimeLabel.textColor = UIColor.grayColor()
-        cell.reasonLabel.text = bLArray[indexPath.row].content
-//        cell.startTimeLabel.textColor = UIColor.grayColor()
-
-        // Configure the cell...
-
-        return cell
-    }
-    
-    
-    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 120
-    }
-
-    @IBAction func unwindToBL(segue: UIStoryboardSegue) {
-        if let _ = segue.sourceViewController as? KQNewBLTableViewController {
-            let bodyStr = "page=1&rows=1000"
-            do {
-                
-                try httpRequest.Post2(GetService + "/KaoQinMask/JBuLuList", str: bodyStr)
-            } catch {
-                
-            }
-        }
-    }
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
+
