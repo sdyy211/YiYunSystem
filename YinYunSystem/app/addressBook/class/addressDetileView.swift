@@ -94,14 +94,36 @@ class addressDetileView: UIView,UITableViewDataSource,UITableViewDelegate,MFMess
         if(indexPath.row == 0)
         {
             let phone = itemDic.objectForKey("TELEPHONE") as! String
-            let url1 = NSURL(string: "tel://\(phone)")
-            UIApplication.sharedApplication().openURL(url1!)
+            if(phone != "")
+            {
+                let url1 = NSURL(string: "tel://\(phone)")
+                UIApplication.sharedApplication().openURL(url1!)
+            }else{
+            
+                alter("提醒", message: "电话号码为空，不能进行电话操作！")
+            }
+            
         }else if(indexPath.row == 1){
             let phone = itemDic.objectForKey("Phone") as! String
-            let url1 = NSURL(string: "tel://\(phone)")
-            UIApplication.sharedApplication().openURL(url1!)
+            if(phone != "")
+            {
+                let url1 = NSURL(string: "tel://\(phone)")
+                UIApplication.sharedApplication().openURL(url1!)
+            }else{
+                
+                alter("提醒", message: "电话号码为空，不能进行电话操作！")
+            }
         }
     }
+    
+    func alter(title:String,message:String)
+    {
+        let alertView =  UIAlertController.init(title:title, message:message, preferredStyle: UIAlertControllerStyle.Alert)
+        let alertViewCancelAction: UIAlertAction = UIAlertAction.init(title: "取消", style: UIAlertActionStyle.Cancel, handler: nil)
+        alertView.addAction(alertViewCancelAction)
+        viewController.presentViewController(alertView, animated:true , completion: nil)
+    }
+
     func initdetile(cell:UITableViewCell,indexPath:NSIndexPath)
     {
         let str =  itemArray.objectAtIndex(indexPath.row) as! String
@@ -125,13 +147,15 @@ class addressDetileView: UIView,UITableViewDataSource,UITableViewDelegate,MFMess
                 label2.textColor = UIColor.blackColor()
                 cell.addSubview(label2)
                 
-            
-                let button = addressBtn()
-                button.frame = CGRectMake(CGRectGetMaxX(label2.frame),(cellheight-20)/2,30,20)
-                button.setBackgroundImage(UIImage(named: "message"), forState: UIControlState.Normal)
-                button.phoneNumber = phone
-                button.addTarget(self, action:Selector("sendMessage:"), forControlEvents: UIControlEvents.TouchUpInside)
-                cell.addSubview(button)
+                if(phone != "")
+                {
+                    let button = addressBtn()
+                    button.frame = CGRectMake(CGRectGetMaxX(label2.frame),(cellheight-20)/2,30,20)
+                    button.setBackgroundImage(UIImage(named: "message"), forState: UIControlState.Normal)
+                    button.phoneNumber = phone
+                    button.addTarget(self, action:Selector("sendMessage:"), forControlEvents: UIControlEvents.TouchUpInside)
+                    cell.addSubview(button)
+                }
                 
                     break
             case "办公电话":
@@ -234,7 +258,13 @@ class addressDetileView: UIView,UITableViewDataSource,UITableViewDelegate,MFMess
         let tvHeight = itemArray.count * Int(cellheight)
         tv.frame = CGRectMake(0,CGRectGetMaxY(titleImage.frame),CGRectGetWidth(cv.frame),CGFloat(tvHeight))
         cv.frame = CGRectMake(CGRectGetMinX(cv.frame),(CGRectGetHeight(UIScreen.mainScreen().bounds)-CGRectGetMaxY(tv.frame	))/2,CGRectGetWidth(cv.frame),CGRectGetMaxY(titleImage.frame)+CGFloat(tvHeight))
-
+        let  scale = JNWSpringAnimation(keyPath: "transform.scale")
+        
+        scale.fromValue = 0
+        scale.toValue = 0.9
+        
+        cv.layer.addAnimation(scale, forKey: scale.keyPath)
+        cv.transform = CGAffineTransformMakeScale(0.9, 0.9)
         if(itemArray.count > 0)
         {
             tv.reloadData()
