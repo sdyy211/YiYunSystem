@@ -21,6 +21,7 @@ class AuditDetileView: UIView,UITableViewDelegate,UITableViewDataSource,HttpProt
     var request = HttpRequest()
     var viewController = UIViewController()
     var delegate = AuditDetileProtocol?()
+    var detileView = UIView()
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
@@ -40,7 +41,7 @@ class AuditDetileView: UIView,UITableViewDelegate,UITableViewDataSource,HttpProt
         tv.frame = CGRectMake(30, 20, 10,60)
         tv.estimatedRowHeight = 50.0
         tv.rowHeight = UITableViewAutomaticDimension
-        self.addSubview(tv)
+        detileView.addSubview(tv)
         
     }
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -57,7 +58,7 @@ class AuditDetileView: UIView,UITableViewDelegate,UITableViewDataSource,HttpProt
         tableView.registerNib(UINib(nibName: "AuditDetileTableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
         let cell:AuditDetileTableViewCell = tableView.dequeueReusableCellWithIdentifier("cell") as! AuditDetileTableViewCell
         tableView.separatorStyle = UITableViewCellSeparatorStyle.None
-
+        cell.selectionStyle = UITableViewCellSelectionStyle.None	
         cell.projectL.text =  itemDic.objectForKey("XiangMu") as? String
         cell.startTime.text =  itemDic.objectForKey("KQ_StartTime") as? String
         cell.endTime.text =  itemDic.objectForKey("KQ_EndTime") as? String
@@ -91,7 +92,7 @@ class AuditDetileView: UIView,UITableViewDelegate,UITableViewDataSource,HttpProt
         label.text = "\( itemDic.objectForKey("U_Name") as! String)(\( itemDic.objectForKey("D_Name") as! String))"
         label.textColor = UIColor.whiteColor()
         headerView.addSubview(label)
-        self.addSubview(headerView)
+        detileView.addSubview(headerView)
 
         tv.frame = CGRectMake(leftWith, CGRectGetMaxY(headerView.frame), with,CGFloat(h)-50)
         tv.reloadData()
@@ -137,7 +138,17 @@ class AuditDetileView: UIView,UITableViewDelegate,UITableViewDataSource,HttpProt
         footerView.addSubview(btn2)
 
         
-        self.addSubview(footerView)
+        detileView.addSubview(footerView)
+        
+        detileView.frame = UIScreen.mainScreen().bounds
+        let  scale = JNWSpringAnimation(keyPath: "transform.scale")
+        
+        scale.fromValue = 0
+        scale.toValue = 1
+        
+        detileView.layer.addAnimation(scale, forKey: scale.keyPath)
+        detileView.transform = CGAffineTransformMakeScale(1, 1)
+        self.addSubview(detileView)
     }
     // MARK:退回的点击事件
     func btnAction()

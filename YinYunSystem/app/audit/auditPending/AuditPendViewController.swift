@@ -312,7 +312,7 @@ class AuditPendViewController: UIViewController,UITableViewDataSource,UITableVie
 
         tableView.registerNib(UINib(nibName: "AuditTableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
         let cell:AuditTableViewCell = tableView.dequeueReusableCellWithIdentifier("cell") as! AuditTableViewCell
-       
+       cell.selectionStyle = UITableViewCellSelectionStyle.None
         if(rightBtn.tag == 1)
         {
             cell.imageFlage.hidden = true

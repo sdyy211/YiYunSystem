@@ -57,6 +57,8 @@
 		0496A6311C78338B002B0947 /* personalCenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0496A6301C78338B002B0947 /* personalCenterViewController.swift */; };
 		0497D0F91C7C1FDF00809A1A /* personalMegcell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0497D0F71C7C1FDF00809A1A /* personalMegcell.swift */; };
 		0497D0FA1C7C1FDF00809A1A /* personalMegcell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0497D0F81C7C1FDF00809A1A /* personalMegcell.xib */; };
+		04CD153D1C83E6B90061D34B /* JNWSpringAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CD153A1C83E6B90061D34B /* JNWSpringAnimation.m */; };
+		04CD153E1C83E6B90061D34B /* NSValue+JNWAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CD153C1C83E6B90061D34B /* NSValue+JNWAdditions.m */; };
 		04EBF6361C7E946A00A2E717 /* loadingAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EBF6351C7E946A00A2E717 /* loadingAnimationView.swift */; };
 		04EBF6381C7E949400A2E717 /* loadingAnimationMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EBF6371C7E949400A2E717 /* loadingAnimationMethod.swift */; };
 		04FB3D021C604F9300AE0787 /* fixedDetileBorrowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FB3CFA1C604F9300AE0787 /* fixedDetileBorrowView.swift */; };
@@ -203,6 +205,10 @@
 		0496A6301C78338B002B0947 /* personalCenterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = personalCenterViewController.swift; sourceTree = "<group>"; };
 		0497D0F71C7C1FDF00809A1A /* personalMegcell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = personalMegcell.swift; sourceTree = "<group>"; };
 		0497D0F81C7C1FDF00809A1A /* personalMegcell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = personalMegcell.xib; sourceTree = "<group>"; };
+		04CD15391C83E6B90061D34B /* JNWSpringAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JNWSpringAnimation.h; sourceTree = "<group>"; };
+		04CD153A1C83E6B90061D34B /* JNWSpringAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JNWSpringAnimation.m; sourceTree = "<group>"; };
+		04CD153B1C83E6B90061D34B /* NSValue+JNWAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSValue+JNWAdditions.h"; sourceTree = "<group>"; };
+		04CD153C1C83E6B90061D34B /* NSValue+JNWAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSValue+JNWAdditions.m"; sourceTree = "<group>"; };
 		04EBF6351C7E946A00A2E717 /* loadingAnimationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = loadingAnimationView.swift; sourceTree = "<group>"; };
 		04EBF6371C7E949400A2E717 /* loadingAnimationMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = loadingAnimationMethod.swift; sourceTree = "<group>"; };
 		04FB3CFA1C604F9300AE0787 /* fixedDetileBorrowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = fixedDetileBorrowView.swift; sourceTree = "<group>"; };
@@ -533,6 +539,17 @@
 			path = workPlatform;
 			sourceTree = "<group>";
 		};
+		04CD15381C83E6B90061D34B /* JNW */ = {
+			isa = PBXGroup;
+			children = (
+				04CD15391C83E6B90061D34B /* JNWSpringAnimation.h */,
+				04CD153A1C83E6B90061D34B /* JNWSpringAnimation.m */,
+				04CD153B1C83E6B90061D34B /* NSValue+JNWAdditions.h */,
+				04CD153C1C83E6B90061D34B /* NSValue+JNWAdditions.m */,
+			);
+			path = JNW;
+			sourceTree = "<group>";
+		};
 		04EBF6341C7E944E00A2E717 /*  loadingAnimation */ = {
 			isa = PBXGroup;
 			children = (
@@ -568,6 +585,7 @@
 		04FB3D181C60517C00AE0787 /* Framework */ = {
 			isa = PBXGroup;
 			children = (
+				04CD15381C83E6B90061D34B /* JNW */,
 				980B7E001C58BE710019D5A0 /* libstdc++.6.0.9.tbd */,
 				980B7DFE1C58BE620019D5A0 /* CoreTelephony.framework */,
 				980B7DFC1C58BE4A0019D5A0 /* libsqlite3.0.tbd */,
@@ -885,12 +903,14 @@
 				9822E5241C7324580024E8A0 /* KQBLTableViewCell.swift in Sources */,
 				04FB3D021C604F9300AE0787 /* fixedDetileBorrowView.swift in Sources */,
 				0496A5F41C783375002B0947 /* addressMethod.swift in Sources */,
+				04CD153D1C83E6B90061D34B /* JNWSpringAnimation.m in Sources */,
 				983194811C61EE5300900C0F /* FlowData.swift in Sources */,
 				988227261C604BCB0040DB2C /* AppDelegate.swift in Sources */,
 				04FB3D341C60517C00AE0787 /* Stream.swift in Sources */,
 				04FB3D361C60517C00AE0787 /* Validation.swift in Sources */,
 				98650FCE1C48DA3600DAA323 /* KQCalendarViewController.swift in Sources */,
 				046464DE1C76A2EE004841FF /* OAsySytemService.swift in Sources */,
+				04CD153E1C83E6B90061D34B /* NSValue+JNWAdditions.m in Sources */,
 				0496A61D1C78337D002B0947 /* myselfMeetRoomDetileCell.swift in Sources */,
 				0496A6311C78338B002B0947 /* personalCenterViewController.swift in Sources */,
 				98650FCB1C48827B00DAA323 /* HYSApplicationViewController.swift in Sources */,

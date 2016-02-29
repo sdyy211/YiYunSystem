@@ -20,7 +20,7 @@ class AuditHasbeenView: UIView,UITableViewDelegate,UITableViewDataSource{
     var request = HttpRequest()
     var viewController = UIViewController()
     var delegate = AuditDetileProtocol?()
-    
+    var detileView = UIView()
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
@@ -39,7 +39,7 @@ class AuditHasbeenView: UIView,UITableViewDelegate,UITableViewDataSource{
         tv.frame = CGRectMake(30, 20, 10,60)
         tv.estimatedRowHeight = 50.0
         tv.rowHeight = UITableViewAutomaticDimension
-        self.addSubview(tv)
+        detileView.addSubview(tv)
         
     }
 
@@ -58,7 +58,7 @@ class AuditHasbeenView: UIView,UITableViewDelegate,UITableViewDataSource{
         tableView.registerNib(UINib(nibName: "AuditHasbeenCell", bundle: nil), forCellReuseIdentifier: "cell")
         let cell:AuditHasbeenCell = tableView.dequeueReusableCellWithIdentifier("cell") as! AuditHasbeenCell
         tableView.separatorStyle = UITableViewCellSeparatorStyle.None
-        
+        cell.selectionStyle = UITableViewCellSelectionStyle.None
         cell.projectL.text =  itemDic.objectForKey("XiangMu") as? String
         cell.startTime.text =  itemDic.objectForKey("KQ_StartTime") as? String
         cell.endTime.text =  itemDic.objectForKey("KQ_EndTime") as? String
@@ -88,7 +88,7 @@ class AuditHasbeenView: UIView,UITableViewDelegate,UITableViewDataSource{
         label.text = "\( itemDic.objectForKey("U_Name") as! String)(\( itemDic.objectForKey("D_Name") as! String))"
         label.textColor = UIColor.whiteColor()
         headerView.addSubview(label)
-        self.addSubview(headerView)
+        detileView.addSubview(headerView)
         
         tv.frame = CGRectMake(leftWith, CGRectGetMaxY(headerView.frame), with,CGFloat(h)-50)
         tv.reloadData()
@@ -99,9 +99,10 @@ class AuditHasbeenView: UIView,UITableViewDelegate,UITableViewDataSource{
         
  
         
-        let btnWith2 = CGRectGetWidth(tv.frame)-40
+        let btnWith2 = CGRectGetWidth(tv.frame)-80
+        
         let btn3 = UIButton()
-        btn3.frame = CGRectMake(20, 15,btnWith2,CGRectGetHeight(footerView.frame)-30)
+        btn3.frame = CGRectMake(40, 15,btnWith2,CGRectGetHeight(footerView.frame)-30)
         btn3.setBackgroundImage(UIImage(named: "trueBtn"), forState: UIControlState.Normal)
         btn3.setTitle("返回", forState: UIControlState.Normal)
         btn3.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
@@ -115,7 +116,16 @@ class AuditHasbeenView: UIView,UITableViewDelegate,UITableViewDataSource{
         footerView.addSubview(lineL)
         footerView.addSubview(btn3)
         
-        self.addSubview(footerView)
+        detileView.frame = UIScreen.mainScreen().bounds
+        let  scale = JNWSpringAnimation(keyPath: "transform.scale")
+        
+        scale.fromValue = 0
+        scale.toValue = 0.95
+        
+        detileView.layer.addAnimation(scale, forKey: scale.keyPath)
+        detileView.transform = CGAffineTransformMakeScale(0.95, 0.95)
+        detileView.addSubview(footerView)
+        self.addSubview(detileView)
 
     }
     func btn3Action()
