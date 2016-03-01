@@ -8,22 +8,9 @@
 
 import UIKit
 
-class KQChaiViewController: UIViewController, BMKLocationServiceDelegate, BMKGeoCodeSearchDelegate, HttpProtocol {
+class KQChaiViewController: UIViewController, BMKLocationServiceDelegate, BMKGeoCodeSearchDelegate {
     
-    @IBAction func mapButton(sender: UIButton) {
-        dateCompare()
-        
-        if currentChai.type == "" {
-            let alert = UIAlertController(title: "警告", message: "请先新建出差事件再标注地址！", preferredStyle: UIAlertControllerStyle.Alert)
-            let action = UIAlertAction(title: "确定", style: UIAlertActionStyle.Default, handler: nil)
-            alert.addAction(action)
-            self.presentViewController(alert, animated: true, completion: nil)
-        } else if haveAddress == false{
-            performSegueWithIdentifier("MapSegue", sender: self)
-        } else if haveAddress == true {
-            performSegueWithIdentifier("CheckMapSegue", sender: self)
-        }
-    }
+    
     @IBOutlet weak var locationTF: UILabel!
     @IBOutlet weak var firstTimeLabel: UILabel!
     @IBOutlet weak var lastTimeLabel: UILabel!
@@ -33,71 +20,7 @@ class KQChaiViewController: UIViewController, BMKLocationServiceDelegate, BMKGeo
     @IBOutlet weak var firstBT: UIButton!
     @IBOutlet weak var lastBT: UIButton!
     
-    @IBAction func firstButton(sender: UIButton) {
-        if locationTF.text == "请标注出差地址" {
-            let alert = UIAlertController(title: "警告", message: "请先标注出差地址再打卡！", preferredStyle: UIAlertControllerStyle.Alert)
-            let action = UIAlertAction(title: "确定", style: UIAlertActionStyle.Default, handler: nil)
-            alert.addAction(action)
-            self.presentViewController(alert, animated: true, completion: nil)
-        } else if haveAddress == false{
-            let alert = UIAlertController(title: "确认", message: "目的地标注为\(locationTF!.text!),点击签到后不能修改，请确认是否继续！", preferredStyle: UIAlertControllerStyle.Alert)
-            let cancel = UIAlertAction(title: "取消", style: UIAlertActionStyle.Cancel, handler: nil)
-            let done = UIAlertAction(title: "继续", style: UIAlertActionStyle.Default, handler: { (alertAction) -> Void in
-                self.haveAddress = true
-                self.num = 1
-                self.setLocation()
-            })
-            alert.addAction(done)
-            alert.addAction(cancel)
-            self.presentViewController(alert, animated: true, completion: nil)
-        } else if haveAddress == true {
-            self.num = 1
-            self.setLocation()
-        }
-        
-        
-    }
-
-    @IBAction func lastButton(sender: UIButton) {
-        
-        
-        if firstBT.enabled == true {
-            let alert = UIAlertController(title: "警告", message: "请先进行上班打卡！", preferredStyle: UIAlertControllerStyle.Alert)
-            let action = UIAlertAction(title: "确定", style: UIAlertActionStyle.Default, handler: nil)
-            alert.addAction(action)
-            self.presentViewController(alert, animated: true, completion: nil)
-        } else {
-            let dateFor = NSDateFormatter()
-//            dateFor.dateFormat = "HH:mm:ss"
-            dateFor.dateFormat = "HH"
-            let down1 = Int(dateFor.stringFromDate(NSDate()))
-            let up1 = Int((firstTimeLabel.text! as NSString).substringWithRange(NSMakeRange(0, 2)))
-            if up1 == down1 {
-                dateFor.dateFormat = "mm"
-                let down2 = Int(dateFor.stringFromDate(NSDate()))
-                let up2 = Int((firstTimeLabel.text! as NSString).substringWithRange(NSMakeRange(3, 2)))
-                if (up2! + 5) >= down2 {
-                    let alert = UIAlertController(title: "警告", message: "上下班打卡间隔小于5分钟！", preferredStyle: UIAlertControllerStyle.Alert)
-                    let action = UIAlertAction(title: "确定", style: UIAlertActionStyle.Default, handler: nil)
-                    alert.addAction(action)
-                    self.presentViewController(alert, animated: true, completion: nil)
-                } else {
-                    num = 2
-                    setLocation()
-                }
-//            } else if (up1! + 3) >= down1! {
-//                let alert = UIAlertController(title: "警告", message: "上下班打卡间隔小于3小时！", preferredStyle: UIAlertControllerStyle.Alert)
-//                let action = UIAlertAction(title: "确定", style: UIAlertActionStyle.Default, handler: nil)
-//                alert.addAction(action)
-//                self.presentViewController(alert, animated: true, completion: nil)
-            } else if up1 < down1{
-                num = 2
-                setLocation()
-                
-            }
-        }
-
-    }
+    
 
     var httpRequest: HttpRequest!
     // 定位服务
@@ -171,8 +94,6 @@ class KQChaiViewController: UIViewController, BMKLocationServiceDelegate, BMKGeo
         }
         
     }
-    
-    
     //定位功能设置
     func setLocation() {
         //定位设置
@@ -247,81 +168,7 @@ class KQChaiViewController: UIViewController, BMKLocationServiceDelegate, BMKGeo
         // Dispose of any resources that can be recreated.
     }
     
-    //反向转场
-    @IBAction func unwindToChai(segue: UIStoryboardSegue) {
-        
-    }
-    
-    @IBAction func unwindToChaiDone(segue: UIStoryboardSegue) {
-
-    }
-    
-    func didResponse(result: NSDictionary) {
-//        print(result)
-        //获取当天的时间string
-        let nowDate = NSDate()
-        let dateFor = NSDateFormatter()
-        dateFor.dateFormat = "yyyy-MM-dd"
-        let today = dateFor.stringFromDate(nowDate)
-        
-        if let data = result["dt"] {
-            let json = JSON(data)
-//            print(json)
-            for val in json {
-                let time = (val.1["G_Time"].string! as NSString).substringWithRange(NSMakeRange(0, 10))
-                locationTF.text = val.1["G_Address"].string
-                //判断是否有目的地值
-                if val.1["G_Address"].string != nil {
-                    self.haveAddress = true
-                }
-                self.latitude = val.1["G_WeiDu"].string!
-                self.longitude = val.1["G_JingDu"].string!
-                //判断是否有当天的数据
-                if today == time {
-                    if val.1["G_Num"].string == "1" {
-                        firstTimeLabel.text = (val.1["G_Time"].string! as NSString).substringWithRange(NSMakeRange(11, 8)) + "--打卡"
-                        firstLocationLabel.text = val.1["G_TAddress"].string
-                        self.firstBT.alpha = 0.2
-                        self.firstBT.enabled = false
-                        self.firstBT.setTitle("已签", forState: .Normal)
-                    } else if val.1["G_Num"].string == "2" {
-                        lastTimeLabel.text = (val.1["G_Time"].string! as NSString).substringWithRange(NSMakeRange(11, 8)) + "--打卡"
-                        lastLocationLabel.text = val.1["G_TAddress"].string
-                        self.lastBT.alpha = 0.2
-                        self.lastBT.enabled = false
-                        self.lastBT.setTitle("已签", forState: .Normal)
-                    }
-                }
-                
-            }
-
-
-        }
-        
-        let flag = result["flag"] as! Int
-        if flag != 1 {
-
-            let alert = UIAlertController(title: "警告", message: "打卡出错，请检查网络重新打卡！", preferredStyle: UIAlertControllerStyle.Alert)
-            let action = UIAlertAction(title: "确定", style: UIAlertActionStyle.Default, handler: { (alertAction) -> Void in
-                if self.num == 1 {
-                    self.firstLocationLabel.text = "签到地址"
-                    self.firstTimeLabel.text = "打卡时间"
-                    self.firstBT.alpha = 1
-                    self.firstBT.enabled = true
-                    self.firstBT.setTitle("签到", forState: .Normal)
-                } else if self.num == 2 {
-                    self.lastLocationLabel.text = "签到地址"
-                    self.lastTimeLabel.text = "打卡时间"
-                    self.lastBT.alpha = 1
-                    self.lastBT.enabled = true
-                }
-            })
-            alert.addAction(action)
-            self.presentViewController(alert, animated: true, completion: nil)
-        }
-//        num = 0
-    }
-    //打卡提交
+        //打卡提交
     func sendIndex() {
         let kqid = currentChai.id//考勤ID
         let address = locationTF!.text!//考勤出差地址
@@ -351,6 +198,89 @@ class KQChaiViewController: UIViewController, BMKLocationServiceDelegate, BMKGeo
         }
     }
     
+    
+}
+
+private typealias Https = KQChaiViewController
+
+extension Https: HttpProtocol {
+    
+    func didResponse(result: NSDictionary) {
+        //获取当天的时间string
+        let nowDate = NSDate()
+        let dateFor = NSDateFormatter()
+        dateFor.dateFormat = "yyyy-MM-dd"
+        let today = dateFor.stringFromDate(nowDate)
+        
+        if let data = result["dt"] {
+            let json = JSON(data)
+            //            print(json)
+            for val in json {
+                let time = (val.1["G_Time"].string! as NSString).substringWithRange(NSMakeRange(0, 10))
+                locationTF.text = val.1["G_Address"].string
+                //判断是否有目的地值
+                if val.1["G_Address"].string != nil {
+                    self.haveAddress = true
+                }
+                self.latitude = val.1["G_WeiDu"].string!
+                self.longitude = val.1["G_JingDu"].string!
+                //判断是否有当天的数据
+                if today == time {
+                    if val.1["G_Num"].string == "1" {
+                        firstTimeLabel.text = (val.1["G_Time"].string! as NSString).substringWithRange(NSMakeRange(11, 8)) + "--打卡"
+                        firstLocationLabel.text = val.1["G_TAddress"].string
+                        self.firstBT.alpha = 0.2
+                        self.firstBT.enabled = false
+                        self.firstBT.setTitle("已签", forState: .Normal)
+                    } else if val.1["G_Num"].string == "2" {
+                        lastTimeLabel.text = (val.1["G_Time"].string! as NSString).substringWithRange(NSMakeRange(11, 8)) + "--打卡"
+                        lastLocationLabel.text = val.1["G_TAddress"].string
+                        self.lastBT.alpha = 0.2
+                        self.lastBT.enabled = false
+                        self.lastBT.setTitle("已签", forState: .Normal)
+                    }
+                }
+            }
+        }
+        
+        let flag = result["flag"] as! Int
+        if flag != 1 {
+            
+            let alert = UIAlertController(title: "警告", message: "打卡出错，请检查网络重新打卡！", preferredStyle: UIAlertControllerStyle.Alert)
+            let action = UIAlertAction(title: "确定", style: UIAlertActionStyle.Default, handler: { (alertAction) -> Void in
+                if self.num == 1 {
+                    self.firstLocationLabel.text = "签到地址"
+                    self.firstTimeLabel.text = "打卡时间"
+                    self.firstBT.alpha = 1
+                    self.firstBT.enabled = true
+                    self.firstBT.setTitle("签到", forState: .Normal)
+                } else if self.num == 2 {
+                    self.lastLocationLabel.text = "签到地址"
+                    self.lastTimeLabel.text = "打卡时间"
+                    self.lastBT.alpha = 1
+                    self.lastBT.enabled = true
+                }
+            })
+            alert.addAction(action)
+            self.presentViewController(alert, animated: true, completion: nil)
+        }
+        //        num = 0
+    }
+
+}
+
+private typealias Segues = KQChaiViewController
+
+extension Segues {
+    //反向转场
+    @IBAction func unwindToChai(segue: UIStoryboardSegue) {
+        
+    }
+    
+    @IBAction func unwindToChaiDone(segue: UIStoryboardSegue) {
+        
+    }
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "CheckMapSegue" {
             if let vc = segue.destinationViewController as? KQChaiMapCheckViewController {
@@ -360,5 +290,94 @@ class KQChaiViewController: UIViewController, BMKLocationServiceDelegate, BMKGeo
             }
         }
     }
+
+}
+
+private typealias Buttons = KQChaiViewController
+
+extension Buttons {
+    
+    @IBAction func mapButton(sender: UIButton) {
+        dateCompare()
+        
+        if currentChai.type == "" {
+            let alert = UIAlertController(title: "警告", message: "请先新建出差事件再标注地址！", preferredStyle: UIAlertControllerStyle.Alert)
+            let action = UIAlertAction(title: "确定", style: UIAlertActionStyle.Default, handler: nil)
+            alert.addAction(action)
+            self.presentViewController(alert, animated: true, completion: nil)
+        } else if haveAddress == false{
+            performSegueWithIdentifier("MapSegue", sender: self)
+        } else if haveAddress == true {
+            performSegueWithIdentifier("CheckMapSegue", sender: self)
+        }
+    }
+    
+    @IBAction func firstButton(sender: UIButton) {
+        if locationTF.text == "请标注出差地址" {
+            let alert = UIAlertController(title: "警告", message: "请先标注出差地址再打卡！", preferredStyle: UIAlertControllerStyle.Alert)
+            let action = UIAlertAction(title: "确定", style: UIAlertActionStyle.Default, handler: nil)
+            alert.addAction(action)
+            self.presentViewController(alert, animated: true, completion: nil)
+        } else if haveAddress == false{
+            let alert = UIAlertController(title: "确认", message: "目的地标注为\(locationTF!.text!),点击签到后不能修改，请确认是否继续！", preferredStyle: UIAlertControllerStyle.Alert)
+            let cancel = UIAlertAction(title: "取消", style: UIAlertActionStyle.Cancel, handler: nil)
+            let done = UIAlertAction(title: "继续", style: UIAlertActionStyle.Default, handler: { (alertAction) -> Void in
+                self.haveAddress = true
+                self.num = 1
+                self.setLocation()
+            })
+            alert.addAction(done)
+            alert.addAction(cancel)
+            self.presentViewController(alert, animated: true, completion: nil)
+        } else if haveAddress == true {
+            self.num = 1
+            self.setLocation()
+        }
+        
+        
+    }
+    
+    @IBAction func lastButton(sender: UIButton) {
+        
+        
+        if firstBT.enabled == true {
+            let alert = UIAlertController(title: "警告", message: "请先进行上班打卡！", preferredStyle: UIAlertControllerStyle.Alert)
+            let action = UIAlertAction(title: "确定", style: UIAlertActionStyle.Default, handler: nil)
+            alert.addAction(action)
+            self.presentViewController(alert, animated: true, completion: nil)
+        } else {
+            let dateFor = NSDateFormatter()
+            //            dateFor.dateFormat = "HH:mm:ss"
+            dateFor.dateFormat = "HH"
+            let down1 = Int(dateFor.stringFromDate(NSDate()))
+            let up1 = Int((firstTimeLabel.text! as NSString).substringWithRange(NSMakeRange(0, 2)))
+            if up1 == down1 {
+                dateFor.dateFormat = "mm"
+                let down2 = Int(dateFor.stringFromDate(NSDate()))
+                let up2 = Int((firstTimeLabel.text! as NSString).substringWithRange(NSMakeRange(3, 2)))
+                if (up2! + 5) >= down2 {
+                    let alert = UIAlertController(title: "警告", message: "上下班打卡间隔小于5分钟！", preferredStyle: UIAlertControllerStyle.Alert)
+                    let action = UIAlertAction(title: "确定", style: UIAlertActionStyle.Default, handler: nil)
+                    alert.addAction(action)
+                    self.presentViewController(alert, animated: true, completion: nil)
+                } else {
+                    num = 2
+                    setLocation()
+                }
+                //            } else if (up1! + 3) >= down1! {
+                //                let alert = UIAlertController(title: "警告", message: "上下班打卡间隔小于3小时！", preferredStyle: UIAlertControllerStyle.Alert)
+                //                let action = UIAlertAction(title: "确定", style: UIAlertActionStyle.Default, handler: nil)
+                //                alert.addAction(action)
+                //                self.presentViewController(alert, animated: true, completion: nil)
+            } else if up1 < down1{
+                num = 2
+                setLocation()
+                
+            }
+        }
+        
+    }
     
 }
+
+

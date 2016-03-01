@@ -8,12 +8,11 @@
 
 import UIKit
 
-class KQChaiMapViewController: UIViewController, BMKMapViewDelegate, BMKPoiSearchDelegate, UITextFieldDelegate, BMKLocationServiceDelegate {
+class KQChaiMapViewController: UIViewController, BMKMapViewDelegate, BMKPoiSearchDelegate, BMKLocationServiceDelegate {
     
     
     @IBOutlet weak var cityTF: UITextField!
     @IBOutlet weak var locationTF: UITextField!
-    
     @IBOutlet weak var searchBT: UIButton!
     
     //百度地图视图
@@ -29,44 +28,7 @@ class KQChaiMapViewController: UIViewController, BMKMapViewDelegate, BMKPoiSearc
     var chooseTitle = ""
     //目的地坐标
     var coordinate:CLLocationCoordinate2D!
-    
 
-    @IBAction func searchButton(sender: UIButton) {
-        
-        self.cityTF.resignFirstResponder()
-        self.locationTF.resignFirstResponder()
-        
-        let city = cityTF.text
-        let location = locationTF.text
-        
-        if city == "" || location == "" {
-            let alert = UIAlertController(title: "警告", message: "有选项未输入，无法查询", preferredStyle: UIAlertControllerStyle.Alert)
-            let action = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil)
-            alert.addAction(action)
-            self.presentViewController(alert, animated: true, completion: nil)
-            return
-        }
-        
-        
-        let citySearchOption = BMKCitySearchOption()
-        citySearchOption.pageIndex = 0
-        citySearchOption.pageCapacity = 20
-        citySearchOption.city = cityTF.text
-        citySearchOption.keyword = locationTF.text
-        
-        if poiSearch.poiSearchInCity(citySearchOption) {
-            print("城市内检索发送成功！")
-        } else {
-            print("城市内检索发送失败！")
-        }
-
-    }
-    @IBAction func doneButton(sender: UIBarButtonItem) {
-
-    }
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -76,25 +38,9 @@ class KQChaiMapViewController: UIViewController, BMKMapViewDelegate, BMKPoiSearc
         // 地图界面初始化
         mapView = BMKMapView(frame: view.frame)
         mapView.translatesAutoresizingMaskIntoConstraints = false
-        
-
         self.view.addSubview(mapView)
-        
-        
-        
-        //Poi 搜索初始化
-        poiSearch = BMKPoiSearch()
-        
-
-        //界面初始化
-//        cityTF.text = "济南"
-//        locationTF.text = "宾馆"
-
         mapView.zoomLevel = 6
-        
         mapView.isSelectedAnnotationViewFront = true
-
-        
         // 创建地图视图约束
         var constraints = [NSLayoutConstraint]()
         constraints.append(mapView.leadingAnchor.constraintEqualToAnchor(view.leadingAnchor))
@@ -102,8 +48,10 @@ class KQChaiMapViewController: UIViewController, BMKMapViewDelegate, BMKPoiSearc
         constraints.append(mapView.bottomAnchor.constraintEqualToAnchor(view.bottomAnchor))
         constraints.append(mapView.topAnchor.constraintEqualToAnchor(searchBT.bottomAnchor, constant: 23))
         self.view.addConstraints(constraints)
+        
+        //Poi 搜索初始化
+        poiSearch = BMKPoiSearch()
 
-        // Do any additional setup after loading the view.
     }
     
  
@@ -156,12 +104,6 @@ class KQChaiMapViewController: UIViewController, BMKMapViewDelegate, BMKPoiSearc
         self.presentViewController(alert, animated: true, completion: nil)
     }
     
-    
-    
-//    func mapView(mapView: BMKMapView!, didAddAnnotationViews views: [AnyObject]!) {
-//        print("标注添加前的方法调用")
-//    }
-    
     // MARK: Poi 搜索的相关方法实现
     func onGetPoiResult(searcher: BMKPoiSearch!, result poiResult: BMKPoiResult!, errorCode: BMKSearchErrorCode) {
         // 清除屏幕中所有的annotation
@@ -199,24 +141,6 @@ class KQChaiMapViewController: UIViewController, BMKMapViewDelegate, BMKPoiSearc
             print("获取poi失败")
         }
     }
-    
-    // MARK:TextField代理
-    // 点击return会隐藏键盘
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
-        cityTF.resignFirstResponder()
-        locationTF.resignFirstResponder()
-        textField.resignFirstResponder()
-        
-        return true
-    }
-    
-    //点击空白处会隐藏键盘
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        self.cityTF.resignFirstResponder()
-        self.locationTF.resignFirstResponder()
-    }
-    
-
     // MARK: 内存管理
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -236,8 +160,11 @@ class KQChaiMapViewController: UIViewController, BMKMapViewDelegate, BMKPoiSearc
         mapView.delegate = nil  // 不用时，置nil
         poiSearch.delegate = nil
     }
-    
+}
 
+private typealias Segues = KQChaiMapViewController
+
+extension Segues {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "UnwindToChaiDone" {
@@ -253,20 +180,68 @@ class KQChaiMapViewController: UIViewController, BMKMapViewDelegate, BMKPoiSearc
             viewController.addressTitle = chooseTitle
             viewController.latitude = String(self.coordinate.latitude)
             viewController.longitude = String(self.coordinate.longitude)
-//            viewController.haveAddress = true
+            //            viewController.haveAddress = true
         }
     }
+}
 
-    
+private typealias TextFieldDelegate = KQChaiMapViewController
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+extension TextFieldDelegate: UITextFieldDelegate {
+    // 点击return会隐藏键盘
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        cityTF.resignFirstResponder()
+        locationTF.resignFirstResponder()
+        textField.resignFirstResponder()
+        
+        return true
     }
-    */
+    
+    //点击空白处会隐藏键盘
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        self.cityTF.resignFirstResponder()
+        self.locationTF.resignFirstResponder()
+    }
 
 }
+
+private typealias Buttons = KQChaiMapViewController
+
+extension Buttons {
+    
+    @IBAction func searchButton(sender: UIButton) {
+        
+        self.cityTF.resignFirstResponder()
+        self.locationTF.resignFirstResponder()
+        
+        let city = cityTF.text
+        let location = locationTF.text
+        
+        if city == "" || location == "" {
+            let alert = UIAlertController(title: "警告", message: "有选项未输入，无法查询", preferredStyle: UIAlertControllerStyle.Alert)
+            let action = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil)
+            alert.addAction(action)
+            self.presentViewController(alert, animated: true, completion: nil)
+            return
+        }
+        
+        
+        let citySearchOption = BMKCitySearchOption()
+        citySearchOption.pageIndex = 0
+        citySearchOption.pageCapacity = 20
+        citySearchOption.city = cityTF.text
+        citySearchOption.keyword = locationTF.text
+        
+        if poiSearch.poiSearchInCity(citySearchOption) {
+            print("城市内检索发送成功！")
+        } else {
+            print("城市内检索发送失败！")
+        }
+        
+    }
+    @IBAction func doneButton(sender: UIBarButtonItem) {
+        
+    }
+
+}
+

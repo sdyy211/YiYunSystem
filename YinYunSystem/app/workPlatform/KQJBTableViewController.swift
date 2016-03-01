@@ -8,7 +8,7 @@
 
 import UIKit
 
-class KQJBTableViewController: UITableViewController, HttpProtocol, UITextFieldDelegate {
+class KQJBTableViewController: UITableViewController {
     //流程
     @IBOutlet weak var flowData: UIButton!
     //开始时间和结束时间
@@ -167,14 +167,47 @@ class KQJBTableViewController: UITableViewController, HttpProtocol, UITextFieldD
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+
+}
+
+private typealias Segues = KQJBTableViewController
+
+extension Segues {
     
+    @IBAction func unwindAskForJB(segue: UIStoryboardSegue) {
+        
+    }
+    @IBAction func unwindAskForJBDone(segue: UIStoryboardSegue) {
+        
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "TimeSegue" {
+            if beginButton.titleLabel?.text != "开始试时间" {
+                let dateFormatter = NSDateFormatter()
+                dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+                if let vc = segue.destinationViewController as? KQJBTimeViewController {
+                    
+                    vc.begin = dateFormatter.dateFromString(beginButton.titleLabel!.text!)
+                    vc.end = dateFormatter.dateFromString(endButton.titleLabel!.text!)
+                }
+                
+            }
+        }
+    }
+    
+}
+
+private typealias Https = KQJBTableViewController
+
+extension Https: HttpProtocol {
     
     func didResponse(result: NSDictionary) {
-
+        
         
         if let data = result["rows"] {
             let json = JSON(data)
-//            print(json)
+            //            print(json)
             for val in json {
                 let flowdata = FlowData()
                 flowdata.id = val.1["F_ID"].string!
@@ -184,19 +217,19 @@ class KQJBTableViewController: UITableViewController, HttpProtocol, UITextFieldD
                 
                 
             }
-
+            
         }
         
         if let data = result["dt"] {
             let json = JSON(data)
-//            print(json)
+            //            print(json)
             for val in json {
                 let project = ProjectData()
                 project.id = val.1["projectID"].string!
                 project.name = val.1["projectName"].string!
                 projectArray.append(project)
             }
-
+            
         }
         
         if request1 == true {
@@ -215,19 +248,16 @@ class KQJBTableViewController: UITableViewController, HttpProtocol, UITextFieldD
                 }
             }
         }
+        
+    }
 
-    }
     
-    
-    @IBAction func unwindAskForJB(segue: UIStoryboardSegue) {
-        
-    }
-    @IBAction func unwindAskForJBDone(segue: UIStoryboardSegue) {
-        
-    }
-    
-    
-    // MARK:TextField代理
+}
+
+private typealias TextFieldDelegate = KQJBTableViewController
+
+extension TextFieldDelegate: UITextFieldDelegate {
+
     // 点击return会隐藏键盘
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         reasonText.resignFirstResponder()
@@ -243,20 +273,4 @@ class KQJBTableViewController: UITableViewController, HttpProtocol, UITextFieldD
         otherText.resignFirstResponder()
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "TimeSegue" {
-            if beginButton.titleLabel?.text != "开始试时间" {
-                let dateFormatter = NSDateFormatter()
-                dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-                if let vc = segue.destinationViewController as? KQJBTimeViewController {
-                    
-                    vc.begin = dateFormatter.dateFromString(beginButton.titleLabel!.text!)
-                    vc.end = dateFormatter.dateFromString(endButton.titleLabel!.text!)
-                }
-                
-            }
-        }
-    }
-    
-
 }
