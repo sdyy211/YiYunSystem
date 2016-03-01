@@ -17,8 +17,10 @@ class KQViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         listTableView.delegate = self
         listTableView.dataSource = self
+        listTableView.tableFooterView = UIView(frame: CGRectZero)
     }
 
 }
@@ -49,6 +51,10 @@ extension TableViewDelegate: UITableViewDelegate {
         case 0 :
             self.listTableView.deselectRowAtIndexPath(indexPath, animated: true)
             self.performSegueWithIdentifier("RLSegue", sender: self)
+            UITabBar.appearance().barTintColor = UIColor(red: 67.0/255.0, green:
+                70.0/255.0, blue: 76.0/255.0, alpha: 1.0)
+            UITabBar.appearance().selectedImageTintColor = UIColor(red: 53.0/255.0, green:
+                53.0/255.0, blue: 53.0/255.0, alpha: 1.0)
         case 1:
             self.listTableView.deselectRowAtIndexPath(indexPath, animated: true)
             self.performSegueWithIdentifier("SQSegue", sender: self)
