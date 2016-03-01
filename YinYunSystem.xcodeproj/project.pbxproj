@@ -126,6 +126,7 @@
 		984A83BF1C76E886001A3D3A /* KQTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 984A83BE1C76E886001A3D3A /* KQTableViewCell.swift */; };
 		984D56BE1C75950E00FAC478 /* KQNewBLTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 984D56BD1C75950E00FAC478 /* KQNewBLTableViewController.swift */; };
 		984D56C01C75955000FAC478 /* KQNewBLTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 984D56BF1C75955000FAC478 /* KQNewBLTimeViewController.swift */; };
+		9854FB961C853493002DCBD7 /* ChaiUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9854FB951C853493002DCBD7 /* ChaiUser.swift */; };
 		9855BCCA1C586CF5005788BE /* KQ_Jia.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9855BCC91C586CF5005788BE /* KQ_Jia.storyboard */; };
 		9855BCCC1C5874EB005788BE /* KQ_JB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9855BCCB1C5874EB005788BE /* KQ_JB.storyboard */; };
 		9855BCCE1C589E1F005788BE /* KQ_Tiao.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9855BCCD1C589E1F005788BE /* KQ_Tiao.storyboard */; };
@@ -273,6 +274,7 @@
 		984A83BE1C76E886001A3D3A /* KQTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KQTableViewCell.swift; sourceTree = "<group>"; };
 		984D56BD1C75950E00FAC478 /* KQNewBLTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KQNewBLTableViewController.swift; sourceTree = "<group>"; };
 		984D56BF1C75955000FAC478 /* KQNewBLTimeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KQNewBLTimeViewController.swift; sourceTree = "<group>"; };
+		9854FB951C853493002DCBD7 /* ChaiUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChaiUser.swift; sourceTree = "<group>"; };
 		9855BCC91C586CF5005788BE /* KQ_Jia.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = KQ_Jia.storyboard; sourceTree = "<group>"; };
 		9855BCCB1C5874EB005788BE /* KQ_JB.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = KQ_JB.storyboard; sourceTree = "<group>"; };
 		9855BCCD1C589E1F005788BE /* KQ_Tiao.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = KQ_Tiao.storyboard; sourceTree = "<group>"; };
@@ -684,6 +686,7 @@
 				984A83BC1C76B695001A3D3A /* KQChaiDate.swift */,
 				983194801C61EE5300900C0F /* FlowData.swift */,
 				9814D2AF1C62F58300584CD3 /* ProjectData.swift */,
+				9854FB951C853493002DCBD7 /* ChaiUser.swift */,
 				985A93101C7D57120061D9D0 /* Errors.swift */,
 			);
 			name = KQModel;
@@ -863,6 +866,7 @@
 				984A83BD1C76B695001A3D3A /* KQChaiDate.swift in Sources */,
 				04FB3D051C604F9300AE0787 /* menuView.swift in Sources */,
 				9814D2B01C62F58300584CD3 /* ProjectData.swift in Sources */,
+				9854FB961C853493002DCBD7 /* ChaiUser.swift in Sources */,
 				0496A61A1C78337D002B0947 /* HYSViewController.swift in Sources */,
 				985A930F1C7D4ACC0061D9D0 /* AlertViews.swift in Sources */,
 				9846BB2B1C47465A00E7DF6A /* ListTableViewCell.swift in Sources */,

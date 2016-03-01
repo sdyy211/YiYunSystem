@@ -8,7 +8,7 @@
 
 import UIKit
 
-class KQTiaoTableViewController: UITableViewController, HttpProtocol, UITextFieldDelegate {
+class KQTiaoTableViewController: UITableViewController {
     
     //流程
     @IBOutlet weak var flowData: UIButton!
@@ -111,11 +111,6 @@ class KQTiaoTableViewController: UITableViewController, HttpProtocol, UITextFiel
         //流程申请
         httpRequest.Get(GetService + "/Mobile/Mobile/JMGetLiuCheng", parameters: [:])
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -130,10 +125,42 @@ class KQTiaoTableViewController: UITableViewController, HttpProtocol, UITextFiel
     }
 
 
+}
+
+private typealias Segues = KQTiaoTableViewController
+
+extension Segues {
     
+    @IBAction func unwindAskForTiao(segue: UIStoryboardSegue) {
+        
+    }
+    @IBAction func unwindAskForTiaoDone(segue: UIStoryboardSegue) {
+        
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "TimeSegue" {
+            if beginButton.titleLabel?.text != "开始试时间" {
+                let dateFormatter = NSDateFormatter()
+                dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+                if let vc = segue.destinationViewController as? KQTiaoTimeViewController {
+                    
+                    vc.begin = dateFormatter.dateFromString(beginButton.titleLabel!.text!)
+                    vc.end = dateFormatter.dateFromString(endButton.titleLabel!.text!)
+                }
+                
+            }
+        }
+    }
+    
+}
+
+private typealias Https = KQTiaoTableViewController
+
+extension Https: HttpProtocol {
     
     func didResponse(result: NSDictionary) {
-
+        
         //流程返回
         if let data = result["rows"] {
             let json = JSON(data)
@@ -146,7 +173,7 @@ class KQTiaoTableViewController: UITableViewController, HttpProtocol, UITextFiel
                 
                 
             }
-
+            
         }
         //保存事件返回
         if request1 == true {
@@ -168,7 +195,7 @@ class KQTiaoTableViewController: UITableViewController, HttpProtocol, UITextFiel
         
         //年假天数信息
         if let data = result["values"] {
-
+            
             let json = JSON(data)
             guard json["nianjiatianshu"].string != nil else {
                 return
@@ -186,15 +213,12 @@ class KQTiaoTableViewController: UITableViewController, HttpProtocol, UITextFiel
         
     }
     
-    
-    @IBAction func unwindAskForTiao(segue: UIStoryboardSegue) {
-        
-    }
-    @IBAction func unwindAskForTiaoDone(segue: UIStoryboardSegue) {
-        
-    }
-    
-    // MARK:TextField代理
+}
+
+private typealias TextFieldDelegate = KQTiaoTableViewController
+
+extension TextFieldDelegate: UITextFieldDelegate {
+
     // 点击return会隐藏键盘
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         reasonText.resignFirstResponder()
@@ -209,24 +233,4 @@ class KQTiaoTableViewController: UITableViewController, HttpProtocol, UITextFiel
         reasonText.resignFirstResponder()
         otherText.resignFirstResponder()
     }
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "TimeSegue" {
-            if beginButton.titleLabel?.text != "开始试时间" {
-                let dateFormatter = NSDateFormatter()
-                dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-                if let vc = segue.destinationViewController as? KQTiaoTimeViewController {
-                    
-                    vc.begin = dateFormatter.dateFromString(beginButton.titleLabel!.text!)
-                    vc.end = dateFormatter.dateFromString(endButton.titleLabel!.text!)
-                }
-                
-            }
-        }
-    }
-    
-
-
-    
-
 }
