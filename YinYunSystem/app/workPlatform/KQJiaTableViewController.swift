@@ -8,7 +8,7 @@
 
 import UIKit
 
-class KQJiaTableViewController: UITableViewController, HttpProtocol, UITextFieldDelegate {
+class KQJiaTableViewController: UITableViewController {
     
     
 
@@ -99,12 +99,7 @@ class KQJiaTableViewController: UITableViewController, HttpProtocol, UITextField
                 
             }
         }
-        
-        
-        
-
-        
-        
+ 
     }
     
     var types = ["事假","病假","婚假","产假","陪产假","丧假","年假","其他"]
@@ -137,16 +132,6 @@ class KQJiaTableViewController: UITableViewController, HttpProtocol, UITextField
         let parameters = ["date": date, "lx":"qj"]
         httpRequest.Get(GetService + "/Mobile/Mobile/JMGetKQInfo", parameters: parameters)
         
-//        flowData.setTitle(flowArray[0].name + flowArray[0].nodes, forState: UIControlState.Normal)
-        
-        
-        
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -160,96 +145,21 @@ class KQJiaTableViewController: UITableViewController, HttpProtocol, UITextField
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-    // MARK: - Table view data source
-
-//    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-//        // #warning Incomplete implementation, return the number of sections
-//        return 0
-//    }
-//
-//    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        // #warning Incomplete implementation, return the number of rows
-//        return 0
-//    }
     
     
- 
     
-    func didResponse(result: NSDictionary) {
-        //流程获取
-        if let data = result["rows"] {
-            let json = JSON(data)
-
-            for val in json {
-                let flowdata = FlowData()
-                flowdata.id = val.1["F_ID"].string!
-                flowdata.name = val.1["F_Name"].string!
-                flowdata.nodes = val.1["Nodes"].string!
-                flowArray.append(flowdata)
-            }
-
-        }
-        
-        //保存提示
-        if request1 == true {
-            request1 = false
-            let json = JSON(result)
-  
-            if let flag = json["flag"].int {
-                if flag == 0 {
-                    let alert = UIAlertController(title: "警告", message: json["msg"].string, preferredStyle: UIAlertControllerStyle.Alert)
-                    let action = UIAlertAction(title: "确定", style: UIAlertActionStyle.Cancel, handler: nil)
-                    alert.addAction(action)
-                    self.presentViewController(alert, animated: true, completion: nil)
-                } else if flag == 1 {
-
-                    self.dismissViewControllerAnimated(true, completion: nil)
-                }
-            }
-        }
-        //年假天数信息
-        if let data = result["values"] {
-        
-            let json = JSON(data)
-            guard json["nianjiatianshu"].string != nil else {
-                return
-            }
-
-            let tianshu = json["nianjiatianshu"].string!
-            let shengyu = json["nianjiashengyu"].string!
-            let daishen = json["daishennianjiatianshu"].string!
-            let shiyong = json["yishennianjiatianshu"].string!
-            self.messageLabel.text = "该年共有\(tianshu)天年假，已使用\(shiyong)天年假，\n待审\(daishen)天年假，剩余\(shengyu)天年假。"
-                
-            
-        }
-        
-        
-        
-    }
     
+}
+
+private typealias Segues = KQJiaTableViewController
+
+extension Segues {
     
     @IBAction func unwindAskForJia(segue: UIStoryboardSegue) {
         
     }
     @IBAction func unwindAskForJiaDone(segue: UIStoryboardSegue) {
         
-    }
-    
-    // MARK:TextField代理
-    // 点击return会隐藏键盘
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
-        reasonText.resignFirstResponder()
-        otherText.resignFirstResponder()
-        
-        return true
-    }
-    
-    //点击空白处会隐藏键盘
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        reasonText.resignFirstResponder()
-        otherText.resignFirstResponder()
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -267,62 +177,79 @@ class KQJiaTableViewController: UITableViewController, HttpProtocol, UITextField
         }
     }
 
+}
+
+private typealias Https = KQJiaTableViewController
+
+extension Https: HttpProtocol {
     
-    
+    func didResponse(result: NSDictionary) {
+        //流程获取
+        if let data = result["rows"] {
+            let json = JSON(data)
+            
+            for val in json {
+                let flowdata = FlowData()
+                flowdata.id = val.1["F_ID"].string!
+                flowdata.name = val.1["F_Name"].string!
+                flowdata.nodes = val.1["Nodes"].string!
+                flowArray.append(flowdata)
+            }
+            
+        }
+        
+        //保存提示
+        if request1 == true {
+            request1 = false
+            let json = JSON(result)
+            
+            if let flag = json["flag"].int {
+                if flag == 0 {
+                    let alert = UIAlertController(title: "警告", message: json["msg"].string, preferredStyle: UIAlertControllerStyle.Alert)
+                    let action = UIAlertAction(title: "确定", style: UIAlertActionStyle.Cancel, handler: nil)
+                    alert.addAction(action)
+                    self.presentViewController(alert, animated: true, completion: nil)
+                } else if flag == 1 {
+                    
+                    self.dismissViewControllerAnimated(true, completion: nil)
+                }
+            }
+        }
+        //年假天数信息
+        if let data = result["values"] {
+            
+            let json = JSON(data)
+            guard json["nianjiatianshu"].string != nil else {
+                return
+            }
+            
+            let tianshu = json["nianjiatianshu"].string!
+            let shengyu = json["nianjiashengyu"].string!
+            let daishen = json["daishennianjiatianshu"].string!
+            let shiyong = json["yishennianjiatianshu"].string!
+            self.messageLabel.text = "该年共有\(tianshu)天年假，已使用\(shiyong)天年假，\n待审\(daishen)天年假，剩余\(shengyu)天年假。"
+            
+            
+        }
 
-    /*
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
-
-        // Configure the cell...
-
-        return cell
     }
-    */
 
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
+}
+
+private typealias TextFieldDelegate = KQJiaTableViewController
+
+extension TextFieldDelegate: UITextFieldDelegate {
+    // 点击return会隐藏键盘
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        reasonText.resignFirstResponder()
+        otherText.resignFirstResponder()
+        
         return true
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+    
+    //点击空白处会隐藏键盘
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        reasonText.resignFirstResponder()
+        otherText.resignFirstResponder()
     }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

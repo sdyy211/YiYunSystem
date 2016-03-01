@@ -46,20 +46,7 @@ class KQChaiMapCheckViewController: UIViewController, BMKMapViewDelegate, BMKPoi
         mapview!.showsUserLocation = true
         mapview!.updateLocationData(userLocation)
         
-        //        BMKLocationService
-        
-        
-        
-        
-        
-        //        locService = BMKLocationService()
-        //        locService?.delegate = self
-        //        locService?.startUserLocationService()
-        //        var user = locService?.userLocation
-        //        print(user?.location)
-        
-        
-        // Do any additional setup after loading the view, typically from a nib.
+
     }
     
     // MARK: 定位

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class KQChaiTableViewController: UITableViewController, HttpProtocol, UITextFieldDelegate {
+class KQChaiTableViewController: UITableViewController, selectContactProtocol {
     
     //流程
     @IBOutlet weak var flowData: UIButton!
@@ -20,16 +20,15 @@ class KQChaiTableViewController: UITableViewController, HttpProtocol, UITextFiel
     @IBOutlet weak var workButton: UIButton!
     //所在地区
     @IBOutlet weak var areaButton: UIButton!
-
+    //随行人员
+    @IBOutlet weak var peopleName: UIButton!
     //目的地
     @IBOutlet weak var destinationText: UITextField!
-    //联系人
-    @IBOutlet weak var peopleText: UITextField!
     //联系电话
     @IBOutlet weak var phoneText: UITextField!
     //预计差旅支出
     @IBOutlet weak var moneyText: UITextField!
-    //随行人员
+    //联系人
     @IBOutlet weak var friendText: UITextField!
     
     //事由
@@ -101,10 +100,20 @@ class KQChaiTableViewController: UITableViewController, HttpProtocol, UITextFiel
     @IBAction func endTime(sender: UIButton) {
         self.performSegueWithIdentifier("TimeSegue", sender: self)
     }
+    
+    //随行人员选择
+
+    @IBAction func peopleCheck(sender: UIButton) {
+        
+        let selectVC:selectContactViewController = selectContactViewController()
+        selectVC.delegate = self
+        self.navigationController?.pushViewController(selectVC, animated: true)
+    }
+    
+    
     //保存事件
     @IBAction func saveAction(sender: UIBarButtonItem) {
         destinationText.resignFirstResponder()
-        peopleText.resignFirstResponder()
         phoneText.resignFirstResponder()
         moneyText.resignFirstResponder()
         friendText.resignFirstResponder()
@@ -122,8 +131,17 @@ class KQChaiTableViewController: UITableViewController, HttpProtocol, UITextFiel
             let end = endButton.titleLabel!.text!
             var area = areaButton.titleLabel!.text!
             let feiyong = moneyText!.text!
-            let idssuixingrens = friendText!.text!
-            let lianxiren = peopleText!.text!
+            //随行人员ID
+            var idssuixingrens = follows[0].id
+            for i in 1..<follows.count {
+                idssuixingrens += "," + follows[i].id
+            }
+            var suixingrens = follows[0].name
+            for i in 1..<follows.count {
+                suixingrens += "," + follows[i].name
+            }
+            
+            let lianxiren = friendText!.text!
             let phone = phoneText!.text!
             
             let address = destinationText!.text!
@@ -131,9 +149,8 @@ class KQChaiTableViewController: UITableViewController, HttpProtocol, UITextFiel
             if area == "所在地区" {
                 area = ""
             }
-          
             //        print(liuChengId)
-            let bodStr = "F_ID=\(liuChengId)&KQ_XiangMu=\(projectID)&address=\(address)&area=\(area)&endtime=\(end)&feiyong=\(feiyong)&idssuixingrens=\(idssuixingrens)&info=\(other)&leixing=cc&lianxiren=\(lianxiren)&pendtime=\(end)&phone=\(phone)&pstarttime=\(beigin)&reason=\(reasonText!.text!)&starttime=\(beigin)&ssuixingrens=\(idssuixingrens)"
+            let bodStr = "F_ID=\(liuChengId)&KQ_XiangMu=\(projectID)&address=\(address)&area=\(area)&endtime=\(end)&feiyong=\(feiyong)&idssuixingrens=\(idssuixingrens)&info=\(other)&leixing=cc&lianxiren=\(lianxiren)&pendtime=\(end)&phone=\(phone)&pstarttime=\(beigin)&reason=\(reasonText!.text!)&starttime=\(beigin)&ssuixingrens=\(suixingrens)"
             if request1 == false {
                 request1 = true
                 do {
@@ -145,34 +162,23 @@ class KQChaiTableViewController: UITableViewController, HttpProtocol, UITextFiel
                 
             }
         }
-
-        
-        
-//        
-//        let bodStr = "F_ID=\(liuChengId)&endtime=\(endButton.titleLabel?.text)&info=&leixing=qj&pendtime=\(endButton.titleLabel?.text)&pstarttime=\(beginButton.titleLabel?.text)&qjtype=\(typeButton.titleLabel?.text)&reason=\(reasonText.text)&starttime=\(beginButton.titleLabel?.text)"
-//        
-//        self.httpRequest.Post2(GetService + "/KaoQinMask/JSendShenHe", str: bodStr)
-        
-        
-        
-        
     }
     
     var area = ["01历下区","01市中区","01天桥区","01高新区","01槐荫区","01历城区","02出差"]
     var httpRequest: HttpRequest!
-    var flowArray = Array<FlowData>()
+    var flowArray = [FlowData]()
     //项目数组
-    var projectArray = Array<ProjectData>()
-
+    var projectArray = [ProjectData]()
     var liuChengId = ""
     var projectID = ""
     var request1 = false
+    //随行人员数组
+    var follows = [ChaiUser]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         destinationText.delegate = self
-        peopleText.delegate = self
         phoneText.delegate = self
         moneyText.delegate = self
         friendText.delegate = self
@@ -188,19 +194,11 @@ class KQChaiTableViewController: UITableViewController, HttpProtocol, UITextFiel
         //项目请求
         httpRequest.Get(GetService + "/Mobile/Mobile/JMGetXiangMu", parameters: [:])
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
-    
 
-    
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
         destinationText.resignFirstResponder()
-        peopleText.resignFirstResponder()
         phoneText.resignFirstResponder()
         moneyText.resignFirstResponder()
         friendText.resignFirstResponder()
@@ -224,8 +222,61 @@ class KQChaiTableViewController: UITableViewController, HttpProtocol, UITextFiel
         // Dispose of any resources that can be recreated.
     }
     
-    func didResponse(result: NSDictionary) {
+    
+    func getSelectData(array: NSMutableArray) {
+        print(array)
+        for val in array {
+            follows.append(ChaiUser(id: val["U_ID"] as! String, name: val["U_Name"] as! String))
+        }
+        var name = ""
+        for val in follows {
+            name += val.name + " "
+        }
+        
+        peopleName.setTitle(name, forState: UIControlState.Normal)
+        
+    }
+    
+    
+    
 
+}
+
+private typealias Segues = KQChaiTableViewController
+
+extension Segues {
+    
+    @IBAction func unwindAskForChai(segue: UIStoryboardSegue) {
+        
+    }
+    @IBAction func unwindAskForChaiDone(segue: UIStoryboardSegue) {
+        
+    }
+
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "TimeSegue" {
+            if beginButton.titleLabel?.text != "开始试时间" {
+                let dateFormatter = NSDateFormatter()
+                dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+                if let vc = segue.destinationViewController as? KQChaiTimeViewController {
+                    
+                    vc.begin = dateFormatter.dateFromString(beginButton.titleLabel!.text!)
+                    vc.end = dateFormatter.dateFromString(endButton.titleLabel!.text!)
+                }
+                
+            }
+        }
+    }
+    
+}
+
+private typealias Https = KQChaiTableViewController
+
+extension Https: HttpProtocol {
+    
+    func didResponse(result: NSDictionary) {
+        
         
         if let data = result["rows"] {
             let json = JSON(data)
@@ -239,12 +290,12 @@ class KQChaiTableViewController: UITableViewController, HttpProtocol, UITextFiel
                 
             }
             //            print(flowArray[0].nodes)
-
+            
         }
         
         if let data = result["dt"] {
             let json = JSON(data)
-//            print(json)
+            //            print(json)
             for val in json {
                 let project = ProjectData()
                 project.id = val.1["projectID"].string!
@@ -270,39 +321,33 @@ class KQChaiTableViewController: UITableViewController, HttpProtocol, UITextFiel
                 }
             }
         }
-
-    }
-    
-    
-    @IBAction func unwindAskForChai(segue: UIStoryboardSegue) {
         
     }
-    @IBAction func unwindAskForChaiDone(segue: UIStoryboardSegue) {
-        
-    }
-
     
-    // MARK:TextField代理
+}
+
+private typealias TextFieldDelegate = KQChaiTableViewController
+
+extension TextFieldDelegate: UITextFieldDelegate {
+
     // 点击return会隐藏键盘
     func textFieldShouldReturn(textField: UITextField) -> Bool {
-
+        
         destinationText.resignFirstResponder()
-        peopleText.resignFirstResponder()
         phoneText.resignFirstResponder()
         moneyText.resignFirstResponder()
         friendText.resignFirstResponder()
         reasonText.resignFirstResponder()
         otherText.resignFirstResponder()
         
-        
         return true
     }
     
     //点击空白处会隐藏键盘
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-
+        
         destinationText.resignFirstResponder()
-        peopleText.resignFirstResponder()
+        //        peopleText.resignFirstResponder()
         phoneText.resignFirstResponder()
         moneyText.resignFirstResponder()
         friendText.resignFirstResponder()
@@ -323,89 +368,16 @@ class KQChaiTableViewController: UITableViewController, HttpProtocol, UITextFiel
             return false
             
         } else {
-//            for character in string.characters {
-//                switch character {
-//                case "0","1","2","3","4","5","6","7","8","9":
-//                    continue
-//                default:
-//                    return false
-//                }
-//            }
+            //            for character in string.characters {
+            //                switch character {
+            //                case "0","1","2","3","4","5","6","7","8","9":
+            //                    continue
+            //                default:
+            //                    return false
+            //                }
+            //            }
             return true
             
         }
     }
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "TimeSegue" {
-            if beginButton.titleLabel?.text != "开始试时间" {
-                let dateFormatter = NSDateFormatter()
-                dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-                if let vc = segue.destinationViewController as? KQChaiTimeViewController {
-                    
-                    vc.begin = dateFormatter.dateFromString(beginButton.titleLabel!.text!)
-                    vc.end = dateFormatter.dateFromString(endButton.titleLabel!.text!)
-                }
-                
-            }
-        }
-    }
-    
-
-
-    /*
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
-
-        // Configure the cell...
-
-        return cell
-    }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

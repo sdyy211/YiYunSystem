@@ -13,7 +13,7 @@ import UIKit
 
 class selectContactViewController: UITableViewController,HttpProtocol{
     
-    var  url = "/MyInfo/JContacts"
+    var  url = "/Mobile/Mobile/JContacts"
     var itemArray:NSMutableArray = NSMutableArray()
     var titleArray:NSArray = NSArray()
     var selectFlagArray = NSMutableArray()
@@ -99,7 +99,7 @@ class selectContactViewController: UITableViewController,HttpProtocol{
     }
     func didResponse(result: NSDictionary) {
         print("\(result)")
-        itemArray =  (result.objectForKey("rows") as? NSMutableArray)!
+        itemArray =  (result.objectForKey("dt") as? NSMutableArray)!
         if(itemArray.count > 0)
         {
             dataDic = addressMethod.sharedInstance.dealAddressData(itemArray, str:"")
