@@ -289,7 +289,7 @@
         <!--时间选择-->
         <scene sceneID="h4k-UH-vGN">
             <objects>
-                <viewController id="rLg-9h-HpG" customClass="KQTiaoTimeViewController" customModule="YinYunSystem" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="rLg-9h-HpG" customClass="KQTiaoTimeViewController" customModule="YinYunSystem" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="vlc-1S-SJT"/>
                         <viewControllerLayoutGuide type="bottom" id="fSX-nv-TOh"/>

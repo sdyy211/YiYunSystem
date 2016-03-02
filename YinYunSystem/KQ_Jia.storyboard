@@ -309,7 +309,7 @@
         <!--时间选择-->
         <scene sceneID="OxX-it-kHo">
             <objects>
-                <viewController id="l6A-QU-6VP" customClass="KQJiaTimeViewController" customModule="YinYunSystem" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="l6A-QU-6VP" customClass="KQJiaTimeViewController" customModule="YinYunSystem" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y7g-b1-nRA"/>
                         <viewControllerLayoutGuide type="bottom" id="efS-Xr-916"/>

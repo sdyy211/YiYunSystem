@@ -348,7 +348,7 @@
         <!--时间选择-->
         <scene sceneID="DGF-DL-zDk">
             <objects>
-                <viewController id="uf1-BV-sr0" customClass="KQJBTimeViewController" customModule="YinYunSystem" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="uf1-BV-sr0" customClass="KQJBTimeViewController" customModule="YinYunSystem" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="s8V-b9-uKW"/>
                         <viewControllerLayoutGuide type="bottom" id="jMx-5u-bj2"/>

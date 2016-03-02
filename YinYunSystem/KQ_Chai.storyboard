@@ -270,7 +270,7 @@
         <!--出差目的地查看-->
         <scene sceneID="win-IQ-sDy">
             <objects>
-                <viewController id="jRh-5e-169" customClass="KQChaiMapCheckViewController" customModule="YinYunSystem" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="jRh-5e-169" customClass="KQChaiMapCheckViewController" customModule="YinYunSystem" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="VsD-Lw-CCM"/>
                         <viewControllerLayoutGuide type="bottom" id="SKa-bZ-wwa"/>
@@ -298,7 +298,7 @@
         <!--新建出差申请-->
         <scene sceneID="F0f-tQ-ntu">
             <objects>
-                <tableViewController id="rvM-e6-qOi" customClass="KQChaiTableViewController" customModule="YinYunSystem" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController hidesBottomBarWhenPushed="YES" id="rvM-e6-qOi" customClass="KQChaiTableViewController" customModule="YinYunSystem" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="AVs-aE-xd8">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -936,7 +936,7 @@
         <!--时间选择-->
         <scene sceneID="ZNG-E7-hzL">
             <objects>
-                <viewController id="S1r-2v-odj" customClass="KQChaiTimeViewController" customModule="YinYunSystem" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="S1r-2v-odj" customClass="KQChaiTimeViewController" customModule="YinYunSystem" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="vu1-3q-Bnt"/>
                         <viewControllerLayoutGuide type="bottom" id="prE-ET-0Qc"/>
@@ -1014,7 +1014,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RLI-3z-3YH" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Qfa-97-HWe" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="6566" y="359"/>
+            <point key="canvasLocation" x="6633" y="359"/>
         </scene>
     </scenes>
     <resources>
