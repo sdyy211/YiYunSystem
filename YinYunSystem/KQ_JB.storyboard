@@ -12,7 +12,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="40" sectionFooterHeight="28" id="kkG-78-PGO">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.94787708969999995" green="0.9636445669" blue="0.9689280965" alpha="1" colorSpace="calibratedRGB"/>
                         <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
                         <sections>
                             <tableViewSection id="iPe-01-iVl">
@@ -23,7 +23,9 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="K02-0v-VzV" id="IK3-P1-cLS">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="25"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" red="0.94787708969999995" green="0.9636445669" blue="0.9689280965" alpha="1" colorSpace="calibratedRGB"/>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.94787708969999995" green="0.9636445669" blue="0.9689280965" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell1" id="1rU-39-zWk">
                                         <rect key="frame" x="0.0" y="89" width="600" height="44"/>
@@ -61,6 +63,7 @@
                                                 <constraint firstAttribute="bottom" secondItem="xRz-Hc-rg5" secondAttribute="bottom" constant="5" id="lVi-n5-WTD"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.94787708969999995" green="0.9636445669" blue="0.9689280965" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell2" id="WYp-cX-6Jz">
                                         <rect key="frame" x="0.0" y="133" width="600" height="44"/>
@@ -98,6 +101,7 @@
                                                 <constraint firstItem="Gsg-W8-pHi" firstAttribute="leading" secondItem="Kb6-q3-1wn" secondAttribute="leading" constant="15" id="zmK-rd-Hd1"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.94787708969999995" green="0.9636445669" blue="0.9689280965" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell3" id="63O-0T-jLQ">
                                         <rect key="frame" x="0.0" y="177" width="600" height="44"/>
@@ -135,6 +139,7 @@
                                                 <constraint firstAttribute="bottom" secondItem="Ubt-3P-fPy" secondAttribute="bottom" constant="5" id="sTa-2y-HXy"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.94787708969999995" green="0.9636445669" blue="0.9689280965" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell4" id="pEw-E8-B97">
                                         <rect key="frame" x="0.0" y="221" width="600" height="44"/>
@@ -172,6 +177,7 @@
                                                 <constraint firstItem="naB-Db-tDj" firstAttribute="top" secondItem="z72-wd-9xK" secondAttribute="top" id="tuF-PR-tKh"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.94787708969999995" green="0.9636445669" blue="0.9689280965" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell5" id="7AX-8u-Xty">
                                         <rect key="frame" x="0.0" y="265" width="600" height="44"/>
@@ -209,6 +215,7 @@
                                                 <constraint firstItem="Xa3-u3-e9V" firstAttribute="leading" secondItem="u8U-3V-DYR" secondAttribute="leading" constant="15" id="RZH-de-f9q"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.94787708969999995" green="0.9636445669" blue="0.9689280965" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell6" rowHeight="70" id="mRO-5C-95Q">
                                         <rect key="frame" x="0.0" y="309" width="600" height="70"/>
@@ -244,6 +251,7 @@
                                                 <constraint firstAttribute="trailing" secondItem="WoG-xe-DAg" secondAttribute="trailing" constant="15" id="rZY-wG-WpY"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.94787708969999995" green="0.9636445669" blue="0.9689280965" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell7" rowHeight="70" id="hfS-G8-m5E">
                                         <rect key="frame" x="0.0" y="379" width="600" height="70"/>
@@ -279,6 +287,7 @@
                                                 <constraint firstAttribute="trailing" secondItem="mfJ-ug-vcK" secondAttribute="trailing" constant="15" id="yPx-8r-ene"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.94787708969999995" green="0.9636445669" blue="0.9689280965" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -339,7 +348,7 @@
         <!--时间选择-->
         <scene sceneID="DGF-DL-zDk">
             <objects>
-                <viewController id="uf1-BV-sr0" customClass="KQJBTimeViewController" customModule="YinYunSystem" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="uf1-BV-sr0" customClass="KQJBTimeViewController" customModule="YinYunSystem" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="s8V-b9-uKW"/>
                         <viewControllerLayoutGuide type="bottom" id="jMx-5u-bj2"/>
@@ -381,7 +390,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.94787708969999995" green="0.9636445669" blue="0.9689280965" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="BQx-u4-PQb" firstAttribute="top" secondItem="rXJ-12-t6y" secondAttribute="bottom" constant="10" id="0sO-qV-h5A"/>
                             <constraint firstAttribute="trailing" secondItem="BQx-u4-PQb" secondAttribute="trailing" id="Pbm-P5-32A"/>

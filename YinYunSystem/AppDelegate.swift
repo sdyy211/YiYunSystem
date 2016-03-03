@@ -19,7 +19,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, BMKGeneralDelegate {
         UIApplication.sharedApplication().statusBarStyle = .LightContent
 //        UITabBar.appearance().backgroundColor = UIColor(red: 0.0/255.0, green:
 //            122.0/255.0, blue: 204.0/255.0, alpha: 1.0)
-        
         UINavigationBar.appearance().barTintColor = UIColor(red: 0.0/255.0, green:
             122.0/255.0, blue: 204.0/255.0, alpha: 1.0)
         UINavigationBar.appearance().tintColor = UIColor.whiteColor()
