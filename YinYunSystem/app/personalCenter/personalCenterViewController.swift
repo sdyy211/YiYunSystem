@@ -21,6 +21,7 @@ class personalCenterViewController: UIViewController,UITableViewDelegate,UITable
     var rightItem = UIButton()
     var request = HttpRequest()
     var itemDic = NSDictionary()
+    var color = UIColor(colorLiteralRed: 113.0/255.0, green: 123.0/255.0, blue: 128.0/255.0, alpha: 1)
     override func viewDidLoad() {
         super.viewDidLoad()
         titleArray = NSArray(objects: "个人信息")
@@ -28,11 +29,12 @@ class personalCenterViewController: UIViewController,UITableViewDelegate,UITable
         tv.dataSource = self;
         self.automaticallyAdjustsScrollViewInsets = false
         addRightItem()
-        loadDataMethod()
+        
     }
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
         self.tabBarController?.tabBar.hidden = false
+        loadDataMethod()
     }
     func addRightItem()
     {
@@ -61,12 +63,14 @@ class personalCenterViewController: UIViewController,UITableViewDelegate,UITable
     //MARK: 加载数据的方法
     func loadDataMethod()
     {
+        loadingAnimationMethod.sharedInstance.startAnimation()
         let bodyStr = NSString(format: "page=1&rows=100000")
         let str = "\(((UIApplication.sharedApplication().delegate) as! AppDelegate).getService())\(url)"
         request.delegate = self
         request.Post(str, str: bodyStr as String)
     }
     func didResponse(result: NSDictionary) {
+        loadingAnimationMethod.sharedInstance.endAnimation()
         let arryIt =  (result.objectForKey("dt") as? NSMutableArray)!
         let userName = ((UIApplication.sharedApplication().delegate) as! AppDelegate).getUserName()
         for(var i = 0;i < arryIt.count;++i)
@@ -76,9 +80,9 @@ class personalCenterViewController: UIViewController,UITableViewDelegate,UITable
             if(userName == str)
             {
                 itemArry.addObject(arryDic)
-                tv.reloadData()
             }
         }
+        tv.reloadData()
     }
     func updateData() {
         rightItem.selected = false
@@ -91,8 +95,9 @@ class personalCenterViewController: UIViewController,UITableViewDelegate,UITable
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return  1
     }
+    
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return CGRectGetHeight(UIScreen.mainScreen().bounds)
+        return CGRectGetHeight(UIScreen.mainScreen().bounds)-130
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {

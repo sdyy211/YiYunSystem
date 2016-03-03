@@ -135,12 +135,12 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "YinYunSystem/app/workPlatform/workPlat/workPlatformVController.swift"
-            timestampString = "478074593.998344"
+            filePath = "YinYunSystem/app/personalCenter/personalCenterViewController.swift"
+            timestampString = "478686210.385844"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
+            startingLineNumber = "80"
+            endingLineNumber = "80"
             landmarkName = "didResponse(_:)"
             landmarkType = "5">
          </BreakpointContent>
