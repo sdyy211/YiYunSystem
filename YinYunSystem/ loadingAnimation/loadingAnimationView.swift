@@ -16,7 +16,7 @@ class loadingAnimationView: UIView {
     var flag = 1
     var imageWith:CGFloat = 60
     var imageHeight:CGFloat = 60
-    var loadViewHeight:CGFloat = 150
+    var loadViewHeight:CGFloat = 150 - 20
     var loadViewWith:CGFloat = 110
     var loadView = UIView()
     required init?(coder aDecoder: NSCoder) {
@@ -47,10 +47,10 @@ class loadingAnimationView: UIView {
         
         loadView.addSubview(lab)
         
-        activityView = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.WhiteLarge)
-        activityView.frame = CGRectMake((CGRectGetWidth(loadView.frame) - 20)/2, CGRectGetMaxY(lab.frame)+15, 20, 20)
-        
-        loadView.addSubview(activityView)
+//        activityView = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.WhiteLarge)
+//        activityView.frame = CGRectMake((CGRectGetWidth(loadView.frame) - 20)/2, CGRectGetMaxY(lab.frame)+15, 20, 20)
+//        
+//        loadView.addSubview(activityView)
         
     }
     
@@ -70,7 +70,7 @@ class loadingAnimationView: UIView {
                 flag = 1
             }
         }
-        activityView.startAnimating()
+//        activityView.startAnimating()
     }
     func startAnimation()
     {        
@@ -80,7 +80,7 @@ class loadingAnimationView: UIView {
     func endAnimation()
     {
         timer.invalidate()
-        activityView.stopAnimating()
+//        activityView.stopAnimating()
     }
 
 }
