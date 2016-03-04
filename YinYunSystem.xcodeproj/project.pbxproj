@@ -159,6 +159,9 @@
 		98F8B1F81C8932FF00249AAB /* stampUse.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98F8B1F61C8932FF00249AAB /* stampUse.storyboard */; };
 		98F8B1FA1C89396300249AAB /* BX.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98F8B1F91C89396300249AAB /* BX.storyboard */; };
 		98F8B1FD1C893C4800249AAB /* BXViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F8B1FC1C893C4800249AAB /* BXViewController.swift */; };
+		98F8B1FF1C895A9A00249AAB /* BXTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F8B1FE1C895A9A00249AAB /* BXTableViewCell.swift */; };
+		98F8B2021C898B7300249AAB /* YZViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F8B2011C898B7300249AAB /* YZViewController.swift */; };
+		98F8B2041C898B8600249AAB /* YZTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F8B2031C898B8600249AAB /* YZTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -319,6 +322,9 @@
 		98F8B1F71C8932FF00249AAB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/stampUse.storyboard; sourceTree = "<group>"; };
 		98F8B1F91C89396300249AAB /* BX.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = BX.storyboard; sourceTree = "<group>"; };
 		98F8B1FC1C893C4800249AAB /* BXViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BXViewController.swift; sourceTree = "<group>"; };
+		98F8B1FE1C895A9A00249AAB /* BXTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BXTableViewCell.swift; sourceTree = "<group>"; };
+		98F8B2011C898B7300249AAB /* YZViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YZViewController.swift; sourceTree = "<group>"; };
+		98F8B2031C898B8600249AAB /* YZTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YZTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -576,6 +582,7 @@
 				9846BB2F1C474E3300E7DF6A /* HYS */,
 				98650FCC1C48D9D100DAA323 /* KQ */,
 				98F8B1FB1C893BFC00249AAB /* BX */,
+				98F8B2001C898B1E00249AAB /* YZ */,
 			);
 			path = workPlatform;
 			sourceTree = "<group>";
@@ -802,8 +809,18 @@
 			isa = PBXGroup;
 			children = (
 				98F8B1FC1C893C4800249AAB /* BXViewController.swift */,
+				98F8B1FE1C895A9A00249AAB /* BXTableViewCell.swift */,
 			);
 			name = BX;
+			sourceTree = "<group>";
+		};
+		98F8B2001C898B1E00249AAB /* YZ */ = {
+			isa = PBXGroup;
+			children = (
+				98F8B2011C898B7300249AAB /* YZViewController.swift */,
+				98F8B2031C898B8600249AAB /* YZTableViewCell.swift */,
+			);
+			name = YZ;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -921,6 +938,7 @@
 				04FB3D2D1C60517C00AE0787 /* MultipartFormData.swift in Sources */,
 				04FB3D331C60517C00AE0787 /* ServerTrustPolicy.swift in Sources */,
 				981C2DF51C4CCA4000515E60 /* KQCalenderOfMonthTableViewCell.swift in Sources */,
+				98F8B2021C898B7300249AAB /* YZViewController.swift in Sources */,
 				98A693E81C774E1E00B85BD9 /* KQChaiMapCheckViewController.swift in Sources */,
 				04FB3D371C60517C00AE0787 /* HttpRequest.swift in Sources */,
 				9846BB291C47465A00E7DF6A /* CheckHYSViewController.swift in Sources */,
@@ -931,6 +949,7 @@
 				044A89E71C89167900AD5394 /* auditHasbeenViewCell.swift in Sources */,
 				9855BCD01C58A123005788BE /* KQChaiViewController.swift in Sources */,
 				983194871C620C5C00900C0F /* KQJBTimeViewController.swift in Sources */,
+				98F8B2041C898B8600249AAB /* YZTableViewCell.swift in Sources */,
 				984A83BF1C76E886001A3D3A /* KQTableViewCell.swift in Sources */,
 				988227851C609EC80040DB2C /* KQData.swift in Sources */,
 				983194891C620FE100900C0F /* KQTiaoTableViewController.swift in Sources */,
@@ -979,6 +998,7 @@
 				98650FCB1C48827B00DAA323 /* HYSApplicationViewController.swift in Sources */,
 				044A89E41C89167900AD5394 /* AuditHasbeenCell.swift in Sources */,
 				9822E5261C7327430024E8A0 /* KQBL.swift in Sources */,
+				98F8B1FF1C895A9A00249AAB /* BXTableViewCell.swift in Sources */,
 				0496A61B1C78337D002B0947 /* myselfMeetingRoomCell.swift in Sources */,
 				044A89EC1C89167900AD5394 /* AuditDetileView.swift in Sources */,
 				98F8B1F51C892E9900249AAB /* workPlatformVController.swift in Sources */,

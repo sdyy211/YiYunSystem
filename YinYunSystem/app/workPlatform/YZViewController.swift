@@ -1,5 +1,5 @@
 //
-//  BXViewController.swift
+//  YZViewController.swift
 //  YinYunSystem
 //
 //  Created by 魏辉 on 16/3/4.
@@ -8,30 +8,30 @@
 
 import UIKit
 
-class BXViewController: UIViewController {
+class YZViewController: UIViewController {
     @IBOutlet weak var listTableView: UITableView!
     
-    var workArray = ["我要报销","我的报销列表","我的报销配置"]
-
+    var workArray = ["我要申请","我的申请列表"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         listTableView.delegate = self
         listTableView.dataSource = self
         listTableView.tableFooterView = UIView(frame: CGRectZero)
         // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func unwindToBX(segue: UIStoryboardSegue){
+    @IBAction func unwindToYZ(segue: UIStoryboardSegue){
         
     }
 }
-private typealias TableViewDataSource = BXViewController
+private typealias TableViewDataSource = YZViewController
 
 extension TableViewDataSource: UITableViewDataSource {
     
@@ -47,7 +47,7 @@ extension TableViewDataSource: UITableViewDataSource {
     }
 }
 
-private typealias TableViewDelegate = BXViewController
+private typealias TableViewDelegate = YZViewController
 
 extension TableViewDelegate: UITableViewDelegate {
     
@@ -60,9 +60,6 @@ extension TableViewDelegate: UITableViewDelegate {
         case 1:
             self.listTableView.deselectRowAtIndexPath(indexPath, animated: true)
             self.performSegueWithIdentifier("BXListSegue", sender: self)
-        case 2:
-            self.listTableView.deselectRowAtIndexPath(indexPath, animated: true)
-            self.performSegueWithIdentifier("BXPZSegue", sender: self)
         default:
             break
         }
@@ -71,10 +68,10 @@ extension TableViewDelegate: UITableViewDelegate {
     
 }
 
-private typealias Segues = BXViewController
+private typealias Segues = YZViewController
 
 extension Segues {
-
+    
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "RLSegue" {
