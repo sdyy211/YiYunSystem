@@ -20,8 +20,8 @@ class AuditViewController: UIViewController,UICollectionViewDelegate,UICollectio
         self.title = "审核列表"
         self.tabBarController?.tabBar.hidden = true
         
-        itemArry  = ["考勤"]
-        imageArry  = ["p1"]
+        itemArry  = ["考勤","报销","盖章"]
+        imageArry  = ["p1","p3","p4"]
         itemWith = (CGRectGetWidth(UIScreen.mainScreen().bounds)-10-15)/4
         
         let layout = UICollectionViewFlowLayout()
@@ -79,11 +79,16 @@ class AuditViewController: UIViewController,UICollectionViewDelegate,UICollectio
     {
         if(index == 0)
         {
+            //考勤审核
             titleStr = (itemArry[index] as? String)!
             self.performSegueWithIdentifier("push1", sender: self)
         }else if(index == 1)
         {
+            //报销
             
+        }else if(index == 2)
+        {
+            //盖章
         }
     }
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?){

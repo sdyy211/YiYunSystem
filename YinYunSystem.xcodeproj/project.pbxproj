@@ -11,20 +11,20 @@
 		0417F5611C472A0D008CCF59 /* addressBook.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0417F55F1C472A0D008CCF59 /* addressBook.storyboard */; };
 		0417F5671C472A68008CCF59 /* presonCenter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0417F5651C472A68008CCF59 /* presonCenter.storyboard */; };
 		0417F56D1C472F01008CCF59 /* tabbarController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0417F56B1C472F01008CCF59 /* tabbarController.storyboard */; };
-		044196AC1C794A5D00B8E1BE /* AuditPendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044196A51C794A5D00B8E1BE /* AuditPendViewController.swift */; };
-		044196AD1C794A5D00B8E1BE /* AuditDetileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044196A71C794A5D00B8E1BE /* AuditDetileTableViewCell.swift */; };
-		044196AE1C794A5D00B8E1BE /* AuditDetileTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 044196A81C794A5D00B8E1BE /* AuditDetileTableViewCell.xib */; };
-		044196AF1C794A5D00B8E1BE /* AuditDetileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044196A91C794A5D00B8E1BE /* AuditDetileView.swift */; };
-		044196B01C794A5D00B8E1BE /* AuditTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044196AA1C794A5D00B8E1BE /* AuditTableViewCell.swift */; };
-		044196B11C794A5D00B8E1BE /* AuditTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 044196AB1C794A5D00B8E1BE /* AuditTableViewCell.xib */; };
 		044196B31C794A9200B8E1BE /* AuditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044196B21C794A9200B8E1BE /* AuditViewController.swift */; };
-		0451C2051C7C30D700A1EF1B /* AuditPendingOrHasbeenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0451C2041C7C30D700A1EF1B /* AuditPendingOrHasbeenViewController.swift */; };
-		0451C2081C7C383500A1EF1B /* AuditHasbeenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0451C2071C7C383500A1EF1B /* AuditHasbeenViewController.swift */; };
-		0451C20C1C7C3AB100A1EF1B /* auditHasbeenViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0451C20A1C7C3AB100A1EF1B /* auditHasbeenViewCell.swift */; };
-		0451C20D1C7C3AB100A1EF1B /* auditHasbeenViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0451C20B1C7C3AB100A1EF1B /* auditHasbeenViewCell.xib */; };
-		0451C20F1C7C526200A1EF1B /* AuditHasbeenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0451C20E1C7C526200A1EF1B /* AuditHasbeenView.swift */; };
-		0451C2121C7C547700A1EF1B /* AuditHasbeenCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0451C2101C7C547700A1EF1B /* AuditHasbeenCell.swift */; };
-		0451C2131C7C547700A1EF1B /* AuditHasbeenCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0451C2111C7C547700A1EF1B /* AuditHasbeenCell.xib */; };
+		044A89E31C89167900AD5394 /* AuditHasbeenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044A89D31C89167900AD5394 /* AuditHasbeenViewController.swift */; };
+		044A89E41C89167900AD5394 /* AuditHasbeenCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044A89D51C89167900AD5394 /* AuditHasbeenCell.swift */; };
+		044A89E51C89167900AD5394 /* AuditHasbeenCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 044A89D61C89167900AD5394 /* AuditHasbeenCell.xib */; };
+		044A89E61C89167900AD5394 /* AuditHasbeenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044A89D71C89167900AD5394 /* AuditHasbeenView.swift */; };
+		044A89E71C89167900AD5394 /* auditHasbeenViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044A89D81C89167900AD5394 /* auditHasbeenViewCell.swift */; };
+		044A89E81C89167900AD5394 /* auditHasbeenViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 044A89D91C89167900AD5394 /* auditHasbeenViewCell.xib */; };
+		044A89E91C89167900AD5394 /* AuditPendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044A89DB1C89167900AD5394 /* AuditPendViewController.swift */; };
+		044A89EA1C89167900AD5394 /* AuditDetileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044A89DD1C89167900AD5394 /* AuditDetileTableViewCell.swift */; };
+		044A89EB1C89167900AD5394 /* AuditDetileTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 044A89DE1C89167900AD5394 /* AuditDetileTableViewCell.xib */; };
+		044A89EC1C89167900AD5394 /* AuditDetileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044A89DF1C89167900AD5394 /* AuditDetileView.swift */; };
+		044A89ED1C89167900AD5394 /* AuditTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044A89E01C89167900AD5394 /* AuditTableViewCell.swift */; };
+		044A89EE1C89167900AD5394 /* AuditTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 044A89E11C89167900AD5394 /* AuditTableViewCell.xib */; };
+		044A89EF1C89167900AD5394 /* AuditPendingOrHasbeenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044A89E21C89167900AD5394 /* AuditPendingOrHasbeenViewController.swift */; };
 		046464DE1C76A2EE004841FF /* OAsySytemService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046464DD1C76A2EE004841FF /* OAsySytemService.swift */; };
 		048BEE5F1C79606B006C660A /* workCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048BEE5B1C79606B006C660A /* workCollectionCell.swift */; };
 		048BEE601C79606B006C660A /* workCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 048BEE5C1C79606B006C660A /* workCollectionCell.xib */; };
@@ -160,20 +160,20 @@
 		0417F5601C472A0D008CCF59 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/addressBook.storyboard; sourceTree = "<group>"; };
 		0417F5661C472A68008CCF59 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/presonCenter.storyboard; sourceTree = "<group>"; };
 		0417F56C1C472F01008CCF59 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/tabbarController.storyboard; sourceTree = "<group>"; };
-		044196A51C794A5D00B8E1BE /* AuditPendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuditPendViewController.swift; sourceTree = "<group>"; };
-		044196A71C794A5D00B8E1BE /* AuditDetileTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuditDetileTableViewCell.swift; sourceTree = "<group>"; };
-		044196A81C794A5D00B8E1BE /* AuditDetileTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AuditDetileTableViewCell.xib; sourceTree = "<group>"; };
-		044196A91C794A5D00B8E1BE /* AuditDetileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuditDetileView.swift; sourceTree = "<group>"; };
-		044196AA1C794A5D00B8E1BE /* AuditTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuditTableViewCell.swift; sourceTree = "<group>"; };
-		044196AB1C794A5D00B8E1BE /* AuditTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AuditTableViewCell.xib; sourceTree = "<group>"; };
 		044196B21C794A9200B8E1BE /* AuditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuditViewController.swift; sourceTree = "<group>"; };
-		0451C2041C7C30D700A1EF1B /* AuditPendingOrHasbeenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuditPendingOrHasbeenViewController.swift; sourceTree = "<group>"; };
-		0451C2071C7C383500A1EF1B /* AuditHasbeenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuditHasbeenViewController.swift; sourceTree = "<group>"; };
-		0451C20A1C7C3AB100A1EF1B /* auditHasbeenViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = auditHasbeenViewCell.swift; sourceTree = "<group>"; };
-		0451C20B1C7C3AB100A1EF1B /* auditHasbeenViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = auditHasbeenViewCell.xib; sourceTree = "<group>"; };
-		0451C20E1C7C526200A1EF1B /* AuditHasbeenView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuditHasbeenView.swift; sourceTree = "<group>"; };
-		0451C2101C7C547700A1EF1B /* AuditHasbeenCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuditHasbeenCell.swift; sourceTree = "<group>"; };
-		0451C2111C7C547700A1EF1B /* AuditHasbeenCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AuditHasbeenCell.xib; sourceTree = "<group>"; };
+		044A89D31C89167900AD5394 /* AuditHasbeenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuditHasbeenViewController.swift; sourceTree = "<group>"; };
+		044A89D51C89167900AD5394 /* AuditHasbeenCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuditHasbeenCell.swift; sourceTree = "<group>"; };
+		044A89D61C89167900AD5394 /* AuditHasbeenCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AuditHasbeenCell.xib; sourceTree = "<group>"; };
+		044A89D71C89167900AD5394 /* AuditHasbeenView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuditHasbeenView.swift; sourceTree = "<group>"; };
+		044A89D81C89167900AD5394 /* auditHasbeenViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = auditHasbeenViewCell.swift; sourceTree = "<group>"; };
+		044A89D91C89167900AD5394 /* auditHasbeenViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = auditHasbeenViewCell.xib; sourceTree = "<group>"; };
+		044A89DB1C89167900AD5394 /* AuditPendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuditPendViewController.swift; sourceTree = "<group>"; };
+		044A89DD1C89167900AD5394 /* AuditDetileTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuditDetileTableViewCell.swift; sourceTree = "<group>"; };
+		044A89DE1C89167900AD5394 /* AuditDetileTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AuditDetileTableViewCell.xib; sourceTree = "<group>"; };
+		044A89DF1C89167900AD5394 /* AuditDetileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuditDetileView.swift; sourceTree = "<group>"; };
+		044A89E01C89167900AD5394 /* AuditTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuditTableViewCell.swift; sourceTree = "<group>"; };
+		044A89E11C89167900AD5394 /* AuditTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AuditTableViewCell.xib; sourceTree = "<group>"; };
+		044A89E21C89167900AD5394 /* AuditPendingOrHasbeenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuditPendingOrHasbeenViewController.swift; sourceTree = "<group>"; };
 		046464DD1C76A2EE004841FF /* OAsySytemService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAsySytemService.swift; sourceTree = "<group>"; };
 		048BEE5B1C79606B006C660A /* workCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = workCollectionCell.swift; sourceTree = "<group>"; };
 		048BEE5C1C79606B006C660A /* workCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = workCollectionCell.xib; sourceTree = "<group>"; };
@@ -335,44 +335,54 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		044196A41C794A5D00B8E1BE /* auditPending */ = {
+		044A89D11C89167900AD5394 /* kaoqin */ = {
 			isa = PBXGroup;
 			children = (
-				044196A51C794A5D00B8E1BE /* AuditPendViewController.swift */,
-				044196A61C794A5D00B8E1BE /* class */,
+				044A89D21C89167900AD5394 /* auditHasbeen */,
+				044A89DA1C89167900AD5394 /* auditPending */,
+				044A89E21C89167900AD5394 /* AuditPendingOrHasbeenViewController.swift */,
 			);
-			path = auditPending;
+			path = kaoqin;
 			sourceTree = "<group>";
 		};
-		044196A61C794A5D00B8E1BE /* class */ = {
+		044A89D21C89167900AD5394 /* auditHasbeen */ = {
 			isa = PBXGroup;
 			children = (
-				044196A71C794A5D00B8E1BE /* AuditDetileTableViewCell.swift */,
-				044196A81C794A5D00B8E1BE /* AuditDetileTableViewCell.xib */,
-				044196A91C794A5D00B8E1BE /* AuditDetileView.swift */,
-				044196AA1C794A5D00B8E1BE /* AuditTableViewCell.swift */,
-				044196AB1C794A5D00B8E1BE /* AuditTableViewCell.xib */,
-			);
-			path = class;
-			sourceTree = "<group>";
-		};
-		0451C2061C7C381500A1EF1B /* auditHasbeen */ = {
-			isa = PBXGroup;
-			children = (
-				0451C2091C7C39B600A1EF1B /* class */,
-				0451C2071C7C383500A1EF1B /* AuditHasbeenViewController.swift */,
+				044A89D31C89167900AD5394 /* AuditHasbeenViewController.swift */,
+				044A89D41C89167900AD5394 /* class */,
 			);
 			path = auditHasbeen;
 			sourceTree = "<group>";
 		};
-		0451C2091C7C39B600A1EF1B /* class */ = {
+		044A89D41C89167900AD5394 /* class */ = {
 			isa = PBXGroup;
 			children = (
-				0451C20A1C7C3AB100A1EF1B /* auditHasbeenViewCell.swift */,
-				0451C20B1C7C3AB100A1EF1B /* auditHasbeenViewCell.xib */,
-				0451C20E1C7C526200A1EF1B /* AuditHasbeenView.swift */,
-				0451C2101C7C547700A1EF1B /* AuditHasbeenCell.swift */,
-				0451C2111C7C547700A1EF1B /* AuditHasbeenCell.xib */,
+				044A89D51C89167900AD5394 /* AuditHasbeenCell.swift */,
+				044A89D61C89167900AD5394 /* AuditHasbeenCell.xib */,
+				044A89D71C89167900AD5394 /* AuditHasbeenView.swift */,
+				044A89D81C89167900AD5394 /* auditHasbeenViewCell.swift */,
+				044A89D91C89167900AD5394 /* auditHasbeenViewCell.xib */,
+			);
+			path = class;
+			sourceTree = "<group>";
+		};
+		044A89DA1C89167900AD5394 /* auditPending */ = {
+			isa = PBXGroup;
+			children = (
+				044A89DB1C89167900AD5394 /* AuditPendViewController.swift */,
+				044A89DC1C89167900AD5394 /* class */,
+			);
+			path = auditPending;
+			sourceTree = "<group>";
+		};
+		044A89DC1C89167900AD5394 /* class */ = {
+			isa = PBXGroup;
+			children = (
+				044A89DD1C89167900AD5394 /* AuditDetileTableViewCell.swift */,
+				044A89DE1C89167900AD5394 /* AuditDetileTableViewCell.xib */,
+				044A89DF1C89167900AD5394 /* AuditDetileView.swift */,
+				044A89E01C89167900AD5394 /* AuditTableViewCell.swift */,
+				044A89E11C89167900AD5394 /* AuditTableViewCell.xib */,
 			);
 			path = class;
 			sourceTree = "<group>";
@@ -484,9 +494,7 @@
 			isa = PBXGroup;
 			children = (
 				044196B21C794A9200B8E1BE /* AuditViewController.swift */,
-				0451C2041C7C30D700A1EF1B /* AuditPendingOrHasbeenViewController.swift */,
-				044196A41C794A5D00B8E1BE /* auditPending */,
-				0451C2061C7C381500A1EF1B /* auditHasbeen */,
+				044A89D11C89167900AD5394 /* kaoqin */,
 			);
 			path = audit;
 			sourceTree = "<group>";
@@ -814,7 +822,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0451C2131C7C547700A1EF1B /* AuditHasbeenCell.xib in Resources */,
 				98650FC91C48806200DAA323 /* KQ.storyboard in Resources */,
 				0496A6161C78337D002B0947 /* collectionHeaderView.xib in Resources */,
 				980B7DEF1C58B5C50019D5A0 /* mapapi.bundle in Resources */,
@@ -822,6 +829,7 @@
 				984155A91C44A06A000B29F2 /* Assets.xcassets in Resources */,
 				9882272E1C604C5C0040DB2C /* arrays.xml in Resources */,
 				984155A71C44A06A000B29F2 /* Main.storyboard in Resources */,
+				044A89E81C89167900AD5394 /* auditHasbeenViewCell.xib in Resources */,
 				0496A6131C78337D002B0947 /* checkMeetingRoomCollectionCell.xib in Resources */,
 				9855BCCE1C589E1F005788BE /* KQ_Tiao.storyboard in Resources */,
 				981C2DF71C4CCF3F00515E60 /* KQ_Chai.storyboard in Resources */,
@@ -830,14 +838,14 @@
 				9882272F1C604C5C0040DB2C /* ConfigurationInfo.plist in Resources */,
 				048BEE651C7961C7006C660A /* workPlatfor.storyboard in Resources */,
 				0417F5671C472A68008CCF59 /* presonCenter.storyboard in Resources */,
+				044A89E51C89167900AD5394 /* AuditHasbeenCell.xib in Resources */,
 				988227301C604C5C0040DB2C /* fixedAsset.plist in Resources */,
 				04FB3D071C604F9300AE0787 /* fixedAssetsTableCell.xib in Resources */,
-				0451C20D1C7C3AB100A1EF1B /* auditHasbeenViewCell.xib in Resources */,
-				044196B11C794A5D00B8E1BE /* AuditTableViewCell.xib in Resources */,
 				98650FC31C4877D800DAA323 /* HYS.storyboard in Resources */,
 				9855BCCC1C5874EB005788BE /* KQ_JB.storyboard in Resources */,
 				0417F5611C472A0D008CCF59 /* addressBook.storyboard in Resources */,
-				044196AE1C794A5D00B8E1BE /* AuditDetileTableViewCell.xib in Resources */,
+				044A89EE1C89167900AD5394 /* AuditTableViewCell.xib in Resources */,
+				044A89EB1C89167900AD5394 /* AuditDetileTableViewCell.xib in Resources */,
 				0417F55E1C47296B008CCF59 /* message.storyboard in Resources */,
 				0496A6191C78337D002B0947 /* meetingRoomApplyCell.xib in Resources */,
 				981C2DEF1C4C7EC600515E60 /* KQ_RL.storyboard in Resources */,
@@ -871,15 +879,17 @@
 				04FB3D371C60517C00AE0787 /* HttpRequest.swift in Sources */,
 				9846BB291C47465A00E7DF6A /* CheckHYSViewController.swift in Sources */,
 				04EBF6361C7E946A00A2E717 /* loadingAnimationView.swift in Sources */,
+				044A89E61C89167900AD5394 /* AuditHasbeenView.swift in Sources */,
 				980B7E041C58BEC00019D5A0 /* test.mm in Sources */,
 				985A93111C7D57120061D9D0 /* Errors.swift in Sources */,
+				044A89E71C89167900AD5394 /* auditHasbeenViewCell.swift in Sources */,
 				9855BCD01C58A123005788BE /* KQChaiViewController.swift in Sources */,
-				0451C2121C7C547700A1EF1B /* AuditHasbeenCell.swift in Sources */,
 				983194871C620C5C00900C0F /* KQJBTimeViewController.swift in Sources */,
 				984A83BF1C76E886001A3D3A /* KQTableViewCell.swift in Sources */,
 				988227851C609EC80040DB2C /* KQData.swift in Sources */,
 				983194891C620FE100900C0F /* KQTiaoTableViewController.swift in Sources */,
 				0496A60F1C78337D002B0947 /* checkMeetingRoomApplyVController.swift in Sources */,
+				044A89E91C89167900AD5394 /* AuditPendViewController.swift in Sources */,
 				04FB3D2F1C60517C00AE0787 /* Request.swift in Sources */,
 				04FB3D291C60517C00AE0787 /* Alamofire.swift in Sources */,
 				04FB3D321C60517C00AE0787 /* Result.swift in Sources */,
@@ -887,22 +897,25 @@
 				9822E51C1C7311B40024E8A0 /* KQApplyTableViewController.swift in Sources */,
 				984D56C01C75955000FAC478 /* KQNewBLTimeViewController.swift in Sources */,
 				0496A6111C78337D002B0947 /* checkDataPickerView.swift in Sources */,
+				044A89ED1C89167900AD5394 /* AuditTableViewCell.swift in Sources */,
 				988227271C604BCB0040DB2C /* ViewController.swift in Sources */,
-				0451C20F1C7C526200A1EF1B /* AuditHasbeenView.swift in Sources */,
 				0496A6181C78337D002B0947 /* meetingRoomApplyCell.swift in Sources */,
 				983194851C620BA800900C0F /* KQJBTableViewController.swift in Sources */,
 				9831947F1C61E8A300900C0F /* KQJiaTableViewController.swift in Sources */,
 				980B7E061C58C3910019D5A0 /* KQChaiMapViewController.swift in Sources */,
+				044A89EF1C89167900AD5394 /* AuditPendingOrHasbeenViewController.swift in Sources */,
 				9822E5201C73160E0024E8A0 /* KQApply.swift in Sources */,
 				044196B31C794A9200B8E1BE /* AuditViewController.swift in Sources */,
 				0496A6151C78337D002B0947 /* collectionHeaderView.swift in Sources */,
 				981C2DF11C4CBE2A00515E60 /* KQCalenderTableViewCell.swift in Sources */,
+				044A89E31C89167900AD5394 /* AuditHasbeenViewController.swift in Sources */,
 				984A83BD1C76B695001A3D3A /* KQChaiDate.swift in Sources */,
 				04FB3D051C604F9300AE0787 /* menuView.swift in Sources */,
 				9814D2B01C62F58300584CD3 /* ProjectData.swift in Sources */,
 				9854FB961C853493002DCBD7 /* ChaiUser.swift in Sources */,
 				0496A61A1C78337D002B0947 /* HYSViewController.swift in Sources */,
 				985A930F1C7D4ACC0061D9D0 /* AlertViews.swift in Sources */,
+				044A89EA1C89167900AD5394 /* AuditDetileTableViewCell.swift in Sources */,
 				9846BB2B1C47465A00E7DF6A /* ListTableViewCell.swift in Sources */,
 				9822E5241C7324580024E8A0 /* KQBLTableViewCell.swift in Sources */,
 				04FB3D021C604F9300AE0787 /* fixedDetileBorrowView.swift in Sources */,
@@ -918,18 +931,16 @@
 				0496A61D1C78337D002B0947 /* myselfMeetRoomDetileCell.swift in Sources */,
 				0496A6311C78338B002B0947 /* personalCenterViewController.swift in Sources */,
 				98650FCB1C48827B00DAA323 /* HYSApplicationViewController.swift in Sources */,
-				044196AC1C794A5D00B8E1BE /* AuditPendViewController.swift in Sources */,
+				044A89E41C89167900AD5394 /* AuditHasbeenCell.swift in Sources */,
 				9822E5261C7327430024E8A0 /* KQBL.swift in Sources */,
 				0496A61B1C78337D002B0947 /* myselfMeetingRoomCell.swift in Sources */,
 				048BEE611C79606B006C660A /* workPlatformVController.swift in Sources */,
-				0451C20C1C7C3AB100A1EF1B /* auditHasbeenViewCell.swift in Sources */,
+				044A89EC1C89167900AD5394 /* AuditDetileView.swift in Sources */,
 				04FB3D061C604F9300AE0787 /* fixedAssetsTableCell.swift in Sources */,
 				0496A5F61C783375002B0947 /* addressDetileView.swift in Sources */,
 				988227831C609CCB0040DB2C /* SwiftyJSON.swift in Sources */,
 				0496A6141C78337D002B0947 /* checkSelectRoomView.swift in Sources */,
-				044196AF1C794A5D00B8E1BE /* AuditDetileView.swift in Sources */,
 				0497D0F91C7C1FDF00809A1A /* personalMegcell.swift in Sources */,
-				0451C2081C7C383500A1EF1B /* AuditHasbeenViewController.swift in Sources */,
 				984D56BE1C75950E00FAC478 /* KQNewBLTableViewController.swift in Sources */,
 				04FB3D041C604F9300AE0787 /* fixedDetileView.swift in Sources */,
 				0496A6101C78337D002B0947 /* checkMeetingRoomVController.swift in Sources */,
@@ -937,7 +948,6 @@
 				9831948B1C620FFA00900C0F /* KQTiaoTimeViewController.swift in Sources */,
 				04FB3D2A1C60517C00AE0787 /* Download.swift in Sources */,
 				0496A6171C78337D002B0947 /* meetingApplyTypeView.swift in Sources */,
-				044196AD1C794A5D00B8E1BE /* AuditDetileTableViewCell.swift in Sources */,
 				04FB3D2C1C60517C00AE0787 /* Manager.swift in Sources */,
 				04FB3D2E1C60517C00AE0787 /* ParameterEncoding.swift in Sources */,
 				04FB3D031C604F9300AE0787 /* fixedDetileHeaderView.swift in Sources */,
@@ -947,13 +957,11 @@
 				98650FD01C48E4A000DAA323 /* KQViewController.swift in Sources */,
 				04FB3D311C60517C00AE0787 /* ResponseSerialization.swift in Sources */,
 				9822E5221C7324450024E8A0 /* KQBLTableViewController.swift in Sources */,
-				044196B01C794A5D00B8E1BE /* AuditTableViewCell.swift in Sources */,
 				04FB3D081C604F9300AE0787 /* fixedAssetsViewController.swift in Sources */,
 				04FB3D351C60517C00AE0787 /* Upload.swift in Sources */,
 				04FB3D2B1C60517C00AE0787 /* Error.swift in Sources */,
 				04FB3D301C60517C00AE0787 /* Response.swift in Sources */,
 				98E50E3E1C621670002AF370 /* KQChaiTableViewController.swift in Sources */,
-				0451C2051C7C30D700A1EF1B /* AuditPendingOrHasbeenViewController.swift in Sources */,
 				0496A6121C78337D002B0947 /* checkMeetingRoomCollectionCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
