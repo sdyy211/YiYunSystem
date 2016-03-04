@@ -96,8 +96,20 @@ class AuditViewController: UIViewController,UICollectionViewDelegate,UICollectio
         }
     }
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?){
-        let  channel:AuditPendingOrHasbeenViewController = segue.destinationViewController as! AuditPendingOrHasbeenViewController
-        channel.title = titleStr
+        if(titleStr == "考勤")
+        {
+            let  channel:AuditPendingOrHasbeenViewController = segue.destinationViewController as! AuditPendingOrHasbeenViewController
+            channel.title = titleStr
+        }else if(titleStr == "报销")
+        {
+            let  channel:baoXiaoAuditVController = segue.destinationViewController as! baoXiaoAuditVController
+            channel.title = titleStr
+        }else if(titleStr == "盖章")
+        {
+            let  channel:yongZhangAuditVController = segue.destinationViewController as! yongZhangAuditVController
+            channel.title = titleStr
+        }
+        
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

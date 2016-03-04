@@ -14,6 +14,19 @@ class baoXiaoAuditVController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        addLeftItem()
+    }
+    func addLeftItem()
+    {
+        let btn1 = UIButton(frame: CGRectMake(0, 0,12, 20))
+        btn1.setBackgroundImage(UIImage(named: "7"), forState: UIControlState.Normal)
+        btn1.addTarget(self, action: Selector("letfItemAction:"), forControlEvents: UIControlEvents.TouchUpInside)
+        let item2=UIBarButtonItem(customView: btn1)
+        self.navigationItem.leftBarButtonItem = item2
+    }
+    func letfItemAction(send:UIButton)
+    {
+        self.navigationController?.popViewControllerAnimated(true)
     }
 
     override func didReceiveMemoryWarning() {

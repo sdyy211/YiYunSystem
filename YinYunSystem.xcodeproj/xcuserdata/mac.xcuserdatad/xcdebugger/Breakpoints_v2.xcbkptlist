@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YinYunSystem/app/audit/AuditViewController.swift"
-            timestampString = "478749173.821807"
+            timestampString = "478751036.735053"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "382"
-            endingLineNumber = "382">
+            startingLineNumber = "394"
+            endingLineNumber = "394">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -126,22 +126,6 @@
             startingLineNumber = "154"
             endingLineNumber = "154"
             landmarkName = "tableView(_:commitEditingStyle:forRowAtIndexPath:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "YinYunSystem/app/personalCenter/personalCenterViewController.swift"
-            timestampString = "478686210.385844"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "80"
-            endingLineNumber = "80"
-            landmarkName = "didResponse(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
