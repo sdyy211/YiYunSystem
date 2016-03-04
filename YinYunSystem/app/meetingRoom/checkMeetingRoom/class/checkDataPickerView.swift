@@ -13,7 +13,7 @@ import UIKit
 class checkDataPickerView: UIView {
 
     var delegate:dataProtocol?
-    var dataPicker = UIDatePicker()
+    var checkDataPicker = UIDatePicker()
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
@@ -42,20 +42,22 @@ class checkDataPickerView: UIView {
         toolView.addSubview(cancelBtn)
         toolView.addSubview(tureBtn)
         
-        dataPicker = UIDatePicker(frame: CGRectMake(0,CGRectGetMaxY(toolView.frame),CGRectGetWidth(toolView.frame),220-CGRectGetHeight(toolView.frame)))
-        dataPicker.backgroundColor = UIColor.groupTableViewBackgroundColor()
-        dataPicker.datePickerMode = UIDatePickerMode.Date
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
+        
+        checkDataPicker = UIDatePicker(frame: CGRectMake(0,CGRectGetMaxY(toolView.frame),CGRectGetWidth(toolView.frame),220-CGRectGetHeight(toolView.frame)))
+        checkDataPicker.backgroundColor = UIColor.groupTableViewBackgroundColor()
+        checkDataPicker.datePickerMode = UIDatePickerMode.Date
+        
+        
 //        let maxDate = dateFormatter.dateFromString("1900-01-01")
 //        let minDate = dateFormatter.dateFromString("2099-01-01")
 
 //        let maxDate = dateFormatter.dateFromString("1900-01-01")
 //        dataPicker.maximumDate = maxDate
 //        dataPicker.maximumDate = minDate
-        
-        dataPicker.addTarget(self, action:Selector("datePickerValueChange:"), forControlEvents: UIControlEvents.ValueChanged)
-        self.addSubview(dataPicker)
+        checkDataPicker.addTarget(self, action:Selector("datePickerValueChange:"), forControlEvents: UIControlEvents.ValueChanged)
+        self.addSubview(checkDataPicker)
         
     }
     func cancelBtnAction(button:UIButton)
@@ -66,14 +68,13 @@ class checkDataPickerView: UIView {
     {
         let formatter:NSDateFormatter = NSDateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"
-        let dateString = formatter.stringFromDate(dataPicker.date)
-        print(dateString)
+        let dateString = formatter.stringFromDate(checkDataPicker.date)
         delegate?.getData(dateString)
         self.removeFromSuperview()
     }
     func datePickerValueChange(sender: UIDatePicker)
     {
-//        print("date select: \(sender.date)")
+
     }
     override func drawRect(rect: CGRect) {
         // Drawing code

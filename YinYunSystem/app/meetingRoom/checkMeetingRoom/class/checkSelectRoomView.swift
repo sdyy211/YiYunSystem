@@ -41,8 +41,10 @@ class checkSelectRoomView: UIView,UITableViewDataSource,UITableViewDelegate{
     }
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style:.Default, reuseIdentifier:"myCell")
-        cell.textLabel?.text = itemArray.objectAtIndex(indexPath.row) as? String
+        let str = itemArray.objectAtIndex(indexPath.row) as? String
+        cell.textLabel?.text = str! + "室"
         cell.selectionStyle = UITableViewCellSelectionStyle.None
+        cell.textLabel?.textAlignment = NSTextAlignment.Center
         return cell
     }
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {

@@ -43,6 +43,7 @@ class meetingRoomApplyCell: UITableViewCell,HttpProtocol,UITextFieldDelegate,mee
         request.delegate = self
         joinPeople.delegate = self
         peoplePhoneNum.delegate = self
+//        peoplePhoneNum.keyboardType = UIKeyboardType.NamePhonePad
     }
     //MARK: 确认预订按钮点击事件
     func tureBtnAction(button:UIButton)
@@ -114,7 +115,12 @@ class meetingRoomApplyCell: UITableViewCell,HttpProtocol,UITextFieldDelegate,mee
     func textFieldDidEndEditing(textField: UITextField) {
         if(textField.tag == 1)
         {
-            checkPhoneNum(peoplePhoneNum.text!)
+            if(textField.text == "")
+            {
+                
+            }else{
+                checkPhoneNum(peoplePhoneNum.text!)
+            }
         }
     }
     func textFieldDidBeginEditing(textField: UITextField) {
