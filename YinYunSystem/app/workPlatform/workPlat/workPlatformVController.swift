@@ -20,8 +20,8 @@ class workPlatformVController: UIViewController,UICollectionViewDelegate,UIColle
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        itemArry  = ["会议管理","考勤管理","固定资产"]
-        imageArry  =  ["p1","p2","p3"]
+        itemArry  = ["会议管理","考勤管理","固定资产","报销管理","用章管理"]
+        imageArry  =  ["p1","p2","p3","p3","p3"]
         itemWith = (CGRectGetWidth(UIScreen.mainScreen().bounds)-10-15)/4
         
         let layout = UICollectionViewFlowLayout()
@@ -51,6 +51,8 @@ class workPlatformVController: UIViewController,UICollectionViewDelegate,UIColle
     func didResponse(result: NSDictionary) {
         loadingAnimationMethod.sharedInstance.endAnimation()
         let ary =  result.objectForKey("dt") as? NSArray
+        //判断是否有高权限着
+        var isHighLevel = false
         //考勤审批列表 报销审批列表
         for(var i = 0;i < ary?.count ;i++)
         {
@@ -58,9 +60,12 @@ class workPlatformVController: UIViewController,UICollectionViewDelegate,UIColle
             let name = dic.objectForKey("Menu_Name") as? String
             if(name == "考勤审批列表" ||  name == "报销审批列表")
             {
-                itemArry  = ["会议管理","考勤管理","固定资产","办理事项"]
-                imageArry  = ["p1","p2","p3","p4"]
+                isHighLevel = true
             }
+        }
+        if isHighLevel {
+            itemArry.addObject("办理事项")
+            imageArry.addObject("p4")
         }
         cv?.reloadData()
     }
@@ -104,6 +109,14 @@ class workPlatformVController: UIViewController,UICollectionViewDelegate,UIColle
             let vc:fixedAssetsViewController = fixedAssetsViewController()
             self.navigationController?.pushViewController(vc, animated: true)
         }else if(index == 3)
+        {
+            //跳转报销
+            self.performSegueWithIdentifier("BXSegue", sender: self)
+        }else if(index == 4)
+        {
+            //跳转用章
+            self.performSegueWithIdentifier("StampUseSegue", sender: self)
+        }else if(index == 5)
         {
             //跳转审核
             self.performSegueWithIdentifier("pushAudit", sender: self)
