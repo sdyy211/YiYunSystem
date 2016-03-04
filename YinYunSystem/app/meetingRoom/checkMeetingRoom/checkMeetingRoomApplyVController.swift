@@ -73,42 +73,21 @@ class checkMeetingRoomApplyVController: UIViewController,UITableViewDelegate,UIT
          tableView.registerNib(UINib(nibName: "meetingRoomApplyCell", bundle: nil), forCellReuseIdentifier:"cell")
         let cell:meetingRoomApplyCell = tableView.dequeueReusableCellWithIdentifier("cell")! as! meetingRoomApplyCell
         cell.selectionStyle = UITableViewCellSelectionStyle.None
-        if(style == "1")
-        {
-            cell.meetphoneNumLabel.hidden = true
-            cell.meetNameLabel.hidden = true
-            cell.meetTypeLabel.hidden = true
-            cell.meetingName.hidden = false
-            cell.peoplePhoneNum.hidden = false
-            cell.meetingType.hidden = false
-            cell.tureBtn.hidden = false
-            
-            cell.meetingRoom.text = roomName
-            cell.startTime.text = startTime
-            cell.endTime.text = endTime
-            cell.roomId = roomId
-            cell.VC = self
-        }else if(style == "2"){
-            let dicData = itemArry.objectAtIndex(0) as! NSDictionary
-            
-            cell.meetingName.hidden = true
-            cell.peoplePhoneNum.hidden = true
-            cell.meetingType.hidden = true
-            cell.tureBtn.hidden = true
-            
-            cell.meetphoneNumLabel.hidden = false
-            cell.meetNameLabel.hidden = false
-            cell.meetTypeLabel.hidden = false
-            
-            
-            cell.meetingRoom.text = dicData.objectForKey("MZ_Name") as? String
-            cell.startTime.text = dicData.objectForKey("Q_StartTime") as? String
-            cell.endTime.text = dicData.objectForKey("Q_EndTime") as? String
-            cell.roomId = (dicData.objectForKey("MZ_ID") as? String)!
-            cell.meetphoneNumLabel.text = dicData.objectForKey("Q_Telphone") as? String
-            cell.meetNameLabel.text = dicData.objectForKey("Q_Title") as? String
-            cell.meetTypeLabel.text = dicData.objectForKey("Q_Type") as? String
-        }
+   
+        cell.meetphoneNumLabel.hidden = true
+        cell.meetNameLabel.hidden = true
+        cell.meetTypeLabel.hidden = true
+        cell.meetingName.hidden = false
+        cell.peoplePhoneNum.hidden = false
+        cell.meetingType.hidden = false
+        cell.tureBtn.hidden = false
+        
+        cell.meetingRoom.text = roomName
+        cell.startTime.text = startTime
+        cell.endTime.text = endTime
+        cell.roomId = roomId
+        cell.VC = self
+        
         return cell
     }
     func deleteBtnAction(btn:UIBarButtonItem)

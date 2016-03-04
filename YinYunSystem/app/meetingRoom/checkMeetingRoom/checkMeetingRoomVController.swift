@@ -37,6 +37,7 @@ class checkMeetingRoomVController: UIViewController,UITableViewDataSource,UITabl
     var scrollPoint:CGPoint = CGPoint(x: 0, y: 0)
     
     var tvItemArry = NSMutableArray(objects:"8点","9点","10点","11点","12点","13点","14点","15点","16点","17点","18点","19点","20点")
+    //存储选择的时间段
     var selectItem = NSMutableArray(capacity:2)
     //存储之前预订的会议室（时间段）
     var hasSelectItem = NSMutableArray()
@@ -258,17 +259,20 @@ class checkMeetingRoomVController: UIViewController,UITableViewDataSource,UITabl
     }
     
     func getRoomName(roomName: String) {
-        roomStr = "\(roomName)"
-        meetingHomeTextField.text = "\(roomStr)室"
+        roomStr = roomName
+        meetingHomeTextField.text = roomStr + "室"
         meetingHomeTextField.resignFirstResponder()
         loadData()
     }
     //Mark  UITextFieldDelegate
     func textFieldDidBeginEditing(textField: UITextField) {
-        meetingHomeTextField.resignFirstResponder()
-        dateTextfield.resignFirstResponder()
+       
+        selectRoom.removeFromSuperview()
+        
         if(textField.tag == 1)
         {
+             meetingHomeTextField.resignFirstResponder()
+            selectRoom.removeFromSuperview()
             let itemAry = NSMutableArray(objects:"207","217","415")
             var height = CGFloat(itemAry.count) * 30
             if(height > 350)
@@ -284,14 +288,19 @@ class checkMeetingRoomVController: UIViewController,UITableViewDataSource,UITabl
             window?.addSubview(selectRoom)
             
         }else if(textField.tag == 2){
+            dateTextfield.resignFirstResponder()
+            dataPicker.removeFromSuperview()
+            dataPicker = checkDataPickerView(frame: CGRectMake(0,CGRectGetHeight(UIScreen.mainScreen().bounds)-220,CGRectGetWidth(UIScreen.mainScreen().bounds), 220))
             
-            dataPicker = checkDataPickerView()
             dataPicker.delegate = self
-            dataPicker.frame = CGRectMake(0,CGRectGetHeight(UIScreen.mainScreen().bounds)-220,CGRectGetWidth(UIScreen.mainScreen().bounds), 220)
             dataPicker.backgroundColor = UIColor.whiteColor()
             let window = UIApplication.sharedApplication().keyWindow
             window?.addSubview(dataPicker)
+        }else{
+            meetingHomeTextField.resignFirstResponder()
+            dateTextfield.resignFirstResponder()
         }
+        
     }
     //MARK: tableViewDelegate
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -341,7 +350,8 @@ class checkMeetingRoomVController: UIViewController,UITableViewDataSource,UITabl
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
      
-    
+        selectRoom.removeFromSuperview()
+        dataPicker.removeFromSuperview()
         collectionView.registerNib(UINib(nibName:"checkMeetingRoomCollectionCell", bundle: nil), forCellWithReuseIdentifier: "cell")
         let cell:checkMeetingRoomCollectionCell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! checkMeetingRoomCollectionCell
         cell.backgroundColor = UIColor(colorLiteralRed: 226.0/255.0, green: 236.0/255.0, blue: 243.0/255.0, alpha: 1)
@@ -807,7 +817,9 @@ class checkMeetingRoomVController: UIViewController,UITableViewDataSource,UITabl
     }
     // MARK: 清除按钮的点击事件
     @IBAction func clearBtnAction(sender: AnyObject) {
-        loadData()
+        selectItem.removeAllObjects()
+        cv?.reloadData()
+//        loadData()
     }
     // MARK: 点击已选中时间段的范围进行跳转页面
     func jumpDetilePage(row:NSInteger)
@@ -870,6 +882,8 @@ class checkMeetingRoomVController: UIViewController,UITableViewDataSource,UITabl
 
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         resignFirstORRemove()
+        selectRoom.removeFromSuperview()
+        dataPicker.removeFromSuperview()
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
