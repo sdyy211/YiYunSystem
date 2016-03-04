@@ -25,6 +25,9 @@
 		044A89ED1C89167900AD5394 /* AuditTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044A89E01C89167900AD5394 /* AuditTableViewCell.swift */; };
 		044A89EE1C89167900AD5394 /* AuditTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 044A89E11C89167900AD5394 /* AuditTableViewCell.xib */; };
 		044A89EF1C89167900AD5394 /* AuditPendingOrHasbeenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044A89E21C89167900AD5394 /* AuditPendingOrHasbeenViewController.swift */; };
+		044A89F81C8920AC00AD5394 /* Audit_KaoQin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 044A89F61C8920AC00AD5394 /* Audit_KaoQin.storyboard */; };
+		044A89FA1C89215E00AD5394 /* baoXiaoAuditVController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044A89F91C89215E00AD5394 /* baoXiaoAuditVController.swift */; };
+		044A89FC1C89217D00AD5394 /* yongZhangAuditVController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044A89FB1C89217D00AD5394 /* yongZhangAuditVController.swift */; };
 		046464DE1C76A2EE004841FF /* OAsySytemService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046464DD1C76A2EE004841FF /* OAsySytemService.swift */; };
 		048BEE5F1C79606B006C660A /* workCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048BEE5B1C79606B006C660A /* workCollectionCell.swift */; };
 		048BEE601C79606B006C660A /* workCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 048BEE5C1C79606B006C660A /* workCollectionCell.xib */; };
@@ -174,6 +177,9 @@
 		044A89E01C89167900AD5394 /* AuditTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuditTableViewCell.swift; sourceTree = "<group>"; };
 		044A89E11C89167900AD5394 /* AuditTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AuditTableViewCell.xib; sourceTree = "<group>"; };
 		044A89E21C89167900AD5394 /* AuditPendingOrHasbeenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuditPendingOrHasbeenViewController.swift; sourceTree = "<group>"; };
+		044A89F71C8920AC00AD5394 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Audit_KaoQin.storyboard; sourceTree = "<group>"; };
+		044A89F91C89215E00AD5394 /* baoXiaoAuditVController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = baoXiaoAuditVController.swift; sourceTree = "<group>"; };
+		044A89FB1C89217D00AD5394 /* yongZhangAuditVController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = yongZhangAuditVController.swift; sourceTree = "<group>"; };
 		046464DD1C76A2EE004841FF /* OAsySytemService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAsySytemService.swift; sourceTree = "<group>"; };
 		048BEE5B1C79606B006C660A /* workCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = workCollectionCell.swift; sourceTree = "<group>"; };
 		048BEE5C1C79606B006C660A /* workCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = workCollectionCell.xib; sourceTree = "<group>"; };
@@ -387,6 +393,22 @@
 			path = class;
 			sourceTree = "<group>";
 		};
+		044A89F01C89179000AD5394 /* baoxiao */ = {
+			isa = PBXGroup;
+			children = (
+				044A89F91C89215E00AD5394 /* baoXiaoAuditVController.swift */,
+			);
+			path = baoxiao;
+			sourceTree = "<group>";
+		};
+		044A89F11C89179000AD5394 /* yongZhang */ = {
+			isa = PBXGroup;
+			children = (
+				044A89FB1C89217D00AD5394 /* yongZhangAuditVController.swift */,
+			);
+			path = yongZhang;
+			sourceTree = "<group>";
+		};
 		046464DC1C76A2EE004841FF /* service */ = {
 			isa = PBXGroup;
 			children = (
@@ -495,6 +517,8 @@
 			children = (
 				044196B21C794A9200B8E1BE /* AuditViewController.swift */,
 				044A89D11C89167900AD5394 /* kaoqin */,
+				044A89F01C89179000AD5394 /* baoxiao */,
+				044A89F11C89179000AD5394 /* yongZhang */,
 			);
 			path = audit;
 			sourceTree = "<group>";
@@ -757,6 +781,7 @@
 				0417F56B1C472F01008CCF59 /* tabbarController.storyboard */,
 				048BEE631C7961C7006C660A /* workPlatfor.storyboard */,
 				048BEE661C797082006C660A /* AuditPending.storyboard */,
+				044A89F61C8920AC00AD5394 /* Audit_KaoQin.storyboard */,
 				0417F5651C472A68008CCF59 /* presonCenter.storyboard */,
 				0417F55F1C472A0D008CCF59 /* addressBook.storyboard */,
 				0417F55C1C47296B008CCF59 /* message.storyboard */,
@@ -833,6 +858,7 @@
 				0496A6131C78337D002B0947 /* checkMeetingRoomCollectionCell.xib in Resources */,
 				9855BCCE1C589E1F005788BE /* KQ_Tiao.storyboard in Resources */,
 				981C2DF71C4CCF3F00515E60 /* KQ_Chai.storyboard in Resources */,
+				044A89F81C8920AC00AD5394 /* Audit_KaoQin.storyboard in Resources */,
 				048BEE681C797082006C660A /* AuditPending.storyboard in Resources */,
 				0496A61C1C78337D002B0947 /* myselfMeetingRoomCell.xib in Resources */,
 				9882272F1C604C5C0040DB2C /* ConfigurationInfo.plist in Resources */,
@@ -941,6 +967,7 @@
 				988227831C609CCB0040DB2C /* SwiftyJSON.swift in Sources */,
 				0496A6141C78337D002B0947 /* checkSelectRoomView.swift in Sources */,
 				0497D0F91C7C1FDF00809A1A /* personalMegcell.swift in Sources */,
+				044A89FC1C89217D00AD5394 /* yongZhangAuditVController.swift in Sources */,
 				984D56BE1C75950E00FAC478 /* KQNewBLTableViewController.swift in Sources */,
 				04FB3D041C604F9300AE0787 /* fixedDetileView.swift in Sources */,
 				0496A6101C78337D002B0947 /* checkMeetingRoomVController.swift in Sources */,
@@ -960,6 +987,7 @@
 				04FB3D081C604F9300AE0787 /* fixedAssetsViewController.swift in Sources */,
 				04FB3D351C60517C00AE0787 /* Upload.swift in Sources */,
 				04FB3D2B1C60517C00AE0787 /* Error.swift in Sources */,
+				044A89FA1C89215E00AD5394 /* baoXiaoAuditVController.swift in Sources */,
 				04FB3D301C60517C00AE0787 /* Response.swift in Sources */,
 				98E50E3E1C621670002AF370 /* KQChaiTableViewController.swift in Sources */,
 				0496A6121C78337D002B0947 /* checkMeetingRoomCollectionCell.swift in Sources */,
@@ -999,6 +1027,14 @@
 				0417F56C1C472F01008CCF59 /* Base */,
 			);
 			name = tabbarController.storyboard;
+			sourceTree = "<group>";
+		};
+		044A89F61C8920AC00AD5394 /* Audit_KaoQin.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				044A89F71C8920AC00AD5394 /* Base */,
+			);
+			name = Audit_KaoQin.storyboard;
 			sourceTree = "<group>";
 		};
 		048BEE631C7961C7006C660A /* workPlatfor.storyboard */ = {

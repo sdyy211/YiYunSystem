@@ -85,10 +85,14 @@ class AuditViewController: UIViewController,UICollectionViewDelegate,UICollectio
         }else if(index == 1)
         {
             //报销
+            titleStr = (itemArry[index] as? String)!
+            self.performSegueWithIdentifier("pushBaoXiao", sender: self)
             
         }else if(index == 2)
         {
             //盖章
+            titleStr = (itemArry[index] as? String)!
+            self.performSegueWithIdentifier("pushYongZhang", sender: self)
         }
     }
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?){
