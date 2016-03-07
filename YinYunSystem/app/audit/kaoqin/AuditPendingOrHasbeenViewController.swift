@@ -14,7 +14,7 @@ class AuditPendingOrHasbeenViewController: UIViewController,UITableViewDataSourc
     @IBOutlet weak var tv: UITableView!
     
     var itemArry = NSMutableArray(objects: "待审","已审")
-    var color = UIColor.whiteColor()
+    var color = UIColor(colorLiteralRed: 238.0/255.0, green: 247.0/255.0, blue: 244.0/255.0, alpha: 1)
     var titleStr = ""
     override func viewDidLoad() {
         super.viewDidLoad()

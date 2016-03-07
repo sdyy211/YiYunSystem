@@ -13,7 +13,7 @@ class baoXiaoAuditVController: UIViewController,UITableViewDataSource,UITableVie
     @IBOutlet weak var tv: UITableView!
     var itemArry:NSArray = ["待审","已审"]
     var titleStr = ""
-    var color = UIColor.whiteColor()
+    var color = UIColor(colorLiteralRed: 238.0/255.0, green: 247.0/255.0, blue: 244.0/255.0, alpha: 1)
     override func viewDidLoad() {
         super.viewDidLoad()
         self.automaticallyAdjustsScrollViewInsets = false

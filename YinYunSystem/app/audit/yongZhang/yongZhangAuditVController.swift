@@ -22,7 +22,7 @@ class yongZhangAuditVController: UIViewController,UITableViewDelegate,UITableVie
     // 已审批 http://172.16.8.250:8085/Cachet/CheckList?curpage=0&uname=&zt=1
     
     var itemArry:NSArray = ["待审","已审"]
-    var color = UIColor.whiteColor()
+    var color = UIColor(colorLiteralRed: 238.0/255.0, green: 247.0/255.0, blue: 244.0/255.0, alpha: 1)
     var titleStr = ""
     override func viewDidLoad() {
         super.viewDidLoad()

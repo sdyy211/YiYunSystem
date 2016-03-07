@@ -91,6 +91,7 @@ class workPlatformVController: UIViewController,UICollectionViewDelegate,UIColle
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath)
     {
         //某个Cell被选择的事件处理
+        self.tabBarController?.tabBar.hidden = true
         jumpPage(indexPath.row)
     }
     func jumpPage(index: Int)

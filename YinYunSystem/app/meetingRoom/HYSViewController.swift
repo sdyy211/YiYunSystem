@@ -12,8 +12,8 @@ class HYSViewController: UIViewController,UITableViewDataSource,UITableViewDeleg
 
     @IBOutlet weak var tv: UITableView!
     var itemArry = NSMutableArray(objects: "查看会议室","我的会议室")
-//    var color = UIColor(colorLiteralRed: 238.0/255.0, green: 247.0/255.0, blue: 244.0/255.0, alpha: 1)
-    var color = UIColor.whiteColor()
+    var color = UIColor(colorLiteralRed: 238.0/255.0, green: 247.0/255.0, blue: 244.0/255.0, alpha: 1)
+//    var color = UIColor.whiteColor()
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "会议室管理"
