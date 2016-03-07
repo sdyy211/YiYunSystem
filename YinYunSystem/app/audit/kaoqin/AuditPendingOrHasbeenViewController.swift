@@ -58,17 +58,17 @@ class AuditPendingOrHasbeenViewController: UIViewController,UITableViewDataSourc
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if(indexPath.row == 0)
         {
-            titleStr = "待审"
+            titleStr = "考勤待审"
             self.performSegueWithIdentifier("pushpending", sender: self)
         }else if(indexPath.row == 1)
         {
-            titleStr = "已审"
+            titleStr = "考勤已审"
             self.performSegueWithIdentifier("pushHasBeen", sender: self)
         }
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if(titleStr == "待审")
+        if(titleStr == "考勤待审")
         {
             let channel:AuditPendViewController = segue.destinationViewController as! AuditPendViewController
             channel.title = titleStr

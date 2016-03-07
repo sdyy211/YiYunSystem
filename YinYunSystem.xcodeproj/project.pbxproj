@@ -28,6 +28,12 @@
 		044A89F81C8920AC00AD5394 /* Audit_KaoQin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 044A89F61C8920AC00AD5394 /* Audit_KaoQin.storyboard */; };
 		044A89FA1C89215E00AD5394 /* baoXiaoAuditVController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044A89F91C89215E00AD5394 /* baoXiaoAuditVController.swift */; };
 		044A89FC1C89217D00AD5394 /* yongZhangAuditVController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044A89FB1C89217D00AD5394 /* yongZhangAuditVController.swift */; };
+		045CB1351C8D13E8005950DC /* Audit_BaoXiao.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 045CB1331C8D13E8005950DC /* Audit_BaoXiao.storyboard */; };
+		045CB1381C8D1403005950DC /* Audit_YongZhang.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 045CB1361C8D1403005950DC /* Audit_YongZhang.storyboard */; };
+		045CB13E1C8D2078005950DC /* yongZhangPendingVController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045CB13D1C8D2078005950DC /* yongZhangPendingVController.swift */; };
+		045CB1401C8D208F005950DC /* yongZhangHasbeenVController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045CB13F1C8D208F005950DC /* yongZhangHasbeenVController.swift */; };
+		045CB1421C8D24EC005950DC /* baoXiaoPendingVController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045CB1411C8D24EC005950DC /* baoXiaoPendingVController.swift */; };
+		045CB1441C8D2507005950DC /* baoXiaoHasbeenVController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045CB1431C8D2507005950DC /* baoXiaoHasbeenVController.swift */; };
 		046464DE1C76A2EE004841FF /* OAsySytemService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046464DD1C76A2EE004841FF /* OAsySytemService.swift */; };
 		048BEE5F1C79606B006C660A /* workCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048BEE5B1C79606B006C660A /* workCollectionCell.swift */; };
 		048BEE601C79606B006C660A /* workCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 048BEE5C1C79606B006C660A /* workCollectionCell.xib */; };
@@ -186,6 +192,12 @@
 		044A89F71C8920AC00AD5394 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Audit_KaoQin.storyboard; sourceTree = "<group>"; };
 		044A89F91C89215E00AD5394 /* baoXiaoAuditVController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = baoXiaoAuditVController.swift; sourceTree = "<group>"; };
 		044A89FB1C89217D00AD5394 /* yongZhangAuditVController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = yongZhangAuditVController.swift; sourceTree = "<group>"; };
+		045CB1341C8D13E8005950DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Audit_BaoXiao.storyboard; sourceTree = "<group>"; };
+		045CB1371C8D1403005950DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Audit_YongZhang.storyboard; sourceTree = "<group>"; };
+		045CB13D1C8D2078005950DC /* yongZhangPendingVController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = yongZhangPendingVController.swift; sourceTree = "<group>"; };
+		045CB13F1C8D208F005950DC /* yongZhangHasbeenVController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = yongZhangHasbeenVController.swift; sourceTree = "<group>"; };
+		045CB1411C8D24EC005950DC /* baoXiaoPendingVController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = baoXiaoPendingVController.swift; sourceTree = "<group>"; };
+		045CB1431C8D2507005950DC /* baoXiaoHasbeenVController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = baoXiaoHasbeenVController.swift; sourceTree = "<group>"; };
 		046464DD1C76A2EE004841FF /* OAsySytemService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAsySytemService.swift; sourceTree = "<group>"; };
 		048BEE5B1C79606B006C660A /* workCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = workCollectionCell.swift; sourceTree = "<group>"; };
 		048BEE5C1C79606B006C660A /* workCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = workCollectionCell.xib; sourceTree = "<group>"; };
@@ -356,8 +368,8 @@
 		044A89D11C89167900AD5394 /* kaoqin */ = {
 			isa = PBXGroup;
 			children = (
-				044A89D21C89167900AD5394 /* auditHasbeen */,
 				044A89DA1C89167900AD5394 /* auditPending */,
+				044A89D21C89167900AD5394 /* auditHasbeen */,
 				044A89E21C89167900AD5394 /* AuditPendingOrHasbeenViewController.swift */,
 			);
 			path = kaoqin;
@@ -408,6 +420,8 @@
 		044A89F01C89179000AD5394 /* baoxiao */ = {
 			isa = PBXGroup;
 			children = (
+				045CB13C1C8D1EEE005950DC /* auditPending */,
+				045CB13B1C8D1EEE005950DC /* auditHasbeen */,
 				044A89F91C89215E00AD5394 /* baoXiaoAuditVController.swift */,
 			);
 			path = baoxiao;
@@ -416,9 +430,43 @@
 		044A89F11C89179000AD5394 /* yongZhang */ = {
 			isa = PBXGroup;
 			children = (
+				045CB13A1C8D1EE4005950DC /* auditPending */,
+				045CB1391C8D1EE4005950DC /* auditHasbeen */,
 				044A89FB1C89217D00AD5394 /* yongZhangAuditVController.swift */,
 			);
 			path = yongZhang;
+			sourceTree = "<group>";
+		};
+		045CB1391C8D1EE4005950DC /* auditHasbeen */ = {
+			isa = PBXGroup;
+			children = (
+				045CB13F1C8D208F005950DC /* yongZhangHasbeenVController.swift */,
+			);
+			path = auditHasbeen;
+			sourceTree = "<group>";
+		};
+		045CB13A1C8D1EE4005950DC /* auditPending */ = {
+			isa = PBXGroup;
+			children = (
+				045CB13D1C8D2078005950DC /* yongZhangPendingVController.swift */,
+			);
+			path = auditPending;
+			sourceTree = "<group>";
+		};
+		045CB13B1C8D1EEE005950DC /* auditHasbeen */ = {
+			isa = PBXGroup;
+			children = (
+				045CB1431C8D2507005950DC /* baoXiaoHasbeenVController.swift */,
+			);
+			path = auditHasbeen;
+			sourceTree = "<group>";
+		};
+		045CB13C1C8D1EEE005950DC /* auditPending */ = {
+			isa = PBXGroup;
+			children = (
+				045CB1411C8D24EC005950DC /* baoXiaoPendingVController.swift */,
+			);
+			path = auditPending;
 			sourceTree = "<group>";
 		};
 		046464DC1C76A2EE004841FF /* service */ = {
@@ -797,6 +845,8 @@
 				98F8B1F91C89396300249AAB /* BX.storyboard */,
 				98F8B1F61C8932FF00249AAB /* stampUse.storyboard */,
 				048BEE661C797082006C660A /* AuditPending.storyboard */,
+				045CB1361C8D1403005950DC /* Audit_YongZhang.storyboard */,
+				045CB1331C8D13E8005950DC /* Audit_BaoXiao.storyboard */,
 				044A89F61C8920AC00AD5394 /* Audit_KaoQin.storyboard */,
 				0417F5651C472A68008CCF59 /* presonCenter.storyboard */,
 				0417F55F1C472A0D008CCF59 /* addressBook.storyboard */,
@@ -885,6 +935,7 @@
 				0496A6161C78337D002B0947 /* collectionHeaderView.xib in Resources */,
 				980B7DEF1C58B5C50019D5A0 /* mapapi.bundle in Resources */,
 				984155AC1C44A06A000B29F2 /* LaunchScreen.storyboard in Resources */,
+				045CB1351C8D13E8005950DC /* Audit_BaoXiao.storyboard in Resources */,
 				984155A91C44A06A000B29F2 /* Assets.xcassets in Resources */,
 				9882272E1C604C5C0040DB2C /* arrays.xml in Resources */,
 				984155A71C44A06A000B29F2 /* Main.storyboard in Resources */,
@@ -894,6 +945,7 @@
 				981C2DF71C4CCF3F00515E60 /* KQ_Chai.storyboard in Resources */,
 				044A89F81C8920AC00AD5394 /* Audit_KaoQin.storyboard in Resources */,
 				048BEE681C797082006C660A /* AuditPending.storyboard in Resources */,
+				045CB1381C8D1403005950DC /* Audit_YongZhang.storyboard in Resources */,
 				0496A61C1C78337D002B0947 /* myselfMeetingRoomCell.xib in Resources */,
 				9882272F1C604C5C0040DB2C /* ConfigurationInfo.plist in Resources */,
 				048BEE651C7961C7006C660A /* workPlatfor.storyboard in Resources */,
@@ -1008,6 +1060,7 @@
 				0496A6141C78337D002B0947 /* checkSelectRoomView.swift in Sources */,
 				0497D0F91C7C1FDF00809A1A /* personalMegcell.swift in Sources */,
 				044A89FC1C89217D00AD5394 /* yongZhangAuditVController.swift in Sources */,
+				045CB1441C8D2507005950DC /* baoXiaoHasbeenVController.swift in Sources */,
 				984D56BE1C75950E00FAC478 /* KQNewBLTableViewController.swift in Sources */,
 				04FB3D041C604F9300AE0787 /* fixedDetileView.swift in Sources */,
 				0496A6101C78337D002B0947 /* checkMeetingRoomVController.swift in Sources */,
@@ -1018,12 +1071,14 @@
 				04FB3D2C1C60517C00AE0787 /* Manager.swift in Sources */,
 				04FB3D2E1C60517C00AE0787 /* ParameterEncoding.swift in Sources */,
 				04FB3D031C604F9300AE0787 /* fixedDetileHeaderView.swift in Sources */,
+				045CB13E1C8D2078005950DC /* yongZhangPendingVController.swift in Sources */,
 				0496A5F51C783375002B0947 /* addressBtn.swift in Sources */,
 				983194831C61FA2000900C0F /* KQJiaTimeViewController.swift in Sources */,
 				9822E51E1C73154C0024E8A0 /* KQApplyTableViewCell.swift in Sources */,
 				98650FD01C48E4A000DAA323 /* KQViewController.swift in Sources */,
 				04FB3D311C60517C00AE0787 /* ResponseSerialization.swift in Sources */,
 				9822E5221C7324450024E8A0 /* KQBLTableViewController.swift in Sources */,
+				045CB1421C8D24EC005950DC /* baoXiaoPendingVController.swift in Sources */,
 				04FB3D081C604F9300AE0787 /* fixedAssetsViewController.swift in Sources */,
 				04FB3D351C60517C00AE0787 /* Upload.swift in Sources */,
 				04FB3D2B1C60517C00AE0787 /* Error.swift in Sources */,
@@ -1031,6 +1086,7 @@
 				04FB3D301C60517C00AE0787 /* Response.swift in Sources */,
 				98E50E3E1C621670002AF370 /* KQChaiTableViewController.swift in Sources */,
 				0496A6121C78337D002B0947 /* checkMeetingRoomCollectionCell.swift in Sources */,
+				045CB1401C8D208F005950DC /* yongZhangHasbeenVController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1075,6 +1131,22 @@
 				044A89F71C8920AC00AD5394 /* Base */,
 			);
 			name = Audit_KaoQin.storyboard;
+			sourceTree = "<group>";
+		};
+		045CB1331C8D13E8005950DC /* Audit_BaoXiao.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				045CB1341C8D13E8005950DC /* Base */,
+			);
+			name = Audit_BaoXiao.storyboard;
+			sourceTree = "<group>";
+		};
+		045CB1361C8D1403005950DC /* Audit_YongZhang.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				045CB1371C8D1403005950DC /* Base */,
+			);
+			name = Audit_YongZhang.storyboard;
 			sourceTree = "<group>";
 		};
 		048BEE631C7961C7006C660A /* workPlatfor.storyboard */ = {

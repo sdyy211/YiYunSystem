@@ -23,8 +23,8 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <segue destination="tnM-b3-Frb" kind="push" identifier="push1" id="Okz-Bb-vNH"/>
-                        <segue destination="Qd1-CH-Pk2" kind="push" identifier="pushBaoXiao" id="9HI-4s-qvH"/>
-                        <segue destination="cqh-y6-rG9" kind="push" identifier="pushYongZhang" id="Yjw-od-mw0"/>
+                        <segue destination="Sj9-Ar-AEd" kind="push" identifier="pushBaoXiao" id="9HI-4s-qvH"/>
+                        <segue destination="3oU-z4-ST8" kind="push" identifier="pushYongZhang" id="Yjw-od-mw0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z28-JV-QoN" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -39,45 +39,27 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hda-xv-Yst" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3284" y="856"/>
+            <point key="canvasLocation" x="3233" y="1122"/>
         </scene>
-        <!--Yong Zhang AuditV Controller-->
-        <scene sceneID="TPQ-Kp-wFC">
+        <!--Audit_BaoXiao-->
+        <scene sceneID="Zwn-7N-bdV">
             <objects>
-                <viewController id="cqh-y6-rG9" customClass="yongZhangAuditVController" customModule="YinYunSystem" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="hMH-14-CtY"/>
-                        <viewControllerLayoutGuide type="bottom" id="XHf-lN-Ogl"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="txB-52-V4R">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="kha-oh-KZO"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hif-Q1-zpV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardName="Audit_BaoXiao" id="Sj9-Ar-AEd" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="g0h-C9-sh7"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qH5-et-FnB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3523" y="1924"/>
+            <point key="canvasLocation" x="3230" y="1266"/>
         </scene>
-        <!--Bao Xiao AuditV Controller-->
-        <scene sceneID="jDH-8h-3Tn">
+        <!--Audit_YongZhang-->
+        <scene sceneID="0G4-YT-U5y">
             <objects>
-                <viewController id="Qd1-CH-Pk2" customClass="baoXiaoAuditVController" customModule="YinYunSystem" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="pG1-Aa-Lnf"/>
-                        <viewControllerLayoutGuide type="bottom" id="4DI-Ee-VFv"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="y8k-gD-qbk">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="AbC-Vo-6tc"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="XLw-gj-1vm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardName="Audit_YongZhang" id="3oU-z4-ST8" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="DHc-fD-m9v"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="k2o-8M-3hH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3523" y="1224"/>
+            <point key="canvasLocation" x="3236.5" y="1407"/>
         </scene>
     </scenes>
 </document>
