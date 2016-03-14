@@ -155,6 +155,7 @@
 		9855BCD01C58A123005788BE /* KQChaiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9855BCCF1C58A123005788BE /* KQChaiViewController.swift */; };
 		985A930F1C7D4ACC0061D9D0 /* AlertViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985A930E1C7D4ACC0061D9D0 /* AlertViews.swift */; };
 		985A93111C7D57120061D9D0 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985A93101C7D57120061D9D0 /* Errors.swift */; };
+		985B8FAB1C9695E7008149B3 /* stampUse.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 985B8FAA1C9695E7008149B3 /* stampUse.storyboard */; };
 		98650FC31C4877D800DAA323 /* HYS.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98650FC21C4877D800DAA323 /* HYS.storyboard */; };
 		98650FC91C48806200DAA323 /* KQ.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98650FC81C48806200DAA323 /* KQ.storyboard */; };
 		98650FCB1C48827B00DAA323 /* HYSApplicationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98650FCA1C48827B00DAA323 /* HYSApplicationViewController.swift */; };
@@ -172,7 +173,6 @@
 		98E50E3E1C621670002AF370 /* KQChaiTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E50E3D1C621670002AF370 /* KQChaiTableViewController.swift */; };
 		98E50E401C621688002AF370 /* KQChaiTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E50E3F1C621688002AF370 /* KQChaiTimeViewController.swift */; };
 		98F8B1F51C892E9900249AAB /* workPlatformVController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F8B1F41C892E9900249AAB /* workPlatformVController.swift */; };
-		98F8B1F81C8932FF00249AAB /* stampUse.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98F8B1F61C8932FF00249AAB /* stampUse.storyboard */; };
 		98F8B1FA1C89396300249AAB /* BX.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98F8B1F91C89396300249AAB /* BX.storyboard */; };
 		98F8B1FD1C893C4800249AAB /* BXViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F8B1FC1C893C4800249AAB /* BXViewController.swift */; };
 		98F8B1FF1C895A9A00249AAB /* BXTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F8B1FE1C895A9A00249AAB /* BXTableViewCell.swift */; };
@@ -334,6 +334,7 @@
 		9855BCCF1C58A123005788BE /* KQChaiViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KQChaiViewController.swift; sourceTree = "<group>"; };
 		985A930E1C7D4ACC0061D9D0 /* AlertViews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertViews.swift; sourceTree = "<group>"; };
 		985A93101C7D57120061D9D0 /* Errors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
+		985B8FAA1C9695E7008149B3 /* stampUse.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = stampUse.storyboard; sourceTree = "<group>"; };
 		98650FC21C4877D800DAA323 /* HYS.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = HYS.storyboard; sourceTree = "<group>"; };
 		98650FC81C48806200DAA323 /* KQ.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = KQ.storyboard; sourceTree = "<group>"; };
 		98650FCA1C48827B00DAA323 /* HYSApplicationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HYSApplicationViewController.swift; sourceTree = "<group>"; };
@@ -351,7 +352,6 @@
 		98E50E3D1C621670002AF370 /* KQChaiTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KQChaiTableViewController.swift; sourceTree = "<group>"; };
 		98E50E3F1C621688002AF370 /* KQChaiTimeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KQChaiTimeViewController.swift; sourceTree = "<group>"; };
 		98F8B1F41C892E9900249AAB /* workPlatformVController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = workPlatformVController.swift; sourceTree = "<group>"; };
-		98F8B1F71C8932FF00249AAB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/stampUse.storyboard; sourceTree = "<group>"; };
 		98F8B1F91C89396300249AAB /* BX.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = BX.storyboard; sourceTree = "<group>"; };
 		98F8B1FC1C893C4800249AAB /* BXViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BXViewController.swift; sourceTree = "<group>"; };
 		98F8B1FE1C895A9A00249AAB /* BXTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BXTableViewCell.swift; sourceTree = "<group>"; };
@@ -929,7 +929,7 @@
 				04E4379B1C9164B40060F0AE /* yiShen.storyboard */,
 				04E437981C9164950060F0AE /* daiShen.storyboard */,
 				98F8B1F91C89396300249AAB /* BX.storyboard */,
-				98F8B1F61C8932FF00249AAB /* stampUse.storyboard */,
+				985B8FAA1C9695E7008149B3 /* stampUse.storyboard */,
 				048BEE661C797082006C660A /* AuditPending.storyboard */,
 				045CB1361C8D1403005950DC /* Audit_YongZhang.storyboard */,
 				045CB1331C8D13E8005950DC /* Audit_BaoXiao.storyboard */,
@@ -1045,6 +1045,7 @@
 				04D70FD11C92B825003B9B7A /* AuditDetileTableViewCell.xib in Resources */,
 				988227301C604C5C0040DB2C /* fixedAsset.plist in Resources */,
 				04FB3D071C604F9300AE0787 /* fixedAssetsTableCell.xib in Resources */,
+				985B8FAB1C9695E7008149B3 /* stampUse.storyboard in Resources */,
 				98650FC31C4877D800DAA323 /* HYS.storyboard in Resources */,
 				9855BCCC1C5874EB005788BE /* KQ_JB.storyboard in Resources */,
 				0417F5611C472A0D008CCF59 /* addressBook.storyboard in Resources */,
@@ -1052,7 +1053,6 @@
 				98F8B1FA1C89396300249AAB /* BX.storyboard in Resources */,
 				0496A6191C78337D002B0947 /* meetingRoomApplyCell.xib in Resources */,
 				981C2DEF1C4C7EC600515E60 /* KQ_RL.storyboard in Resources */,
-				98F8B1F81C8932FF00249AAB /* stampUse.storyboard in Resources */,
 				0496A61E1C78337D002B0947 /* myselfMeetRoomDetileCell.xib in Resources */,
 				0417F56D1C472F01008CCF59 /* tabbarController.storyboard in Resources */,
 				9882272D1C604C5C0040DB2C /* addressBook.plist in Resources */,
@@ -1291,14 +1291,6 @@
 				984155AB1C44A06A000B29F2 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		98F8B1F61C8932FF00249AAB /* stampUse.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				98F8B1F71C8932FF00249AAB /* Base */,
-			);
-			name = stampUse.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

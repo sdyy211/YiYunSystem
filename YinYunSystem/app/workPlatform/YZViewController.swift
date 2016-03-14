@@ -40,7 +40,7 @@ extension TableViewDataSource: UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("BXCell", forIndexPath: indexPath) as! BXTableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("YZCell", forIndexPath: indexPath) as! YZTableViewCell
         cell.listName.text = workArray[indexPath.row]
         
         return cell
@@ -56,10 +56,10 @@ extension TableViewDelegate: UITableViewDelegate {
         switch num {
         case 0 :
             self.listTableView.deselectRowAtIndexPath(indexPath, animated: true)
-            self.performSegueWithIdentifier("MyBXSegue", sender: self)
+            self.performSegueWithIdentifier("MyStampUseSegue", sender: self)
         case 1:
             self.listTableView.deselectRowAtIndexPath(indexPath, animated: true)
-            self.performSegueWithIdentifier("BXListSegue", sender: self)
+            self.performSegueWithIdentifier("StampUsedSegue", sender: self)
         default:
             break
         }
@@ -71,13 +71,11 @@ extension TableViewDelegate: UITableViewDelegate {
 private typealias Segues = YZViewController
 
 extension Segues {
-    
-    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "RLSegue" {
-            let vc = segue.destinationViewController as! UITabBarController
-            vc.tabBar.backgroundColor = UIColor(red: 67, green: 70, blue: 76, alpha: 1.0)
-        }
+//        if segue.identifier == "RLSegue" {
+//            let vc = segue.destinationViewController as! UITabBarController
+//            vc.tabBar.backgroundColor = UIColor(red: 67, green: 70, blue: 76, alpha: 1.0)
+//        }
     }
     
 }
