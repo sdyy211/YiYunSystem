@@ -50,6 +50,7 @@
         <!--Audit Pend View Controller-->
         <scene sceneID="cOJ-lC-bcd">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NFf-d9-kes" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="MKF-YK-5Vf" customClass="AuditPendViewController" customModule="YinYunSystem" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="iZX-TM-bFH"/>
@@ -144,9 +145,8 @@
                         <outlet property="tv" destination="j5W-hR-o54" id="cpA-GK-bHc"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="NFf-d9-kes" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2440" y="854"/>
+            <point key="canvasLocation" x="2378" y="860"/>
         </scene>
         <!--Audit Hasbeen View Controller-->
         <scene sceneID="jah-be-UQp">

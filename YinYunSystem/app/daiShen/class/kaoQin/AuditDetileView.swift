@@ -11,7 +11,7 @@ import UIKit
     func setLoadData()
 }
 class AuditDetileView: UIView,UITableViewDelegate,UITableViewDataSource,HttpProtocol{
-    var deleteURL = "/KaoQinCheck/JShenHe"
+    var deleteURL = ""
     var tv = UITableView()
     var itemArray = NSMutableArray()
     var itemDic = NSDictionary()

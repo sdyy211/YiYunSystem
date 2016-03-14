@@ -1,22 +1,17 @@
 //
-//  auditHasbeenViewCell.swift
+//  yongZhangDetileTableViewCell.swift
 //  YinYunSystem
 //
-//  Created by Mac on 16/2/23.
+//  Created by Mac on 16/3/9.
 //  Copyright © 2016年 魏辉. All rights reserved.
 //
 
 import UIKit
 
-class auditHasbeenViewCell: UITableViewCell {
+class yongZhangDetileTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var name: UILabel!
-    @IBOutlet weak var startTime: UILabel!
-    @IBOutlet weak var endTime: UILabel!
-    @IBOutlet weak var auditName: UILabel!
-    @IBOutlet weak var state: UILabel!
-    
-    @IBOutlet weak var cellBackView: UIView!
+    @IBOutlet weak var contentL: UILabel!
+    @IBOutlet weak var titleL: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

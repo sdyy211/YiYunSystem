@@ -18,16 +18,12 @@
 		044A89E61C89167900AD5394 /* AuditHasbeenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044A89D71C89167900AD5394 /* AuditHasbeenView.swift */; };
 		044A89E71C89167900AD5394 /* auditHasbeenViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044A89D81C89167900AD5394 /* auditHasbeenViewCell.swift */; };
 		044A89E81C89167900AD5394 /* auditHasbeenViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 044A89D91C89167900AD5394 /* auditHasbeenViewCell.xib */; };
-		044A89E91C89167900AD5394 /* AuditPendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044A89DB1C89167900AD5394 /* AuditPendViewController.swift */; };
-		044A89EA1C89167900AD5394 /* AuditDetileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044A89DD1C89167900AD5394 /* AuditDetileTableViewCell.swift */; };
-		044A89EB1C89167900AD5394 /* AuditDetileTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 044A89DE1C89167900AD5394 /* AuditDetileTableViewCell.xib */; };
-		044A89EC1C89167900AD5394 /* AuditDetileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044A89DF1C89167900AD5394 /* AuditDetileView.swift */; };
-		044A89ED1C89167900AD5394 /* AuditTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044A89E01C89167900AD5394 /* AuditTableViewCell.swift */; };
-		044A89EE1C89167900AD5394 /* AuditTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 044A89E11C89167900AD5394 /* AuditTableViewCell.xib */; };
 		044A89EF1C89167900AD5394 /* AuditPendingOrHasbeenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044A89E21C89167900AD5394 /* AuditPendingOrHasbeenViewController.swift */; };
 		044A89F81C8920AC00AD5394 /* Audit_KaoQin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 044A89F61C8920AC00AD5394 /* Audit_KaoQin.storyboard */; };
 		044A89FA1C89215E00AD5394 /* baoXiaoAuditVController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044A89F91C89215E00AD5394 /* baoXiaoAuditVController.swift */; };
 		044A89FC1C89217D00AD5394 /* yongZhangAuditVController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044A89FB1C89217D00AD5394 /* yongZhangAuditVController.swift */; };
+		044EB3EE1C9174D0008C0BF9 /* selectStyleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044EB3ED1C9174D0008C0BF9 /* selectStyleView.swift */; };
+		044EB3F01C925364008C0BF9 /* segmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044EB3EF1C925364008C0BF9 /* segmentView.swift */; };
 		045CB1351C8D13E8005950DC /* Audit_BaoXiao.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 045CB1331C8D13E8005950DC /* Audit_BaoXiao.storyboard */; };
 		045CB1381C8D1403005950DC /* Audit_YongZhang.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 045CB1361C8D1403005950DC /* Audit_YongZhang.storyboard */; };
 		045CB13E1C8D2078005950DC /* yongZhangPendingVController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045CB13D1C8D2078005950DC /* yongZhangPendingVController.swift */; };
@@ -67,6 +63,20 @@
 		0496A6201C78337D002B0947 /* myselfMeetRoomDetileVController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0496A60E1C78337D002B0947 /* myselfMeetRoomDetileVController.swift */; };
 		04CD153D1C83E6B90061D34B /* JNWSpringAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CD153A1C83E6B90061D34B /* JNWSpringAnimation.m */; };
 		04CD153E1C83E6B90061D34B /* NSValue+JNWAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CD153C1C83E6B90061D34B /* NSValue+JNWAdditions.m */; };
+		04D70FD01C92B825003B9B7A /* AuditDetileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D70FCB1C92B825003B9B7A /* AuditDetileTableViewCell.swift */; };
+		04D70FD11C92B825003B9B7A /* AuditDetileTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04D70FCC1C92B825003B9B7A /* AuditDetileTableViewCell.xib */; };
+		04D70FD21C92B825003B9B7A /* AuditDetileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D70FCD1C92B825003B9B7A /* AuditDetileView.swift */; };
+		04D70FD31C92B825003B9B7A /* AuditTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D70FCE1C92B825003B9B7A /* AuditTableViewCell.swift */; };
+		04D70FD41C92B825003B9B7A /* AuditTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04D70FCF1C92B825003B9B7A /* AuditTableViewCell.xib */; };
+		04D70FDB1C92B876003B9B7A /* yongZhangDetileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D70FD61C92B876003B9B7A /* yongZhangDetileTableViewCell.swift */; };
+		04D70FDC1C92B876003B9B7A /* yongZhangDetileTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04D70FD71C92B876003B9B7A /* yongZhangDetileTableViewCell.xib */; };
+		04D70FDD1C92B876003B9B7A /* yongZhangDetileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D70FD81C92B876003B9B7A /* yongZhangDetileView.swift */; };
+		04D70FDE1C92B876003B9B7A /* yongZhangPendingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D70FD91C92B876003B9B7A /* yongZhangPendingCell.swift */; };
+		04D70FDF1C92B876003B9B7A /* yongZhangPendingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04D70FDA1C92B876003B9B7A /* yongZhangPendingCell.xib */; };
+		04E4379A1C9164950060F0AE /* daiShen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04E437981C9164950060F0AE /* daiShen.storyboard */; };
+		04E4379D1C9164B40060F0AE /* yiShen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04E4379B1C9164B40060F0AE /* yiShen.storyboard */; };
+		04E437A11C91654E0060F0AE /* yiShenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E437A01C91654E0060F0AE /* yiShenViewController.swift */; };
+		04E437A71C916EB80060F0AE /* daiShenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E437A61C916EB80060F0AE /* daiShenViewController.swift */; };
 		04EBF6361C7E946A00A2E717 /* loadingAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EBF6351C7E946A00A2E717 /* loadingAnimationView.swift */; };
 		04EBF6381C7E949400A2E717 /* loadingAnimationMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EBF6371C7E949400A2E717 /* loadingAnimationMethod.swift */; };
 		04FB3D021C604F9300AE0787 /* fixedDetileBorrowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FB3CFA1C604F9300AE0787 /* fixedDetileBorrowView.swift */; };
@@ -182,16 +192,12 @@
 		044A89D71C89167900AD5394 /* AuditHasbeenView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuditHasbeenView.swift; sourceTree = "<group>"; };
 		044A89D81C89167900AD5394 /* auditHasbeenViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = auditHasbeenViewCell.swift; sourceTree = "<group>"; };
 		044A89D91C89167900AD5394 /* auditHasbeenViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = auditHasbeenViewCell.xib; sourceTree = "<group>"; };
-		044A89DB1C89167900AD5394 /* AuditPendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuditPendViewController.swift; sourceTree = "<group>"; };
-		044A89DD1C89167900AD5394 /* AuditDetileTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuditDetileTableViewCell.swift; sourceTree = "<group>"; };
-		044A89DE1C89167900AD5394 /* AuditDetileTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AuditDetileTableViewCell.xib; sourceTree = "<group>"; };
-		044A89DF1C89167900AD5394 /* AuditDetileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuditDetileView.swift; sourceTree = "<group>"; };
-		044A89E01C89167900AD5394 /* AuditTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuditTableViewCell.swift; sourceTree = "<group>"; };
-		044A89E11C89167900AD5394 /* AuditTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AuditTableViewCell.xib; sourceTree = "<group>"; };
 		044A89E21C89167900AD5394 /* AuditPendingOrHasbeenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuditPendingOrHasbeenViewController.swift; sourceTree = "<group>"; };
 		044A89F71C8920AC00AD5394 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Audit_KaoQin.storyboard; sourceTree = "<group>"; };
 		044A89F91C89215E00AD5394 /* baoXiaoAuditVController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = baoXiaoAuditVController.swift; sourceTree = "<group>"; };
 		044A89FB1C89217D00AD5394 /* yongZhangAuditVController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = yongZhangAuditVController.swift; sourceTree = "<group>"; };
+		044EB3ED1C9174D0008C0BF9 /* selectStyleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = selectStyleView.swift; sourceTree = "<group>"; };
+		044EB3EF1C925364008C0BF9 /* segmentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = segmentView.swift; sourceTree = "<group>"; };
 		045CB1341C8D13E8005950DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Audit_BaoXiao.storyboard; sourceTree = "<group>"; };
 		045CB1371C8D1403005950DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Audit_YongZhang.storyboard; sourceTree = "<group>"; };
 		045CB13D1C8D2078005950DC /* yongZhangPendingVController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = yongZhangPendingVController.swift; sourceTree = "<group>"; };
@@ -233,6 +239,20 @@
 		04CD153A1C83E6B90061D34B /* JNWSpringAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JNWSpringAnimation.m; sourceTree = "<group>"; };
 		04CD153B1C83E6B90061D34B /* NSValue+JNWAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSValue+JNWAdditions.h"; sourceTree = "<group>"; };
 		04CD153C1C83E6B90061D34B /* NSValue+JNWAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSValue+JNWAdditions.m"; sourceTree = "<group>"; };
+		04D70FCB1C92B825003B9B7A /* AuditDetileTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuditDetileTableViewCell.swift; sourceTree = "<group>"; };
+		04D70FCC1C92B825003B9B7A /* AuditDetileTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AuditDetileTableViewCell.xib; sourceTree = "<group>"; };
+		04D70FCD1C92B825003B9B7A /* AuditDetileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuditDetileView.swift; sourceTree = "<group>"; };
+		04D70FCE1C92B825003B9B7A /* AuditTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuditTableViewCell.swift; sourceTree = "<group>"; };
+		04D70FCF1C92B825003B9B7A /* AuditTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AuditTableViewCell.xib; sourceTree = "<group>"; };
+		04D70FD61C92B876003B9B7A /* yongZhangDetileTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = yongZhangDetileTableViewCell.swift; sourceTree = "<group>"; };
+		04D70FD71C92B876003B9B7A /* yongZhangDetileTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = yongZhangDetileTableViewCell.xib; sourceTree = "<group>"; };
+		04D70FD81C92B876003B9B7A /* yongZhangDetileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = yongZhangDetileView.swift; sourceTree = "<group>"; };
+		04D70FD91C92B876003B9B7A /* yongZhangPendingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = yongZhangPendingCell.swift; sourceTree = "<group>"; };
+		04D70FDA1C92B876003B9B7A /* yongZhangPendingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = yongZhangPendingCell.xib; sourceTree = "<group>"; };
+		04E437991C9164950060F0AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/daiShen.storyboard; sourceTree = "<group>"; };
+		04E4379C1C9164B40060F0AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/yiShen.storyboard; sourceTree = "<group>"; };
+		04E437A01C91654E0060F0AE /* yiShenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = yiShenViewController.swift; sourceTree = "<group>"; };
+		04E437A61C916EB80060F0AE /* daiShenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = daiShenViewController.swift; sourceTree = "<group>"; };
 		04EBF6351C7E946A00A2E717 /* loadingAnimationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = loadingAnimationView.swift; sourceTree = "<group>"; };
 		04EBF6371C7E949400A2E717 /* loadingAnimationMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = loadingAnimationMethod.swift; sourceTree = "<group>"; };
 		04FB3CFA1C604F9300AE0787 /* fixedDetileBorrowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = fixedDetileBorrowView.swift; sourceTree = "<group>"; };
@@ -399,22 +419,9 @@
 		044A89DA1C89167900AD5394 /* auditPending */ = {
 			isa = PBXGroup;
 			children = (
-				044A89DB1C89167900AD5394 /* AuditPendViewController.swift */,
-				044A89DC1C89167900AD5394 /* class */,
+				04D70FB51C92B70F003B9B7A /* class */,
 			);
 			path = auditPending;
-			sourceTree = "<group>";
-		};
-		044A89DC1C89167900AD5394 /* class */ = {
-			isa = PBXGroup;
-			children = (
-				044A89DD1C89167900AD5394 /* AuditDetileTableViewCell.swift */,
-				044A89DE1C89167900AD5394 /* AuditDetileTableViewCell.xib */,
-				044A89DF1C89167900AD5394 /* AuditDetileView.swift */,
-				044A89E01C89167900AD5394 /* AuditTableViewCell.swift */,
-				044A89E11C89167900AD5394 /* AuditTableViewCell.xib */,
-			);
-			path = class;
 			sourceTree = "<group>";
 		};
 		044A89F01C89179000AD5394 /* baoxiao */ = {
@@ -437,6 +444,13 @@
 			path = yongZhang;
 			sourceTree = "<group>";
 		};
+		044F301E1C90092000BB794C /* class */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = class;
+			sourceTree = "<group>";
+		};
 		045CB1391C8D1EE4005950DC /* auditHasbeen */ = {
 			isa = PBXGroup;
 			children = (
@@ -448,6 +462,7 @@
 		045CB13A1C8D1EE4005950DC /* auditPending */ = {
 			isa = PBXGroup;
 			children = (
+				044F301E1C90092000BB794C /* class */,
 				045CB13D1C8D2078005950DC /* yongZhangPendingVController.swift */,
 			);
 			path = auditPending;
@@ -604,6 +619,8 @@
 		04995BA11C4626E600518DC7 /* app */ = {
 			isa = PBXGroup;
 			children = (
+				04E4379E1C9164FF0060F0AE /* daiShen */,
+				04E4379F1C9164FF0060F0AE /* yiShen */,
 				0496A62F1C78338B002B0947 /* personalCenter */,
 				0496A6211C783383002B0947 /* audit */,
 				0496A5F81C78337D002B0947 /* meetingRoom */,
@@ -644,6 +661,73 @@
 				04CD153C1C83E6B90061D34B /* NSValue+JNWAdditions.m */,
 			);
 			path = JNW;
+			sourceTree = "<group>";
+		};
+		04D70FB51C92B70F003B9B7A /* class */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = class;
+			sourceTree = "<group>";
+		};
+		04D70FCA1C92B824003B9B7A /* kaoQin */ = {
+			isa = PBXGroup;
+			children = (
+				04D70FCB1C92B825003B9B7A /* AuditDetileTableViewCell.swift */,
+				04D70FCC1C92B825003B9B7A /* AuditDetileTableViewCell.xib */,
+				04D70FCD1C92B825003B9B7A /* AuditDetileView.swift */,
+				04D70FCE1C92B825003B9B7A /* AuditTableViewCell.swift */,
+				04D70FCF1C92B825003B9B7A /* AuditTableViewCell.xib */,
+			);
+			path = kaoQin;
+			sourceTree = "<group>";
+		};
+		04D70FD51C92B876003B9B7A /* yongZhang */ = {
+			isa = PBXGroup;
+			children = (
+				04D70FD61C92B876003B9B7A /* yongZhangDetileTableViewCell.swift */,
+				04D70FD71C92B876003B9B7A /* yongZhangDetileTableViewCell.xib */,
+				04D70FD81C92B876003B9B7A /* yongZhangDetileView.swift */,
+				04D70FD91C92B876003B9B7A /* yongZhangPendingCell.swift */,
+				04D70FDA1C92B876003B9B7A /* yongZhangPendingCell.xib */,
+			);
+			path = yongZhang;
+			sourceTree = "<group>";
+		};
+		04E4379E1C9164FF0060F0AE /* daiShen */ = {
+			isa = PBXGroup;
+			children = (
+				04E437A51C916E980060F0AE /* class */,
+				04E437A61C916EB80060F0AE /* daiShenViewController.swift */,
+			);
+			path = daiShen;
+			sourceTree = "<group>";
+		};
+		04E4379F1C9164FF0060F0AE /* yiShen */ = {
+			isa = PBXGroup;
+			children = (
+				04E437A21C9165A70060F0AE /* class */,
+				04E437A01C91654E0060F0AE /* yiShenViewController.swift */,
+			);
+			path = yiShen;
+			sourceTree = "<group>";
+		};
+		04E437A21C9165A70060F0AE /* class */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = class;
+			sourceTree = "<group>";
+		};
+		04E437A51C916E980060F0AE /* class */ = {
+			isa = PBXGroup;
+			children = (
+				04D70FD51C92B876003B9B7A /* yongZhang */,
+				04D70FCA1C92B824003B9B7A /* kaoQin */,
+				044EB3ED1C9174D0008C0BF9 /* selectStyleView.swift */,
+				044EB3EF1C925364008C0BF9 /* segmentView.swift */,
+			);
+			path = class;
 			sourceTree = "<group>";
 		};
 		04EBF6341C7E944E00A2E717 /*  loadingAnimation */ = {
@@ -842,6 +926,8 @@
 				984155A51C44A06A000B29F2 /* Main.storyboard */,
 				0417F56B1C472F01008CCF59 /* tabbarController.storyboard */,
 				048BEE631C7961C7006C660A /* workPlatfor.storyboard */,
+				04E4379B1C9164B40060F0AE /* yiShen.storyboard */,
+				04E437981C9164950060F0AE /* daiShen.storyboard */,
 				98F8B1F91C89396300249AAB /* BX.storyboard */,
 				98F8B1F61C8932FF00249AAB /* stampUse.storyboard */,
 				048BEE661C797082006C660A /* AuditPending.storyboard */,
@@ -936,28 +1022,32 @@
 				980B7DEF1C58B5C50019D5A0 /* mapapi.bundle in Resources */,
 				984155AC1C44A06A000B29F2 /* LaunchScreen.storyboard in Resources */,
 				045CB1351C8D13E8005950DC /* Audit_BaoXiao.storyboard in Resources */,
+				04D70FDF1C92B876003B9B7A /* yongZhangPendingCell.xib in Resources */,
+				04E4379A1C9164950060F0AE /* daiShen.storyboard in Resources */,
 				984155A91C44A06A000B29F2 /* Assets.xcassets in Resources */,
 				9882272E1C604C5C0040DB2C /* arrays.xml in Resources */,
 				984155A71C44A06A000B29F2 /* Main.storyboard in Resources */,
 				044A89E81C89167900AD5394 /* auditHasbeenViewCell.xib in Resources */,
+				04E4379D1C9164B40060F0AE /* yiShen.storyboard in Resources */,
 				0496A6131C78337D002B0947 /* checkMeetingRoomCollectionCell.xib in Resources */,
 				9855BCCE1C589E1F005788BE /* KQ_Tiao.storyboard in Resources */,
 				981C2DF71C4CCF3F00515E60 /* KQ_Chai.storyboard in Resources */,
 				044A89F81C8920AC00AD5394 /* Audit_KaoQin.storyboard in Resources */,
 				048BEE681C797082006C660A /* AuditPending.storyboard in Resources */,
 				045CB1381C8D1403005950DC /* Audit_YongZhang.storyboard in Resources */,
+				04D70FD41C92B825003B9B7A /* AuditTableViewCell.xib in Resources */,
 				0496A61C1C78337D002B0947 /* myselfMeetingRoomCell.xib in Resources */,
 				9882272F1C604C5C0040DB2C /* ConfigurationInfo.plist in Resources */,
 				048BEE651C7961C7006C660A /* workPlatfor.storyboard in Resources */,
+				04D70FDC1C92B876003B9B7A /* yongZhangDetileTableViewCell.xib in Resources */,
 				0417F5671C472A68008CCF59 /* presonCenter.storyboard in Resources */,
 				044A89E51C89167900AD5394 /* AuditHasbeenCell.xib in Resources */,
+				04D70FD11C92B825003B9B7A /* AuditDetileTableViewCell.xib in Resources */,
 				988227301C604C5C0040DB2C /* fixedAsset.plist in Resources */,
 				04FB3D071C604F9300AE0787 /* fixedAssetsTableCell.xib in Resources */,
 				98650FC31C4877D800DAA323 /* HYS.storyboard in Resources */,
 				9855BCCC1C5874EB005788BE /* KQ_JB.storyboard in Resources */,
 				0417F5611C472A0D008CCF59 /* addressBook.storyboard in Resources */,
-				044A89EE1C89167900AD5394 /* AuditTableViewCell.xib in Resources */,
-				044A89EB1C89167900AD5394 /* AuditDetileTableViewCell.xib in Resources */,
 				0417F55E1C47296B008CCF59 /* message.storyboard in Resources */,
 				98F8B1FA1C89396300249AAB /* BX.storyboard in Resources */,
 				0496A6191C78337D002B0947 /* meetingRoomApplyCell.xib in Resources */,
@@ -982,6 +1072,7 @@
 				0496A5F31C783375002B0947 /* addressBookViewController.swift in Sources */,
 				04EBF6381C7E949400A2E717 /* loadingAnimationMethod.swift in Sources */,
 				98F8B1FD1C893C4800249AAB /* BXViewController.swift in Sources */,
+				04E437A11C91654E0060F0AE /* yiShenViewController.swift in Sources */,
 				0496A5F71C783375002B0947 /* selectContactViewController.swift in Sources */,
 				981C2DF31C4CC6BD00515E60 /* KQCalenderOfMonthViewController.swift in Sources */,
 				0496A61F1C78337D002B0947 /* myselfMeetingRoomVController.swift in Sources */,
@@ -991,10 +1082,12 @@
 				04FB3D331C60517C00AE0787 /* ServerTrustPolicy.swift in Sources */,
 				981C2DF51C4CCA4000515E60 /* KQCalenderOfMonthTableViewCell.swift in Sources */,
 				98F8B2021C898B7300249AAB /* YZViewController.swift in Sources */,
+				04D70FDD1C92B876003B9B7A /* yongZhangDetileView.swift in Sources */,
 				98A693E81C774E1E00B85BD9 /* KQChaiMapCheckViewController.swift in Sources */,
 				04FB3D371C60517C00AE0787 /* HttpRequest.swift in Sources */,
 				9846BB291C47465A00E7DF6A /* CheckHYSViewController.swift in Sources */,
 				04EBF6361C7E946A00A2E717 /* loadingAnimationView.swift in Sources */,
+				044EB3F01C925364008C0BF9 /* segmentView.swift in Sources */,
 				044A89E61C89167900AD5394 /* AuditHasbeenView.swift in Sources */,
 				980B7E041C58BEC00019D5A0 /* test.mm in Sources */,
 				985A93111C7D57120061D9D0 /* Errors.swift in Sources */,
@@ -1005,8 +1098,8 @@
 				984A83BF1C76E886001A3D3A /* KQTableViewCell.swift in Sources */,
 				988227851C609EC80040DB2C /* KQData.swift in Sources */,
 				983194891C620FE100900C0F /* KQTiaoTableViewController.swift in Sources */,
+				04D70FDB1C92B876003B9B7A /* yongZhangDetileTableViewCell.swift in Sources */,
 				0496A60F1C78337D002B0947 /* checkMeetingRoomApplyVController.swift in Sources */,
-				044A89E91C89167900AD5394 /* AuditPendViewController.swift in Sources */,
 				04FB3D2F1C60517C00AE0787 /* Request.swift in Sources */,
 				04FB3D291C60517C00AE0787 /* Alamofire.swift in Sources */,
 				04FB3D321C60517C00AE0787 /* Result.swift in Sources */,
@@ -1014,10 +1107,10 @@
 				9822E51C1C7311B40024E8A0 /* KQApplyTableViewController.swift in Sources */,
 				984D56C01C75955000FAC478 /* KQNewBLTimeViewController.swift in Sources */,
 				0496A6111C78337D002B0947 /* checkDataPickerView.swift in Sources */,
-				044A89ED1C89167900AD5394 /* AuditTableViewCell.swift in Sources */,
 				988227271C604BCB0040DB2C /* ViewController.swift in Sources */,
 				0496A6181C78337D002B0947 /* meetingRoomApplyCell.swift in Sources */,
 				983194851C620BA800900C0F /* KQJBTableViewController.swift in Sources */,
+				04D70FDE1C92B876003B9B7A /* yongZhangPendingCell.swift in Sources */,
 				9831947F1C61E8A300900C0F /* KQJiaTableViewController.swift in Sources */,
 				980B7E061C58C3910019D5A0 /* KQChaiMapViewController.swift in Sources */,
 				044A89EF1C89167900AD5394 /* AuditPendingOrHasbeenViewController.swift in Sources */,
@@ -1032,10 +1125,10 @@
 				9854FB961C853493002DCBD7 /* ChaiUser.swift in Sources */,
 				0496A61A1C78337D002B0947 /* HYSViewController.swift in Sources */,
 				985A930F1C7D4ACC0061D9D0 /* AlertViews.swift in Sources */,
-				044A89EA1C89167900AD5394 /* AuditDetileTableViewCell.swift in Sources */,
 				9846BB2B1C47465A00E7DF6A /* ListTableViewCell.swift in Sources */,
 				9822E5241C7324580024E8A0 /* KQBLTableViewCell.swift in Sources */,
 				04FB3D021C604F9300AE0787 /* fixedDetileBorrowView.swift in Sources */,
+				04D70FD31C92B825003B9B7A /* AuditTableViewCell.swift in Sources */,
 				0496A5F41C783375002B0947 /* addressMethod.swift in Sources */,
 				04CD153D1C83E6B90061D34B /* JNWSpringAnimation.m in Sources */,
 				983194811C61EE5300900C0F /* FlowData.swift in Sources */,
@@ -1051,7 +1144,6 @@
 				9822E5261C7327430024E8A0 /* KQBL.swift in Sources */,
 				98F8B1FF1C895A9A00249AAB /* BXTableViewCell.swift in Sources */,
 				0496A61B1C78337D002B0947 /* myselfMeetingRoomCell.swift in Sources */,
-				044A89EC1C89167900AD5394 /* AuditDetileView.swift in Sources */,
 				98F8B1F51C892E9900249AAB /* workPlatformVController.swift in Sources */,
 				04FB3D061C604F9300AE0787 /* fixedAssetsTableCell.swift in Sources */,
 				0496A5F61C783375002B0947 /* addressDetileView.swift in Sources */,
@@ -1063,10 +1155,12 @@
 				04FB3D041C604F9300AE0787 /* fixedDetileView.swift in Sources */,
 				0496A6101C78337D002B0947 /* checkMeetingRoomVController.swift in Sources */,
 				98E50E401C621688002AF370 /* KQChaiTimeViewController.swift in Sources */,
+				044EB3EE1C9174D0008C0BF9 /* selectStyleView.swift in Sources */,
 				9831948B1C620FFA00900C0F /* KQTiaoTimeViewController.swift in Sources */,
 				04FB3D2A1C60517C00AE0787 /* Download.swift in Sources */,
 				0496A6171C78337D002B0947 /* meetingApplyTypeView.swift in Sources */,
 				04FB3D2C1C60517C00AE0787 /* Manager.swift in Sources */,
+				04D70FD01C92B825003B9B7A /* AuditDetileTableViewCell.swift in Sources */,
 				045CB1461C8D5630005950DC /* personalCenterTableViewController.swift in Sources */,
 				04FB3D2E1C60517C00AE0787 /* ParameterEncoding.swift in Sources */,
 				04FB3D031C604F9300AE0787 /* fixedDetileHeaderView.swift in Sources */,
@@ -1075,6 +1169,7 @@
 				983194831C61FA2000900C0F /* KQJiaTimeViewController.swift in Sources */,
 				9822E51E1C73154C0024E8A0 /* KQApplyTableViewCell.swift in Sources */,
 				98650FD01C48E4A000DAA323 /* KQViewController.swift in Sources */,
+				04E437A71C916EB80060F0AE /* daiShenViewController.swift in Sources */,
 				04FB3D311C60517C00AE0787 /* ResponseSerialization.swift in Sources */,
 				045CB14F1C8D5977005950DC /* personalTableViewCell.swift in Sources */,
 				9822E5221C7324450024E8A0 /* KQBLTableViewController.swift in Sources */,
@@ -1083,6 +1178,7 @@
 				04FB3D351C60517C00AE0787 /* Upload.swift in Sources */,
 				04FB3D2B1C60517C00AE0787 /* Error.swift in Sources */,
 				044A89FA1C89215E00AD5394 /* baoXiaoAuditVController.swift in Sources */,
+				04D70FD21C92B825003B9B7A /* AuditDetileView.swift in Sources */,
 				04FB3D301C60517C00AE0787 /* Response.swift in Sources */,
 				98E50E3E1C621670002AF370 /* KQChaiTableViewController.swift in Sources */,
 				0496A6121C78337D002B0947 /* checkMeetingRoomCollectionCell.swift in Sources */,
@@ -1163,6 +1259,22 @@
 				048BEE671C797082006C660A /* Base */,
 			);
 			name = AuditPending.storyboard;
+			sourceTree = "<group>";
+		};
+		04E437981C9164950060F0AE /* daiShen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				04E437991C9164950060F0AE /* Base */,
+			);
+			name = daiShen.storyboard;
+			sourceTree = "<group>";
+		};
+		04E4379B1C9164B40060F0AE /* yiShen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				04E4379C1C9164B40060F0AE /* Base */,
+			);
+			name = yiShen.storyboard;
 			sourceTree = "<group>";
 		};
 		984155A51C44A06A000B29F2 /* Main.storyboard */ = {

@@ -117,6 +117,7 @@ class AuditHasbeenView: UIView,UITableViewDelegate,UITableViewDataSource{
         footerView.addSubview(btn3)
         
         detileView.frame = UIScreen.mainScreen().bounds
+        detileView.transform = CGAffineTransformMakeScale(0, 0)
         let  scale = JNWSpringAnimation(keyPath: "transform.scale")
         
         scale.fromValue = 0

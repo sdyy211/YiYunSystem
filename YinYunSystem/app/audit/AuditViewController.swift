@@ -8,9 +8,11 @@
 
 import UIKit
 
-class AuditViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource{
-    var itemArry  = NSArray()
-    var imageArry  =  NSArray()
+class AuditViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource,HttpProtocol{
+    var url = "/Mobile/Mobile/right"
+    var request = HttpRequest()
+    var itemArry  = NSMutableArray()
+    var imageArry  =  NSMutableArray()
     var itemWith:CGFloat = 0
     var itemHeight:CGFloat = 0
     var cv : UICollectionView?
@@ -20,8 +22,8 @@ class AuditViewController: UIViewController,UICollectionViewDelegate,UICollectio
         self.title = "审核列表"
         self.tabBarController?.tabBar.hidden = true
         
-        itemArry  = ["考勤","报销","盖章"]
-        imageArry  = ["p1","p3","p4"]
+//        itemArry  = ["考勤","报销","盖章"]
+//        imageArry  = ["p1","p3","p4"]
         itemWith = (CGRectGetWidth(UIScreen.mainScreen().bounds)-10-15)/4
         
         let layout = UICollectionViewFlowLayout()
@@ -41,7 +43,40 @@ class AuditViewController: UIViewController,UICollectionViewDelegate,UICollectio
         
         
         addLeftItem()
+        loadData()
     }
+    func loadData()
+    {
+        loadingAnimationMethod.sharedInstance.startAnimation()
+        request.delegate = self
+        let par = ["":""]
+        let str = "\(((UIApplication.sharedApplication().delegate) as! AppDelegate).getService())\(url)"
+        request.Get(str, parameters: par)
+    }
+    func didResponse(result: NSDictionary) {
+        loadingAnimationMethod.sharedInstance.endAnimation()
+        let ary =  result.objectForKey("dt") as? NSArray
+       
+        //考勤审批列表 报销审批列表
+        for(var i = 0;i < ary?.count ;i++)
+        {
+            let dic =  ary?.objectAtIndex(i) as! NSDictionary
+            let name = dic.objectForKey("Menu_Name") as? String
+            if(name == "考勤审批列表")
+            {
+                itemArry.addObject("考勤")
+                imageArry.addObject("p1")
+            }else if(name == "报销审批列表"){
+                itemArry.addObject("报销")
+                imageArry.addObject("p3")
+            }else if(name == "用章审批列表"){
+                itemArry.addObject("用章")
+                imageArry.addObject("p4")
+            }
+        }
+        cv?.reloadData()
+    }
+
     func addLeftItem()
     {
         let btn1 = UIButton(frame: CGRectMake(0, 0,12, 20))
@@ -72,29 +107,39 @@ class AuditViewController: UIViewController,UICollectionViewDelegate,UICollectio
     }
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath)
     {
-        //某个Cell被选择的事件处理
-        jumpPage(indexPath.row)
-    }
-    func jumpPage(index: Int)
-    {
-        if(index == 0)
+        titleStr = (itemArry[indexPath.row] as? String)!
+        if(titleStr == "考勤")
         {
-            //考勤审核
-            titleStr = (itemArry[index] as? String)!
             self.performSegueWithIdentifier("push1", sender: self)
-        }else if(index == 1)
-        {
-            //报销
-            titleStr = (itemArry[index] as? String)!
+        }else if(titleStr == "报销"){
             self.performSegueWithIdentifier("pushBaoXiao", sender: self)
-            
-        }else if(index == 2)
-        {
-            //盖章
-            titleStr = (itemArry[index] as? String)!
+        }else if(titleStr == "用章"){
             self.performSegueWithIdentifier("pushYongZhang", sender: self)
         }
+        
+        //某个Cell被选择的事件处理
+//        jumpPage(indexPath.row)
     }
+//    func jumpPage(index: Int)
+//    {
+//        if(index == 0)
+//        {
+//            //考勤审核
+//            titleStr = (itemArry[index] as? String)!
+//            self.performSegueWithIdentifier("push1", sender: self)
+//        }else if(index == 1)
+//        {
+//            //报销
+//            titleStr = (itemArry[index] as? String)!
+//            self.performSegueWithIdentifier("pushBaoXiao", sender: self)
+//            
+//        }else if(index == 2)
+//        {
+//            //盖章
+//            titleStr = (itemArry[index] as? String)!
+//            self.performSegueWithIdentifier("pushYongZhang", sender: self)
+//        }
+//    }
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?){
         if(titleStr == "考勤")
         {
@@ -104,7 +149,7 @@ class AuditViewController: UIViewController,UICollectionViewDelegate,UICollectio
         {
             let  channel:baoXiaoAuditVController = segue.destinationViewController as! baoXiaoAuditVController
             channel.title = titleStr
-        }else if(titleStr == "盖章")
+        }else if(titleStr == "用章")
         {
             let  channel:yongZhangAuditVController = segue.destinationViewController as! yongZhangAuditVController
             channel.title = titleStr

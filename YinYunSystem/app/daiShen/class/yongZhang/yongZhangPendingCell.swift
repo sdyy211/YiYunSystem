@@ -1,19 +1,27 @@
 //
-//  AuditTableViewCell.swift
+//  yongZhangPendingCell.swift
 //  YinYunSystem
 //
-//  Created by Mac on 16/2/16.
+//  Created by Mac on 16/3/9.
 //  Copyright © 2016年 魏辉. All rights reserved.
 //
 
 import UIKit
 
-class AuditTableViewCell: UITableViewCell {
+class yongZhangPendingCell: UITableViewCell {
 
-    @IBOutlet weak var startTime: UILabel!
-    @IBOutlet weak var endTime: UILabel!
     @IBOutlet weak var name: UILabel!
-    @IBOutlet weak var imageFlage: UIImageView!
+    
+    @IBOutlet weak var yongzhangImage: UIImageView!
+    @IBOutlet weak var department: UILabel!
+    
+    @IBOutlet weak var type: UILabel!
+    
+    @IBOutlet weak var time: UILabel!
+    
+    @IBOutlet weak var state: UILabel!
+    
+    @IBOutlet weak var cellbackView: UIView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="APW-Pf-5S3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="APW-Pf-5S3">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -14,7 +14,7 @@
                         <viewControllerLayoutGuide type="bottom" id="s2w-T2-Suj"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="hPl-eo-THi">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -24,13 +24,15 @@
                         <segue destination="4Mn-Zp-WeE" kind="modal" identifier="KQSegue" modalPresentationStyle="fullScreen" modalTransitionStyle="flipHorizontal" id="CYh-3p-gyW"/>
                         <segue destination="YzH-kz-4Wy" kind="push" identifier="HYSSegue" id="Q3J-a7-ihJ"/>
                         <segue destination="i0n-Hv-l1w" kind="push" identifier="pushAudit" id="8SS-IH-ezS"/>
-                        <segue destination="nzI-Je-OBc" kind="presentation" identifier="StampUseSegue" modalPresentationStyle="fullScreen" modalTransitionStyle="flipHorizontal" id="svb-ZU-st0"/>
-                        <segue destination="QiU-Is-cc0" kind="presentation" identifier="BXSegue" modalPresentationStyle="fullScreen" modalTransitionStyle="flipHorizontal" id="hOW-yb-L41"/>
+                        <segue destination="nzI-Je-OBc" kind="modal" identifier="StampUseSegue" modalPresentationStyle="fullScreen" modalTransitionStyle="flipHorizontal" id="svb-ZU-st0"/>
+                        <segue destination="QiU-Is-cc0" kind="modal" identifier="BXSegue" modalPresentationStyle="fullScreen" modalTransitionStyle="flipHorizontal" id="hOW-yb-L41"/>
+                        <segue destination="X4l-RV-xCz" kind="push" identifier="pushDaiShen" id="FXQ-qf-JZX"/>
+                        <segue destination="6ZE-7c-l97" kind="push" identifier="pushYiShen" id="hKj-Jy-8sN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IPq-nf-16g" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1924" y="949"/>
+            <point key="canvasLocation" x="1026.1333333333332" y="898.38666666666666"/>
         </scene>
         <!--Item-->
         <scene sceneID="d2K-Kl-4I9">
@@ -48,7 +50,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vCG-NT-8e5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1284" y="949"/>
+            <point key="canvasLocation" x="684.79999999999995" y="898.38666666666666"/>
         </scene>
         <!--KQ-->
         <scene sceneID="yPv-Uz-f62">
@@ -56,7 +58,7 @@
                 <viewControllerPlaceholder storyboardName="KQ" id="4Mn-Zp-WeE" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tys-zh-wuk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2403" y="768"/>
+            <point key="canvasLocation" x="1387.5" y="739"/>
         </scene>
         <!--HYS-->
         <scene sceneID="86m-cp-SCX">
@@ -66,7 +68,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KNG-QU-oxM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2407" y="884"/>
+            <point key="canvasLocation" x="1391" y="803"/>
         </scene>
         <!--AuditPending-->
         <scene sceneID="7hp-0o-9DX">
@@ -76,7 +78,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NYz-Ho-PPX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2439" y="1136"/>
+            <point key="canvasLocation" x="1423" y="959"/>
         </scene>
         <!--stampUse-->
         <scene sceneID="LxC-5F-LbF">
@@ -84,7 +86,7 @@
                 <viewControllerPlaceholder storyboardName="stampUse" id="nzI-Je-OBc" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DNB-rb-p8l" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2428.5" y="1038"/>
+            <point key="canvasLocation" x="1413" y="913"/>
         </scene>
         <!--BX-->
         <scene sceneID="8UT-Y8-Qad">
@@ -92,7 +94,27 @@
                 <viewControllerPlaceholder storyboardName="BX" id="QiU-Is-cc0" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e8Y-iB-uKh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2407" y="949"/>
+            <point key="canvasLocation" x="1391" y="863"/>
+        </scene>
+        <!--daiShen-->
+        <scene sceneID="h8d-ZS-RHY">
+            <objects>
+                <viewControllerPlaceholder storyboardName="daiShen" id="X4l-RV-xCz" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="KJt-Jt-v0B"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MPC-Ff-TKg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1407" y="1014"/>
+        </scene>
+        <!--yiShen-->
+        <scene sceneID="2rQ-1s-hfW">
+            <objects>
+                <viewControllerPlaceholder storyboardName="yiShen" id="6ZE-7c-l97" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="HxH-9a-6Q3"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xL0-JJ-FjO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1402.5" y="1071"/>
         </scene>
     </scenes>
     <resources>

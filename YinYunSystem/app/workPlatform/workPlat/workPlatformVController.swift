@@ -66,6 +66,11 @@ class workPlatformVController: UIViewController,UICollectionViewDelegate,UIColle
         if isHighLevel {
             itemArry.addObject("办理事项")
             imageArry.addObject("p4")
+            itemArry.addObject("待审")
+            imageArry.addObject("p4")
+            itemArry.addObject("已审")
+            imageArry.addObject("p2")
+
         }
         cv?.reloadData()
     }
@@ -121,6 +126,14 @@ class workPlatformVController: UIViewController,UICollectionViewDelegate,UIColle
         {
             //跳转审核
             self.performSegueWithIdentifier("pushAudit", sender: self)
+        }else if(index == 6)
+        {
+            //跳转待审
+            self.performSegueWithIdentifier("pushDaiShen", sender: self)
+        }else if(index == 7)
+        {
+            //跳转已审
+            self.performSegueWithIdentifier("pushYiShen", sender: self)
         }
     }
 

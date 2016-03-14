@@ -76,7 +76,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, BMKGeneralDelegate {
     }
     internal func getService()->String
     {
-        let pwd = "http://172.16.8.109"
+//        let pwd = "http://172.16.8.109"
+        let pwd = "http://172.16.8.250:8085"
         return pwd
     }
     func applicationWillResignActive(application: UIApplication) {

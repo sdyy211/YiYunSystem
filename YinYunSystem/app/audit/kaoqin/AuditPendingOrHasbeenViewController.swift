@@ -13,7 +13,7 @@ class AuditPendingOrHasbeenViewController: UIViewController,UITableViewDataSourc
     
     @IBOutlet weak var tv: UITableView!
     
-    var itemArry = NSMutableArray(objects: "待审","已审")
+    var itemArry = NSMutableArray(objects: "考勤待审","考勤已审")
     var color = UIColor(colorLiteralRed: 238.0/255.0, green: 247.0/255.0, blue: 244.0/255.0, alpha: 1)
     var titleStr = ""
     override func viewDidLoad() {
@@ -44,6 +44,7 @@ class AuditPendingOrHasbeenViewController: UIViewController,UITableViewDataSourc
         return 50
     }
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
         let cell:UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "cell")
         cell.selectionStyle = UITableViewCellSelectionStyle.None
         cell.textLabel?.textColor = UIColor(colorLiteralRed: 113.0/255.0, green: 123.0/255.0, blue: 128.0/255.0, alpha: 1)
@@ -70,8 +71,8 @@ class AuditPendingOrHasbeenViewController: UIViewController,UITableViewDataSourc
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if(titleStr == "考勤待审")
         {
-            let channel:AuditPendViewController = segue.destinationViewController as! AuditPendViewController
-            channel.title = titleStr
+//            let channel:AuditPendViewController = segue.destinationViewController as! AuditPendViewController
+//            channel.title = titleStr
         }else{
             let channel:AuditHasbeenViewController = segue.destinationViewController as! AuditHasbeenViewController
             channel.title = titleStr

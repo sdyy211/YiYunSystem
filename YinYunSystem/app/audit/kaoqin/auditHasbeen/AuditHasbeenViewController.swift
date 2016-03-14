@@ -15,11 +15,13 @@ class AuditHasbeenViewController: UIViewController,UITableViewDelegate,UITableVi
     var url = "/KaoQinCheck/JDaiShenList"
     var itemArry = NSMutableArray()
     var request = HttpRequest()
+    var color = UIColor(colorLiteralRed: 238.0/255.0, green: 247.0/255.0, blue: 244.0/255.0, alpha: 1)
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tv.delegate = self
-        tv.dataSource = self
+//        tv.delegate = self
+//        tv.dataSource = self
+        tv.backgroundColor = color
         request.delegate = self
         self.automaticallyAdjustsScrollViewInsets = false
         addLeftItem()
@@ -28,11 +30,18 @@ class AuditHasbeenViewController: UIViewController,UITableViewDelegate,UITableVi
     func loadData()
     {
         loadingAnimationMethod.sharedInstance.startAnimation()
+        itemArry.removeAllObjects()
         let bodyStr = NSString(format:"page=1&rows=100000&lx=1&Name=")
         let str = "\(((UIApplication.sharedApplication().delegate) as! AppDelegate).getService())\(url)"
         request.delegate = self
         request.Post(str, str: bodyStr as String)
     }
+    func didResponse(result: NSDictionary) {
+        loadingAnimationMethod.sharedInstance.endAnimation()
+        itemArry = (result.objectForKey("rows") as? NSMutableArray)!
+        tv.reloadData()
+    }
+
     func addLeftItem()
     {
         let btn1 = UIButton(frame: CGRectMake(0, 0,12, 20))
@@ -47,29 +56,32 @@ class AuditHasbeenViewController: UIViewController,UITableViewDelegate,UITableVi
     }
 
     
-    func didResponse(result: NSDictionary) {
-        loadingAnimationMethod.sharedInstance.endAnimation()
-        itemArry = (result.objectForKey("rows") as? NSMutableArray)!
-        tv.reloadData()
-    }
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return itemArry.count
     }
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 110
+        return 80
     }
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         tableView.registerNib(UINib(nibName: "auditHasbeenViewCell", bundle: nil), forCellReuseIdentifier: "cell")
         let cell:auditHasbeenViewCell = tableView.dequeueReusableCellWithIdentifier("cell") as! auditHasbeenViewCell
-        
+        tableView.separatorStyle = UITableViewCellSeparatorStyle.None
+        cell.contentView.backgroundColor = color
         cell.selectionStyle = UITableViewCellSelectionStyle.None
         cell.textLabel?.textColor = UIColor(colorLiteralRed: 113.0/255.0, green: 123.0/255.0, blue: 128.0/255.0, alpha: 1)
+        cell.cellBackView.layer.borderWidth = 1
+        cell.cellBackView.layer.borderColor = UIColor.grayColor().CGColor
+        cell.cellBackView.layer.cornerRadius  = 10
+        
         
         let dic = itemArry.objectAtIndex(indexPath.row) as? NSDictionary
         cell.name.text = dic!.objectForKey("U_Name") as? String
+        cell.startTime.textColor = UIColor(colorLiteralRed: 113.0/255.0, green: 123.0/255.0, blue: 128.0/255.0, alpha: 1)
+        cell.endTime.textColor = UIColor(colorLiteralRed: 113.0/255.0, green: 123.0/255.0, blue: 128.0/255.0, alpha: 1)
+    
+        
         cell.startTime.text = dic!.objectForKey("KQ_StartTime") as? String
         cell.endTime.text = dic!.objectForKey("KQ_EndTime") as? String
-//        cell.auditName.text = dic!.objectForKey("CK_UName") as? String
         cell.state.text = dic!.objectForKey("KQ_State") as? String
         return cell
     }
