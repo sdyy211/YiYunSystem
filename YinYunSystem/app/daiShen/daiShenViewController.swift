@@ -19,7 +19,7 @@ class daiShenViewController: UIViewController,UITableViewDelegate,UITableViewDat
    var  selectStyle = ""
     var tv = UITableView()
     var itemArry = NSMutableArray()
-//    var itemArry = NSMutableArray()
+    var selectViewItemArry = NSMutableArray()
     var dataArry = NSMutableArray()
     var flageArry = NSMutableArray()
     var selectView = selectStyleView()
@@ -27,7 +27,9 @@ class daiShenViewController: UIViewController,UITableViewDelegate,UITableViewDat
     var segmentV = segmentView()
     var request = HttpRequest()
     var flag = "0"
-    var flag2 = "0"
+    var flag2 = ""
+    var permissionURL = "/Mobile/Mobile/right"
+    
     var kaoqinURL = "/KaoQinCheck/JDaiShenList"
     var KaoqinPiFuURL = "/KaoQinCheck/JShenHe"
     
@@ -36,6 +38,14 @@ class daiShenViewController: UIViewController,UITableViewDelegate,UITableViewDat
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        let cusView = UIView()
+        cusView.frame = CGRectMake(0, 0, CGRectGetWidth(self.view.frame),20)
+        cusView.backgroundColor = UIColor(red: 0.0/255.0, green:
+            122.0/255.0, blue: 204.0/255.0, alpha: 1.0)
+        
+        self.view.addSubview(cusView)
+        
+        selectStyleBtn.selected = false
         rightItem.tag = 1
         request.delegate = self
         self.navigationController?.navigationBar.hidden = true
@@ -44,6 +54,8 @@ class daiShenViewController: UIViewController,UITableViewDelegate,UITableViewDat
         tv.dataSource = self
         tv.backgroundColor = color
         self.view.addSubview(tv)
+        
+        permissionLoadData()
     }
     // MARK: rightItem 点击事件
     @IBAction func rightItemAction(sender: AnyObject) {
@@ -87,14 +99,21 @@ class daiShenViewController: UIViewController,UITableViewDelegate,UITableViewDat
 
     @IBAction func selectStyleBtnAction(sender: AnyObject) {
         //点击全部按钮显示所有类型的列表
-        selectView.removeFromSuperview()
-        selectView = selectStyleView()
-        selectView.frame = CGRectMake(CGRectGetMinX(selectStyleBtn.frame),CGRectGetMinY(tabbarView.frame)+CGRectGetMaxY(selectStyleBtn.frame),CGRectGetWidth(selectStyleBtn.frame),5*40)
-        selectView.delegate  = self
-        selectView.itemArry = ["考勤","用章","报销","全部"]
-        let window = UIApplication.sharedApplication().keyWindow
-        window?.addSubview(selectView)
-        window?.makeKeyAndVisible()
+        if !selectStyleBtn.selected
+        {
+            selectStyleBtn.selected = true
+            selectView.removeFromSuperview()
+            selectView = selectStyleView()
+            selectView.frame = CGRectMake(CGRectGetMinX(selectStyleBtn.frame),CGRectGetMinY(tabbarView.frame)+CGRectGetMaxY(selectStyleBtn.frame),CGRectGetWidth(selectStyleBtn.frame),CGFloat(selectViewItemArry.count)*40)
+            selectView.delegate  = self
+            selectView.itemArry = selectViewItemArry
+            let window = UIApplication.sharedApplication().keyWindow
+            window?.addSubview(selectView)
+            window?.makeKeyAndVisible()
+        }else{
+            selectStyleBtn.selected = false
+            selectView.removeFromSuperview()
+        }
     }
     @IBAction func backBtnAction(sender: AnyObject) {
         //返回的按钮
@@ -272,6 +291,7 @@ class daiShenViewController: UIViewController,UITableViewDelegate,UITableViewDat
     }
     //MARK:获取选择的待审的类型
     func getSelectStyle(style: String) {
+        selectStyleBtn.selected = false
         selectStyleBtn.setTitle(style, forState: UIControlState.Normal)
         selectStyle = style
         if(style == "全部")
@@ -302,12 +322,26 @@ class daiShenViewController: UIViewController,UITableViewDelegate,UITableViewDat
         }else if(style == "报销"){
             segmentV.removeFromSuperview()
             tv.removeFromSuperview()
-            tv.frame = CGRectMake(0, CGRectGetMaxY(tabbarView.frame), CGRectGetWidth(self.view.frame),CGRectGetHeight(self.view.frame)-CGRectGetMaxY(tabbarView.frame))
+            segmentV = segmentView()
+            segmentV.segmentArray = ["通讯费","差旅费","室内交通费","通用","培训费","会议费"]
+            segmentV.delegate = self
+            segmentV.frame = CGRectMake(0,CGRectGetMaxY(tabbarView.frame),CGRectGetWidth(self.view.frame),40)
+            self.view.addSubview(segmentV)
+            tv.frame = CGRectMake(0, CGRectGetMaxY(segmentV.frame), CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame)-CGRectGetMaxY(segmentV.frame))
             self.view.addSubview(tv)
             BaoXiaoLoadData()
         }
     }
     //MARK:全部请求
+    func permissionLoadData()
+    {
+        flag2 = "permission"
+        loadingAnimationMethod.sharedInstance.startAnimation()
+        request.delegate = self
+        let par = ["":""]
+        let str = GetService + permissionURL
+        request.Get(str, parameters: par)
+    }
     func AllLoadData()
     {
         flag = "0"
@@ -342,7 +376,7 @@ class daiShenViewController: UIViewController,UITableViewDelegate,UITableViewDat
         itemArry.removeAllObjects()
         tv.reloadData()
     }
-    // MARK: 批量通过 和 批量退回请求的接口
+    // 批量通过 和 批量退回请求的接口
     func KaoQinloadBatch(type:String,kqid:String)
     {
         flag = "批量通过和退回"
@@ -353,7 +387,7 @@ class daiShenViewController: UIViewController,UITableViewDelegate,UITableViewDat
         request.delegate = self
         request.Post(str, str: bodyStr as String)
     }
-    // MARK: 用章详情页面的 退回，通过按钮的请求方法
+    // 用章详情页面的 退回，通过按钮的请求方法
     func loadData_exitAction(id:String)
     {
         flag = "用章详情退回"
@@ -372,6 +406,36 @@ class daiShenViewController: UIViewController,UITableViewDelegate,UITableViewDat
 
     func didResponse(result: NSDictionary) {
         loadingAnimationMethod.sharedInstance.endAnimation()
+        
+        if(flag2 == "permission")
+        {
+            flag2 = ""
+            let ary =  result.objectForKey("dt") as? NSArray
+            
+            //考勤审批列表 报销审批列表
+            for(var i = 0;i < ary?.count ;i++)
+            {
+                let dic =  ary?.objectAtIndex(i) as! NSDictionary
+                let name = dic.objectForKey("Menu_Name") as? String
+                if(name == "考勤审批列表")
+                {
+                    selectViewItemArry.addObject("考勤")
+                }else if(name == "报销审批列表"){
+                    selectViewItemArry.addObject("报销")
+                }else if(name == "用章审批列表"){
+                    selectViewItemArry.addObject("用章")
+                }else if(name == "借还款审核列表"){
+                    selectViewItemArry.addObject("借还款")
+                }else if(name == "云资源审核列表"){
+                    selectViewItemArry.addObject("云资源")
+                }else if(name == "项目审核"){
+                    selectViewItemArry.addObject("项目")
+                }else if(name == "合同审核列表"){
+                    selectViewItemArry.addObject("合同")
+                }
+            }
+
+        }
         if(flag == "0")
         {
             

@@ -25,11 +25,13 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vc7-07-8oG">
                                         <rect key="frame" x="79" y="10" width="162" height="25"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" red="0.79246768769999998" green="0.91433869950000002" blue="0.87697770559999999" alpha="0.85999999999999999" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="162" id="8s7-7D-HDk"/>
                                         </constraints>
-                                        <state key="normal" title="全部"/>
+                                        <state key="normal" title="全部">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
                                         <connections>
                                             <action selector="selectStyleBtnAction:" destination="ubk-E9-qq7" eventType="touchUpInside" id="Ybi-Ed-Kwi"/>
                                         </connections>
@@ -46,14 +48,16 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mSF-RR-TIO">
                                         <rect key="frame" x="272" y="10" width="40" height="25"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <state key="normal" title="批"/>
+                                        <color key="backgroundColor" red="0.79246768769999998" green="0.91433869950000002" blue="0.87697770559999999" alpha="0.85999999999999999" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="批">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
                                         <connections>
                                             <action selector="rightItemAction:" destination="ubk-E9-qq7" eventType="touchUpInside" id="bXe-b3-2ZJ"/>
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="1" green="0.35178497549999999" blue="0.25336498569999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="1wM-wF-hBo"/>
                                     <constraint firstItem="vc7-07-8oG" firstAttribute="centerY" secondItem="SRc-nt-Ixc" secondAttribute="centerY" id="Ezz-VV-msR"/>

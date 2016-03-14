@@ -168,11 +168,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YinYunSystem/app/daiShen/daiShenViewController.swift"
-            timestampString = "479377791.694244"
+            timestampString = "479638118.607245"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "398"
-            endingLineNumber = "398"
+            startingLineNumber = "462"
+            endingLineNumber = "462"
             landmarkName = "didResponse(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -184,11 +184,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YinYunSystem/app/daiShen/daiShenViewController.swift"
-            timestampString = "479377791.694244"
+            timestampString = "479638118.607245"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "362"
-            endingLineNumber = "362"
+            startingLineNumber = "396"
+            endingLineNumber = "396"
             landmarkName = "loadData_exitAction(_:)"
             landmarkType = "5">
          </BreakpointContent>

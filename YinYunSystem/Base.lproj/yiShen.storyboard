@@ -23,8 +23,10 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p4R-gt-xYA">
                                         <rect key="frame" x="79" y="10" width="162" height="25"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <state key="normal" title="全部"/>
+                                        <color key="backgroundColor" red="0.79246768769999998" green="0.91433869950000002" blue="0.87697770559999999" alpha="0.85999999999999999" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="全部">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
                                         <connections>
                                             <action selector="selectStypeAction:" destination="oxh-KZ-arf" eventType="touchUpInside" id="ayd-oL-OQA"/>
                                         </connections>
@@ -40,7 +42,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="1" green="0.35178497549999999" blue="0.25336498569999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137254901957" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="p4R-gt-xYA" firstAttribute="top" secondItem="9wb-3k-CmZ" secondAttribute="top" constant="10" id="IF9-g0-TSQ"/>
                                     <constraint firstItem="p4R-gt-xYA" firstAttribute="centerX" secondItem="9wb-3k-CmZ" secondAttribute="centerX" id="LEZ-ql-3an"/>
