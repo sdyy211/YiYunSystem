@@ -64,8 +64,8 @@ class workPlatformVController: UIViewController,UICollectionViewDelegate,UIColle
             }
         }
         if isHighLevel {
-            itemArry.addObject("办理事项")
-            imageArry.addObject("p4")
+//            itemArry.addObject("办理事项")
+//            imageArry.addObject("p4")
             itemArry.addObject("待审")
             imageArry.addObject("p4")
             itemArry.addObject("已审")
@@ -124,17 +124,19 @@ class workPlatformVController: UIViewController,UICollectionViewDelegate,UIColle
             self.performSegueWithIdentifier("StampUseSegue", sender: self)
         }else if(index == 5)
         {
-            //跳转审核
-            self.performSegueWithIdentifier("pushAudit", sender: self)
-        }else if(index == 6)
-        {
             //跳转待审
             self.performSegueWithIdentifier("pushDaiShen", sender: self)
-        }else if(index == 7)
+        }else if(index == 6)
         {
             //跳转已审
             self.performSegueWithIdentifier("pushYiShen", sender: self)
         }
+//        else if(index == 5)
+//        {
+//            //跳转审核
+//            self.performSegueWithIdentifier("pushAudit", sender: self)
+//        }
+        
     }
 
     override func didReceiveMemoryWarning() {

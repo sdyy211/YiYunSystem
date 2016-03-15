@@ -61,6 +61,11 @@
 		0496A61E1C78337D002B0947 /* myselfMeetRoomDetileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0496A60C1C78337D002B0947 /* myselfMeetRoomDetileCell.xib */; };
 		0496A61F1C78337D002B0947 /* myselfMeetingRoomVController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0496A60D1C78337D002B0947 /* myselfMeetingRoomVController.swift */; };
 		0496A6201C78337D002B0947 /* myselfMeetRoomDetileVController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0496A60E1C78337D002B0947 /* myselfMeetRoomDetileVController.swift */; };
+		04C67C361C96B79B0058C88A /* myTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C67C351C96B79B0058C88A /* myTableView.swift */; };
+		04C67C381C97A4210058C88A /* baoXiaoTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C67C371C97A4210058C88A /* baoXiaoTableView.swift */; };
+		04C67C3C1C97B2480058C88A /* baoXiaoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C67C3A1C97B2480058C88A /* baoXiaoTableViewCell.swift */; };
+		04C67C3D1C97B2490058C88A /* baoXiaoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04C67C3B1C97B2480058C88A /* baoXiaoTableViewCell.xib */; };
+		04C67C3F1C97DF5E0058C88A /* baoXiaoCellClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C67C3E1C97DF5E0058C88A /* baoXiaoCellClass.swift */; };
 		04CD153D1C83E6B90061D34B /* JNWSpringAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CD153A1C83E6B90061D34B /* JNWSpringAnimation.m */; };
 		04CD153E1C83E6B90061D34B /* NSValue+JNWAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CD153C1C83E6B90061D34B /* NSValue+JNWAdditions.m */; };
 		04D70FD01C92B825003B9B7A /* AuditDetileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D70FCB1C92B825003B9B7A /* AuditDetileTableViewCell.swift */; };
@@ -235,6 +240,11 @@
 		0496A60C1C78337D002B0947 /* myselfMeetRoomDetileCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = myselfMeetRoomDetileCell.xib; sourceTree = "<group>"; };
 		0496A60D1C78337D002B0947 /* myselfMeetingRoomVController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = myselfMeetingRoomVController.swift; sourceTree = "<group>"; };
 		0496A60E1C78337D002B0947 /* myselfMeetRoomDetileVController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = myselfMeetRoomDetileVController.swift; sourceTree = "<group>"; };
+		04C67C351C96B79B0058C88A /* myTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = myTableView.swift; sourceTree = "<group>"; };
+		04C67C371C97A4210058C88A /* baoXiaoTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = baoXiaoTableView.swift; sourceTree = "<group>"; };
+		04C67C3A1C97B2480058C88A /* baoXiaoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = baoXiaoTableViewCell.swift; path = baoXiao/baoXiaoTableViewCell.swift; sourceTree = "<group>"; };
+		04C67C3B1C97B2480058C88A /* baoXiaoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = baoXiaoTableViewCell.xib; path = baoXiao/baoXiaoTableViewCell.xib; sourceTree = "<group>"; };
+		04C67C3E1C97DF5E0058C88A /* baoXiaoCellClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = baoXiaoCellClass.swift; path = baoXiao/baoXiaoCellClass.swift; sourceTree = "<group>"; };
 		04CD15391C83E6B90061D34B /* JNWSpringAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JNWSpringAnimation.h; sourceTree = "<group>"; };
 		04CD153A1C83E6B90061D34B /* JNWSpringAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JNWSpringAnimation.m; sourceTree = "<group>"; };
 		04CD153B1C83E6B90061D34B /* NSValue+JNWAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSValue+JNWAdditions.h"; sourceTree = "<group>"; };
@@ -652,6 +662,16 @@
 			path = workPlatform;
 			sourceTree = "<group>";
 		};
+		04C67C391C97B2130058C88A /* baoXiao */ = {
+			isa = PBXGroup;
+			children = (
+				04C67C3A1C97B2480058C88A /* baoXiaoTableViewCell.swift */,
+				04C67C3B1C97B2480058C88A /* baoXiaoTableViewCell.xib */,
+				04C67C3E1C97DF5E0058C88A /* baoXiaoCellClass.swift */,
+			);
+			name = baoXiao;
+			sourceTree = "<group>";
+		};
 		04CD15381C83E6B90061D34B /* JNW */ = {
 			isa = PBXGroup;
 			children = (
@@ -722,10 +742,13 @@
 		04E437A51C916E980060F0AE /* class */ = {
 			isa = PBXGroup;
 			children = (
+				04C67C391C97B2130058C88A /* baoXiao */,
 				04D70FD51C92B876003B9B7A /* yongZhang */,
 				04D70FCA1C92B824003B9B7A /* kaoQin */,
 				044EB3ED1C9174D0008C0BF9 /* selectStyleView.swift */,
 				044EB3EF1C925364008C0BF9 /* segmentView.swift */,
+				04C67C351C96B79B0058C88A /* myTableView.swift */,
+				04C67C371C97A4210058C88A /* baoXiaoTableView.swift */,
 			);
 			path = class;
 			sourceTree = "<group>";
@@ -1017,6 +1040,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04C67C3D1C97B2490058C88A /* baoXiaoTableViewCell.xib in Resources */,
 				98650FC91C48806200DAA323 /* KQ.storyboard in Resources */,
 				0496A6161C78337D002B0947 /* collectionHeaderView.xib in Resources */,
 				980B7DEF1C58B5C50019D5A0 /* mapapi.bundle in Resources */,
@@ -1082,6 +1106,7 @@
 				04FB3D331C60517C00AE0787 /* ServerTrustPolicy.swift in Sources */,
 				981C2DF51C4CCA4000515E60 /* KQCalenderOfMonthTableViewCell.swift in Sources */,
 				98F8B2021C898B7300249AAB /* YZViewController.swift in Sources */,
+				04C67C3C1C97B2480058C88A /* baoXiaoTableViewCell.swift in Sources */,
 				04D70FDD1C92B876003B9B7A /* yongZhangDetileView.swift in Sources */,
 				98A693E81C774E1E00B85BD9 /* KQChaiMapCheckViewController.swift in Sources */,
 				04FB3D371C60517C00AE0787 /* HttpRequest.swift in Sources */,
@@ -1114,6 +1139,7 @@
 				9831947F1C61E8A300900C0F /* KQJiaTableViewController.swift in Sources */,
 				980B7E061C58C3910019D5A0 /* KQChaiMapViewController.swift in Sources */,
 				044A89EF1C89167900AD5394 /* AuditPendingOrHasbeenViewController.swift in Sources */,
+				04C67C3F1C97DF5E0058C88A /* baoXiaoCellClass.swift in Sources */,
 				9822E5201C73160E0024E8A0 /* KQApply.swift in Sources */,
 				044196B31C794A9200B8E1BE /* AuditViewController.swift in Sources */,
 				0496A6151C78337D002B0947 /* collectionHeaderView.swift in Sources */,
@@ -1128,6 +1154,7 @@
 				9846BB2B1C47465A00E7DF6A /* ListTableViewCell.swift in Sources */,
 				9822E5241C7324580024E8A0 /* KQBLTableViewCell.swift in Sources */,
 				04FB3D021C604F9300AE0787 /* fixedDetileBorrowView.swift in Sources */,
+				04C67C381C97A4210058C88A /* baoXiaoTableView.swift in Sources */,
 				04D70FD31C92B825003B9B7A /* AuditTableViewCell.swift in Sources */,
 				0496A5F41C783375002B0947 /* addressMethod.swift in Sources */,
 				04CD153D1C83E6B90061D34B /* JNWSpringAnimation.m in Sources */,
@@ -1135,6 +1162,7 @@
 				988227261C604BCB0040DB2C /* AppDelegate.swift in Sources */,
 				04FB3D341C60517C00AE0787 /* Stream.swift in Sources */,
 				04FB3D361C60517C00AE0787 /* Validation.swift in Sources */,
+				04C67C361C96B79B0058C88A /* myTableView.swift in Sources */,
 				98650FCE1C48DA3600DAA323 /* KQCalendarViewController.swift in Sources */,
 				046464DE1C76A2EE004841FF /* OAsySytemService.swift in Sources */,
 				04CD153E1C83E6B90061D34B /* NSValue+JNWAdditions.m in Sources */,

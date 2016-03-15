@@ -49,6 +49,7 @@ class addressBookViewController:UIViewController,UITableViewDataSource,UITableVi
     }
     func didResponse(result: NSDictionary) {
         loadingAnimationMethod.sharedInstance.endAnimation()
+        print(result)
         itemArray =  (result.objectForKey("rows") as? NSMutableArray)!
         if(itemArray.count > 0)
         {

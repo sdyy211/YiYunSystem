@@ -16,7 +16,7 @@ class daiShenViewController: UIViewController,UITableViewDelegate,UITableViewDat
     
     @IBOutlet weak var rightItem: UIButton!
     var color = UIColor(colorLiteralRed: 238.0/255.0, green: 247.0/255.0, blue: 244.0/255.0, alpha: 1)
-   var  selectStyle = ""
+    var  selectStyle = ""
     var tv = UITableView()
     var itemArry = NSMutableArray()
     var selectViewItemArry = NSMutableArray()
@@ -26,6 +26,8 @@ class daiShenViewController: UIViewController,UITableViewDelegate,UITableViewDat
     var yongzhangDetileView = yongZhangDetileView()
     var segmentV = segmentView()
     var request = HttpRequest()
+    var baoXiaoTV:baoXiaoTableView?
+    
     var flag = "0"
     var flag2 = ""
     var permissionURL = "/Mobile/Mobile/right"
@@ -235,7 +237,7 @@ class daiShenViewController: UIViewController,UITableViewDelegate,UITableViewDat
     }
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         selectView.removeFromSuperview()
-        if(flag == "1"){
+        if(selectStyle == "考勤"){
             //点击考勤的列表判断
             let flagStr = flageArry.objectAtIndex(indexPath.row) as! String
             if(rightItem.tag == 2)
@@ -260,7 +262,7 @@ class daiShenViewController: UIViewController,UITableViewDelegate,UITableViewDat
                 window.addSubview(detileView)
             }
 
-        }else if(flag == "2"){
+        }else if(selectStyle == "用章"){
             //点击用章的列表判断
             let flagStr = flageArry.objectAtIndex(indexPath.row) as! String
             if(rightItem.tag == 2)
@@ -303,6 +305,8 @@ class daiShenViewController: UIViewController,UITableViewDelegate,UITableViewDat
             self.view.addSubview(tv)
             AllLoadData()
         }else if(style == "考勤"){
+//            baoXiaoTV!.removeFromSuperview()
+            
             segmentV.removeFromSuperview()
             tv.removeFromSuperview()
             segmentV = segmentView()
@@ -322,14 +326,15 @@ class daiShenViewController: UIViewController,UITableViewDelegate,UITableViewDat
         }else if(style == "报销"){
             segmentV.removeFromSuperview()
             tv.removeFromSuperview()
-            segmentV = segmentView()
-            segmentV.segmentArray = ["通讯费","差旅费","室内交通费","通用","培训费","会议费"]
-            segmentV.delegate = self
-            segmentV.frame = CGRectMake(0,CGRectGetMaxY(tabbarView.frame),CGRectGetWidth(self.view.frame),40)
-            self.view.addSubview(segmentV)
-            tv.frame = CGRectMake(0, CGRectGetMaxY(segmentV.frame), CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame)-CGRectGetMaxY(segmentV.frame))
-            self.view.addSubview(tv)
-            BaoXiaoLoadData()
+            
+            let frame = CGRectMake(0,  CGRectGetMaxY(tabbarView.frame), CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame)-CGRectGetMaxY(tabbarView.frame))
+            baoXiaoTV = baoXiaoTableView(frame:frame)
+            self.view.addSubview(baoXiaoTV!)
+            
+            
+//            tv.frame = CGRectMake(0, CGRectGetMaxY(segmentV.frame), CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame)-CGRectGetMaxY(segmentV.frame))
+//            self.view.addSubview(tv)
+//            BaoXiaoLoadData()
         }
     }
     //MARK:全部请求
